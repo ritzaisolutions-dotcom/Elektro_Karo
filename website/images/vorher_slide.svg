@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="571" viewBox="0 0 1024 571" role="img" aria-labelledby="title">
+  <title id="title">Vorher Zustand einer Wandflaeche</title>
+  <rect width="1024" height="571" fill="#1c1a14"/>
+  <rect x="84" y="72" width="856" height="427" fill="#242018" stroke="#4a4640" stroke-width="3"/>
+  <path d="M150 160h720M150 250h720M150 340h720" stroke="#4a4640" stroke-width="2" opacity=".5"/>
+  <text x="512" y="288" text-anchor="middle" fill="#b5a98a" font-family="Jost, Arial, sans-serif" font-size="36" letter-spacing="5">VORHER</text>
+  <text x="512" y="336" text-anchor="middle" fill="#8a7035" font-family="Jost, Arial, sans-serif" font-size="18">Untergrund pruefen · vorbereiten · schuetzen</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "name": "handwerker-website-template-rais",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Wiederverwendbares Handwerker-Website-Template (RAIS). Vanilla HTML/CSS/JS, kein Framework.",
+  "scripts": {
+    "preview": "node server.js",
+    "start": "node server.js",
+    "smoke": "node scripts/smoke-test.js"
+  }
+}

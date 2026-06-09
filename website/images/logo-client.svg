@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="96" viewBox="0 0 420 96" role="img" aria-labelledby="title desc">
+  <title id="title">Schmitt Malerei Koblenz</title>
+  <desc id="desc">Goldener Schriftzug auf dunklem Grund.</desc>
+  <rect width="420" height="96" fill="#0f0e0c"/>
+  <text x="210" y="48" text-anchor="middle" fill="#c9a84c" font-family="Cormorant Garamond, Georgia, serif" font-size="36" font-weight="600" letter-spacing="8">SCHMITT</text>
+  <text x="210" y="72" text-anchor="middle" fill="#f5efe0" font-family="Jost, Arial, sans-serif" font-size="12" font-weight="300" letter-spacing="5">MALEREI · KOBLENZ</text>
+</svg>

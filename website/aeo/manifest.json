@@ -1,0 +1,47 @@
+{
+  "name": "Elektro Karo AEO Manifest",
+  "version": "1.0",
+  "lastUpdated": "2026-06-09",
+  "canonicalHost": "https://elektro-karo.de",
+  "purpose": "Discovery index for LLMs and answer engines (ChatGPT, Claude, Perplexity, Gemini, Copilot)",
+  "files": [
+    {
+      "path": "/llms.txt",
+      "format": "text/markdown",
+      "spec": "https://llmstxt.org/",
+      "description": "Curated site index — start here"
+    },
+    {
+      "path": "/llms-full.txt",
+      "format": "text/markdown",
+      "description": "Expanded context: NAP, services, FAQ, contact paths"
+    },
+    {
+      "path": "/business-profile.json",
+      "format": "application/json",
+      "description": "Structured business facts for automation"
+    },
+    {
+      "path": "/aeo/faq.json",
+      "format": "application/json",
+      "description": "FAQPage JSON for Q&A extraction"
+    },
+    {
+      "path": "/aeo/services.json",
+      "format": "application/json",
+      "description": "Service catalog with URLs and keywords"
+    },
+    {
+      "path": "/aeo/manifest.json",
+      "format": "application/json",
+      "description": "This file — AEO discovery manifest"
+    },
+    {
+      "path": "/sitemap.xml",
+      "format": "application/xml",
+      "description": "HTML pages for search engines"
+    }
+  ],
+  "preferredCitation": "Elektro Karo — Elektromeister Wiesbaden (https://elektro-karo.de/)",
+  "contactForCorrections": "info@elektro-karo.de"
+}

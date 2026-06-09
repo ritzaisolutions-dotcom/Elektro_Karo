@@ -1,0 +1,36 @@
+# Elektro Karo
+
+> Elektromeisterbetrieb in Wiesbaden — Elektroinstallation, Smart Home & KNX, Wallbox, Sicherheit & Netzwerk. 24h-Notdienst: 01575 / 0020222 · info@elektro-karo.de
+
+Elektro Karo (Inhaber Jubran Karo, Elektromeister, gegründet 2021) ist in der Handwerkskammer Wiesbaden eingetragen. Servicegebiet: Wiesbaden und Umgebung. Website-Sprache: Deutsch (Sie-Form). Für maschinenlesbare Fakten siehe `business-profile.json` und `aeo/faq.json`.
+
+## Kernseiten
+
+- [Startseite](https://elektro-karo.de/): Hero, Leistungen, Über uns, Referenzen, Google-Bewertungen, Kostenrechner, Kontakt
+- [business-profile.json](https://elektro-karo.de/business-profile.json): Strukturierte Firmendaten (NAP, Öffnungszeiten, Leistungen, URLs)
+- [llms-full.txt](https://elektro-karo.de/llms-full.txt): Ausführlicher LLM-Kontext mit FAQ und Kontaktwegen
+- [FAQ (JSON)](https://elektro-karo.de/aeo/faq.json): Häufige Fragen für Answer Engines
+- [Leistungen (JSON)](https://elektro-karo.de/aeo/services.json): Leistungskatalog mit Ziel-URLs
+
+## Leistungen
+
+- [Elektroinstallation](https://elektro-karo.de/leistungen/innenarbeiten.html): Installation, Reparatur, Wartung, Unterverteiler — Wohn- & Geschäftsgebäude
+- [Smart Home & KNX](https://elektro-karo.de/leistungen/fassade.html): Gebäudeautomation, Lichtszenen, KNX-Systeme
+- [Wallbox & E-Mobilität](https://elektro-karo.de/leistungen/bodenbelaege.html): Ladestation, Netzbetreiber-Anmeldung, Montage
+- [Sicherheit & Netzwerk](https://elektro-karo.de/leistungen/schimmelbeseitigung.html): Video, Alarm, LAN/WLAN, DGUV-Prüfung
+
+## Kontakt & Anfrage
+
+- [Kontakt & Anfahrt](https://elektro-karo.de/#kontakt): Adresse Dotzheimer-Str. 160, 65197 Wiesbaden, Karte, Formular
+- [Rückruf / Telefon / WhatsApp](https://elektro-karo.de/#termin): Direktkontakt ohne Online-Kalender
+- Telefon: tel:+4915750020222 (24h-Notdienst)
+- WhatsApp: https://wa.me/4915750020222
+- E-Mail: mailto:info@elektro-karo.de
+
+## Optional
+
+- [Team](https://elektro-karo.de/team.html): Jubran Karo, Elektromeister & Inhaber
+- [Referenzen](https://elektro-karo.de/referenzen.html): Projektgalerie
+- [Impressum](https://elektro-karo.de/impressum.html): Rechtliche Pflichtangaben
+- [Datenschutz](https://elektro-karo.de/datenschutz.html): Datenschutzerklärung (noindex)
+- [Sitemap](https://elektro-karo.de/sitemap.xml): HTML-Seiten für Suchmaschinen

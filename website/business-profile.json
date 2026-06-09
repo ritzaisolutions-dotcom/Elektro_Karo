@@ -1,0 +1,121 @@
+{
+  "@context": "https://schema.org",
+  "type": "PublicBusinessProfile",
+  "version": "1.0",
+  "generatedFor": "llm-crawlers-and-automation",
+  "business": {
+    "legalName": "Elektro Karo",
+    "tradeNames": ["Elektro Karo", "Elektro-Karo Wiesbaden"],
+    "handwerksbezeichnung": "Elektroinstallateur",
+    "berufsbezeichnung": "Elektromeister",
+    "url": "https://elektro-karo.de",
+    "email": "info@elektro-karo.de",
+    "telephone": "+4915750020222",
+    "telephoneDisplay": "01575 / 0020222",
+    "fax": "",
+    "faxDisplay": "",
+    "address": {
+      "streetAddress": "Dotzheimer-Str. 160",
+      "postalCode": "65197",
+      "addressLocality": "Wiesbaden",
+      "addressRegion": "Hessen",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "latitude": 50.0826,
+      "longitude": 8.2400
+    },
+    "hasMap": "https://maps.google.com/?q=Dotzheimer-Str.+160,+65197+Wiesbaden",
+    "googlePlaceIdNote": "Google Maps search: Elektro Karo Wiesbaden"
+  },
+  "openingHours": {
+    "mondayToThursday": [
+      { "opens": "08:00", "closes": "16:00" }
+    ],
+    "friday": [
+      { "opens": "08:00", "closes": "16:00" }
+    ],
+    "saturdaySunday": "closed"
+  },
+  "services": [
+    {
+      "id": "elektroinstallation",
+      "name": "Elektroinstallation",
+      "summary": "Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude",
+      "url": "https://elektro-karo.de/leistungen/innenarbeiten.html"
+    },
+    {
+      "id": "smart-home-knx",
+      "name": "Smart Home & KNX",
+      "summary": "Gebäudeautomation, Lichtszenen, KNX-Systeme",
+      "url": "https://elektro-karo.de/leistungen/fassade.html"
+    },
+    {
+      "id": "wallbox",
+      "name": "Wallbox & E-Mobilität",
+      "summary": "Ladestation, Anmeldung, Installation",
+      "url": "https://elektro-karo.de/leistungen/bodenbelaege.html"
+    },
+    {
+      "id": "sicherheit-netzwerk",
+      "name": "Sicherheit & Netzwerk",
+      "summary": "Video, Alarm, LAN/WLAN, DGUV-Prüfung",
+      "url": "https://elektro-karo.de/leistungen/schimmelbeseitigung.html"
+    }
+  ],
+  "serviceArea": [
+    "Wiesbaden",
+    "Mainz",
+    "Taunusstein",
+    "Eltville",
+    "Rüdesheim",
+    "Bad Schwalbach"
+  ],
+  "canonicalUrls": {
+    "home": "https://elektro-karo.de/",
+    "referenzen": "https://elektro-karo.de/referenzen.html",
+    "team": "https://elektro-karo.de/team.html",
+    "impressum": "https://elektro-karo.de/impressum.html",
+    "datenschutz": "https://elektro-karo.de/datenschutz.html",
+    "kontakt": "https://elektro-karo.de/#kontakt",
+    "cta": "https://elektro-karo.de/#termin",
+    "faq": "https://elektro-karo.de/#faq"
+  },
+  "contactPaths": {
+    "telephoneUri": "tel:+4915750020222",
+    "emailUri": "mailto:info@elektro-karo.de",
+    "whatsappUri": "https://wa.me/4915750020222",
+    "contactForm": "https://elektro-karo.de/#kontakt"
+  },
+  "seoKeywords": [
+    "Elektriker Wiesbaden",
+    "Elektromeister Wiesbaden",
+    "Elektroinstallation Wiesbaden",
+    "Wallbox Wiesbaden",
+    "Smart Home Wiesbaden",
+    "Elektro Notdienst Wiesbaden"
+  ],
+  "demoNotes": {
+    "isDemoSite": true,
+    "reviewsSource": "https://elektro-karo.de/",
+    "noInventedRatings": false,
+    "reviewsNote": "Google reviews sourced from public website content"
+  },
+  "aeo": {
+    "lastUpdated": "2026-06-09",
+    "llmsTxt": "https://elektro-karo.de/llms.txt",
+    "llmsFullTxt": "https://elektro-karo.de/llms-full.txt",
+    "manifest": "https://elektro-karo.de/aeo/manifest.json",
+    "faqJson": "https://elektro-karo.de/aeo/faq.json",
+    "servicesJson": "https://elektro-karo.de/aeo/services.json",
+    "preferredCitation": "Elektro Karo — Elektromeister Wiesbaden (https://elektro-karo.de/)",
+    "answerEngineKeywords": [
+      "Elektriker Wiesbaden",
+      "Elektromeister Wiesbaden",
+      "Elektro Notdienst Wiesbaden",
+      "Wallbox Wiesbaden",
+      "Smart Home Elektriker Wiesbaden",
+      "KNX Wiesbaden"
+    ]
+  }
+}

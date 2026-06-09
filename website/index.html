@@ -1,0 +1,1333 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elektriker Wiesbaden | Elektromeister Elektro Karo — Installation &amp; Smart Home</title>
+  <meta name="description" content="Elektromeister in Wiesbaden: Elektroinstallation, Smart Home, KNX, Wallbox, Sicherheitstechnik und 24h-Notdienst. Elektro Karo, Dotzheimer-Str. 160.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://elektro-karo.de/">
+  <meta name="theme-color" content="#0a1628">
+  <meta name="geo.region" content="DE-HE">
+  <meta name="geo.placename" content="Wiesbaden">
+  <meta name="geo.position" content="50.0826;8.2400">
+  <meta name="ICBM" content="50.0826, 8.2400">
+  <meta property="og:title" content="Elektro Karo | Elektromeister Wiesbaden">
+  <meta property="og:description" content="Elektroinstallation, Smart Home, Wallbox und 24h-Notdienst in Wiesbaden und Umgebung.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elektro-karo.de/">
+  <meta property="og:site_name" content="Elektro Karo">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="https://elektro-karo.de/images/og-image.jpg">
+  <meta property="og:image:alt" content="Elektro Karo — Elektromeister in Wiesbaden">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Elektro Karo | Elektromeister Wiesbaden">
+  <meta name="twitter:description" content="Elektroinstallation, Smart Home, Wallbox und 24h-Notdienst in Wiesbaden.">
+  <meta name="twitter:image" content="https://elektro-karo.de/images/og-image.jpg">
+  <meta name="twitter:image:alt" content="Elektro Karo — Elektromeister in Wiesbaden">
+  <link rel="icon" type="image/png" href="images/favicon-client.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preload" as="image" href="images/ref_1.jpg" fetchpriority="high">
+  <!-- AEO: LLM / Answer Engine discovery -->
+  <link rel="alternate" type="text/markdown" href="https://elektro-karo.de/llms.txt" title="LLM Site Index (llms.txt)">
+  <link rel="alternate" type="text/markdown" href="https://elektro-karo.de/llms-full.txt" title="LLM Full Context">
+  <link rel="alternate" type="application/json" href="https://elektro-karo.de/business-profile.json" title="Business Profile JSON">
+  <link rel="alternate" type="application/json" href="https://elektro-karo.de/aeo/faq.json" title="FAQ JSON">
+  <meta name="author" content="Elektro Karo">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pdf-kalkulation.css">
+
+  <!-- ═══════════════════════════════════════════════════════
+       Template-Erweiterungen: WhatsApp FAB, Termin-Varianten
+       Diese Styles ergänzen style.css ohne es zu berühren.
+  ═══════════════════════════════════════════════════════ -->
+  <style>
+    /* ── WhatsApp FAB ────────────────────────────────────── */
+    .wa-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 1.5rem;
+      z-index: 950;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--wa-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 24px rgba(37,211,102,.45), 0 2px 8px rgba(0,0,0,.18);
+      text-decoration: none;
+      transition: transform var(--t-fast), box-shadow var(--t-fast);
+    }
+    .wa-fab:hover  { transform: scale(1.1); box-shadow: 0 8px 36px rgba(37,211,102,.6); }
+    .wa-fab:focus  { outline: 3px solid var(--wa-green); outline-offset: 4px; }
+    .wa-fab svg    { display: block; }
+    .wa-fab__ring  {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2.5px solid var(--wa-green);
+      opacity: 0;
+      pointer-events: none;
+      animation: wa-ring 2.8s ease-out infinite;
+    }
+    @keyframes wa-ring {
+      0%   { transform: scale(1);    opacity: .55; }
+      75%  { transform: scale(1.6);  opacity: 0;   }
+      100% { transform: scale(1.6);  opacity: 0;   }
+    }
+    @media (max-width: 768px) {
+      .wa-fab { bottom: 1.2rem; right: 1rem; width: 52px; height: 52px; }
+    }
+
+    /* ── Hero: Telefon-CTA mobile-first ──────────────────── */
+    .hero__ctas {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .hero__cta-phone {
+      width: 100%;
+      justify-content: center;
+    }
+    .hero__notdienst {
+      display: inline-block;
+      margin-top: var(--sp-3);
+      padding: .35rem .85rem;
+      border-radius: var(--r-md);
+      background: rgba(245, 166, 35, .15);
+      border: 1px solid rgba(245, 166, 35, .45);
+      color: #ffc04d;
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .termin-rueckruf__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-3);
+      justify-content: center;
+    }
+    .termin-rueckruf__ctas .btn {
+      flex: 1 1 200px;
+      justify-content: center;
+      max-width: 280px;
+    }
+
+    /* ── Termin-Variante: WhatsApp ───────────────────────── */
+    .termin-wa-box {
+      max-width: 560px;
+      margin: 2.5rem auto 0;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--r-lg);
+      padding: var(--sp-5) var(--sp-5) var(--sp-6);
+      text-align: center;
+    }
+    .termin-wa-box__icon { font-size: 3rem; line-height: 1; margin-bottom: 1rem; }
+    .termin-wa-box h3 {
+      font-size: var(--fs-xl);
+      color: #fff;
+      margin-bottom: .6rem;
+      font-family: var(--ff-head);
+      font-weight: 600;
+    }
+    .termin-wa-box p { color: rgba(255,255,255,.65); margin-bottom: var(--sp-4); font-size: var(--fs-base); }
+
+    /* ── Termin-Variante: Formular ───────────────────────── */
+    .termin-form-box {
+      max-width: 640px;
+      margin: 2.5rem auto 0;
+      background: var(--bg);
+      border-radius: var(--r-lg);
+      padding: var(--sp-5) var(--sp-5) var(--sp-6);
+      box-shadow: var(--s-lg);
+    }
+    .termin-form-box__title {
+      font-family: var(--ff-head);
+      font-size: var(--fs-xl);
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0 0 var(--sp-4);
+      text-align: center;
+    }
+    .termin-form-box label { color: var(--text); }
+    .termin-form-box input,
+    .termin-form-box textarea,
+    .termin-form-box select { color: var(--text); background: var(--bg); }
+    #terminFormResult { margin-top: .75rem; font-size: var(--fs-sm); font-weight: 600; }
+
+    /* ── WhatsApp Button (universell) ────────────────────── */
+    .btn--wa {
+      background: var(--wa-green);
+      color: #fff;
+      border: 2px solid var(--wa-green);
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      font-weight: 600;
+    }
+    .btn--wa:hover, .btn--wa:focus {
+      background: var(--wa-green-hover);
+      border-color: var(--wa-green-hover);
+      color: #fff;
+    }
+    .btn--wa svg { flex-shrink: 0; }
+
+    /* ── WhatsApp im Kontaktbereich ──────────────────────── */
+    .kontakt-wa-wrap { margin-top: 1rem; }
+    .kontakt-wa-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      color: var(--wa-green);
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      text-decoration: none;
+      transition: color var(--t-fast);
+    }
+    .kontakt-wa-link:hover { color: var(--wa-green-hover); }
+    .kontakt-wa-link svg   { flex-shrink: 0; }
+  </style>
+
+  <script src="js/config.js"></script>
+  <script defer src="js/config-apply.js"></script>
+  <script>
+    window.klaroConfig = {
+      version: 1,
+      elementID: 'klaro',
+      storageMethod: 'localStorage',
+      storageName: 'karo-consent-v1',
+      mustConsent: true,
+      acceptAll: true,
+      hideDeclineAll: false,
+      default: false,
+      lang: 'de',
+      translations: {
+        de: {
+          consentNotice: {
+            description: 'Wir nutzen optionale Dienste nur mit Ihrer Einwilligung. Details finden Sie in der Datenschutzerklärung.'
+          },
+          purposes: {
+            technisch: 'Technisch erforderlich',
+            terminbuchung: 'Terminbuchung',
+            karten: 'Karten & Standort'
+          },
+          services: {
+            necessary: {
+              title: 'Technisch erforderliche Speicherung',
+              description: 'Speichert Ihre Consent-Entscheidung lokal im Browser.'
+            },
+            booking: {
+              title: 'Cal.com Terminbuchung',
+              description: 'Lädt den externen Terminbuchungsdienst erst nach Einwilligung.'
+            },
+            googleMaps: {
+              title: 'Google Maps',
+              description: 'Ermöglicht die interaktive Anfahrtskarte und Routenplanung direkt auf unserer Webseite.'
+            }
+          }
+        }
+      },
+      services: [
+        { name: 'necessary', required: true,  purposes: ['technisch']      },
+        { name: 'booking',   required: false, purposes: ['terminbuchung'] },
+        { name: 'googleMaps',required: false, purposes: ['karten']        }
+      ]
+    };
+  </script>
+  <script type="application/ld+json" id="schema-graph">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://elektro-karo.de/#website",
+          "url": "https://elektro-karo.de/",
+          "name": "Elektro Karo",
+          "inLanguage": "de-DE",
+          "publisher": { "@id": "https://elektro-karo.de/#business" }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://elektro-karo.de/#webpage",
+          "url": "https://elektro-karo.de/",
+          "name": "Elektriker Wiesbaden | Elektro Karo",
+          "isPartOf": { "@id": "https://elektro-karo.de/#website" },
+          "about": { "@id": "https://elektro-karo.de/#business" },
+          "inLanguage": "de-DE"
+        },
+        {
+          "@type": "PostalAddress",
+          "@id": "https://elektro-karo.de/#address",
+          "streetAddress": "Dotzheimer-Str. 160",
+          "postalCode": "65197",
+          "addressLocality": "Wiesbaden",
+          "addressRegion": "Hessen",
+          "addressCountry": "DE"
+        },
+        {
+          "@type": "GeoCoordinates",
+          "@id": "https://elektro-karo.de/#geo",
+          "latitude": 50.0826,
+          "longitude": 8.2400
+        },
+        {
+          "@type": "Electrician",
+          "@id": "https://elektro-karo.de/#business",
+          "name": "Elektro Karo",
+          "url": "https://elektro-karo.de/",
+          "telephone": "+4915750020222",
+          "email": "info@elektro-karo.de",
+          "image": "https://elektro-karo.de/images/og-image.jpg",
+          "address": { "@id": "https://elektro-karo.de/#address" },
+          "geo": { "@id": "https://elektro-karo.de/#geo" },
+          "hasMap": "https://maps.google.com/?q=Dotzheimer-Str.+160,+65197+Wiesbaden",
+          "areaServed": [
+            { "@type": "City", "name": "Wiesbaden" },
+            { "@type": "City", "name": "Mainz" },
+            { "@type": "City", "name": "Taunusstein" }
+          ],
+          "openingHoursSpecification": [
+            { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "16:00" }
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Elektro-Leistungen",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elektroinstallation", "url": "https://elektro-karo.de/leistungen/innenarbeiten.html" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Smart Home & KNX", "url": "https://elektro-karo.de/leistungen/fassade.html" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Wallbox & E-Mobilität", "url": "https://elektro-karo.de/leistungen/bodenbelaege.html" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sicherheit & Netzwerk", "url": "https://elektro-karo.de/leistungen/schimmelbeseitigung.html" } }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://elektro-karo.de/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Welche Elektro-Leistungen bietet Elektro Karo in Wiesbaden an?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Elektroinstallation, Reparatur, Smart Home, KNX, Wallbox, Sicherheitstechnik, Netzwerke und Prüfungen nach DGUV."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Bieten Sie einen Notdienst an?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja — Elektro Karo bietet einen 24-Stunden-Notdienst unter 01575 / 0020222."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Erstellen Sie kostenlose Angebote?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Ja. Nach Ihrer Anfrage klären wir den Umfang und erstellen auf Wunsch ein unverbindliches Angebot — vor Ort in Wiesbaden oder telefonisch."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  NAV                           ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__wordmark" aria-label="Elektro Karo, Startseite">
+        <img class="nav__logo" src="images/logo-client.png" alt="" width="48" height="48" decoding="async" fetchpriority="high" aria-hidden="true">
+        <span class="nav__wordmark-text">
+          <span class="nav__wordmark-name" data-config="nameKurz">Karo</span>
+          <span class="nav__wordmark-sub">Elektro · Wiesbaden</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li class="nav__item nav__item--dropdown">
+          <button type="button" class="nav__dropdown-btn" id="navLeistungenBtn" aria-expanded="false" aria-controls="navLeistungenMenu" aria-haspopup="true">Leistungen</button>
+          <ul class="nav__dropdown" id="navLeistungenMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="leistungen/innenarbeiten.html">Elektroinstallation</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/fassade.html">Smart Home &amp; KNX</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a></li>
+            <li role="none" class="nav__dropdown-divider"><a role="menuitem" href="#leistungen">Übersicht Startseite</a></li>
+          </ul>
+        </li>
+        <li data-nav-calc><a href="#kostenrechner">Kostenrechner</a></li>
+        <li><a href="#referenzen">Referenzen</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="#familie">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <a href="tel:#" class="btn btn--primary btn--sm nav__cta" data-config-href="tel">Anrufen</a>
+
+      <button class="nav__hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav__mobile" id="navMobile" role="dialog" aria-label="Navigation">
+    <button class="nav__mobile-close" id="navMobileClose" aria-label="Menü schließen">✕</button>
+    <details class="nav__mobile-group">
+      <summary>Leistungen</summary>
+      <a href="leistungen/innenarbeiten.html">Elektroinstallation</a>
+      <a href="leistungen/fassade.html">Smart Home &amp; KNX</a>
+      <a href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a>
+      <a href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a>
+      <a href="#leistungen">Übersicht Startseite</a>
+    </details>
+    <a href="#kostenrechner" data-nav-calc>Kostenrechner</a>
+    <a href="#referenzen">Referenzen</a>
+    <a href="team.html">Team</a>
+    <a href="#familie">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:#" class="btn btn--primary" style="margin-top:1rem" data-config-href="tel">Jetzt anrufen</a>
+    <span class="nav__mobile-phone">
+      <a href="tel:#" data-config-href="tel" data-config="telefonDisplay">01575 / 0020222</a>
+    </span>
+  </div>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  HERO                          ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="hero" id="hero">
+    <div class="hero__sticky" id="heroSticky">
+      <div class="hero__bg">
+        <video
+          class="hero__bg-img"
+          id="heroVideo"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="auto"
+          poster="images/ref_1.jpg"
+          data-videoCandidates="images/hero-video.mp4">
+          <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__center">
+          <div class="hero__brand" aria-hidden="true">
+            <img class="hero__logo" src="images/logo-client.png" alt="" width="160" height="160" decoding="async">
+          </div>
+
+          <p class="hero__eyebrow" data-config="heroEyebrow">Elektromeister · Wiesbaden</p>
+
+          <h1 class="hero__title">
+            <span class="hero__title-line" data-config="name">Elektro Karo</span>
+            <span class="hero__title-sub" data-config="slogan">Meisterbetrieb für Elektroinstallation in Wiesbaden — zuverlässig, sauber und mit 24h-Notdienst.</span>
+          </h1>
+
+          <div class="hero__ctas">
+            <a href="tel:#" class="btn btn--primary btn--lg hero__cta-phone" data-config-href="tel">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>Anrufen: </span><span data-config="telefonDisplay">01575 / 0020222</span>
+            </a>
+          </div>
+
+          <p class="hero__notdienst">24h-Notdienst · <span data-config="telefonDisplay">01575 / 0020222</span></p>
+        </div>
+
+        <p class="hero__credentials">
+          <span>Elektromeister</span>
+          <span class="hero__credentials-sep" aria-hidden="true">·</span>
+          <span data-config="ort">Wiesbaden</span>
+          <span class="hero__credentials-sep" aria-hidden="true">·</span>
+          <span>Seit 2021</span>
+          <span class="hero__credentials-sep" aria-hidden="true">·</span>
+          <a href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" class="inline-link">18 Google-Bewertungen</a>
+        </p>
+
+        <a href="#leistungen" class="scroll-indicator" id="scrollIndicator" aria-label="Weiter zu den Leistungen">
+          <span>Scroll</span>
+          <span class="scroll-indicator__arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  LEISTUNGEN                    ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" id="leistungen">
+    <div class="container">
+      <header class="section-header reveal">
+        <span class="section-label">Was wir tun</span>
+        <h2 class="section-h2">Unsere Leistungen.</h2>
+        <p class="section-sub">Von der Steckdose bis zur Wallbox — Elektrotechnik mit Meisterqualität in Wiesbaden.</p>
+      </header>
+
+      <div class="leistungen-grid">
+        <a class="leistung-card reveal reveal-delay-1" href="leistungen/innenarbeiten.html">
+          <div class="leistung-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="leistung-card__num">01</div>
+          <h3 class="leistung-card__title" data-config="leistung1Titel">Elektroinstallation</h3>
+          <p class="leistung-card__text" data-config="leistung1Text">Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude.</p>
+        </a>
+
+        <a class="leistung-card reveal reveal-delay-2" href="leistungen/fassade.html">
+          <div class="leistung-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+          </div>
+          <div class="leistung-card__num">02</div>
+          <h3 class="leistung-card__title" data-config="leistung2Titel">Smart Home &amp; KNX</h3>
+          <p class="leistung-card__text" data-config="leistung2Text">Gebäudeautomation, Lichtszenen und intelligente Steuerung.</p>
+        </a>
+
+        <a class="leistung-card reveal reveal-delay-3" href="leistungen/bodenbelaege.html">
+          <div class="leistung-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M5 18h14M7 18V8h10v10M9 8V5h6v3"/></svg>
+          </div>
+          <div class="leistung-card__num">03</div>
+          <h3 class="leistung-card__title" data-config="leistung3Titel">Wallbox &amp; E-Mobilität</h3>
+          <p class="leistung-card__text" data-config="leistung3Text">Wallbox-Montage, Anmeldung und sichere Ladeinfrastruktur.</p>
+        </a>
+
+        <a class="leistung-card reveal reveal-delay-4" href="leistungen/schimmelbeseitigung.html">
+          <div class="leistung-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="leistung-card__num">04</div>
+          <h3 class="leistung-card__title" data-config="leistung4Titel">Sicherheit &amp; Netzwerk</h3>
+          <p class="leistung-card__text" data-config="leistung4Text">Video, Alarm, LAN/WLAN und Prüfungen nach DGUV.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  KOSTENRECHNER                 ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <!-- Sichtbarkeit gesteuert durch CLIENT.kostenrechnerAktiv in config.js -->
+  <section class="section section--alt" id="kostenrechner">
+    <div class="container">
+      <header class="section-header reveal section-header--center">
+        <span class="section-label">Kostenrechner</span>
+        <h2 class="section-h2">Ihr Preisrahmen in 4 interaktiven Schritten.</h2>
+        <p class="section-sub">In 4 Schritten zum Elektro-Richtpreis – unverbindlich und kostenlos. Der verbindliche Preis folgt nach Besichtigung.</p>
+      </header>
+
+      <div class="calc-wizard reveal reveal-delay-1" id="calcWizard">
+        <div class="calc-steps" aria-hidden="true">
+          <span class="calc-step-dot calc-step-dot--active"></span>
+          <span class="calc-step-dot"></span>
+          <span class="calc-step-dot"></span>
+          <span class="calc-step-dot"></span>
+        </div>
+
+        <form id="calcForm" class="calc-form" novalidate>
+          <section class="calc-panel" data-step="1">
+            <h3>1) Projektart wählen</h3>
+            <div class="calc-card-grid">
+              <button type="button" class="calc-choice" data-field="projectType" data-value="bath">
+                <span class="calc-choice__title">Elektroinstallation</span>
+                <span class="calc-choice__desc">Neu- und Bestandsinstallation in Wohn- und Geschäftsräumen.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="floor">
+                <span class="calc-choice__title">Renovierung &amp; Reparatur</span>
+                <span class="calc-choice__desc">Leitungen, Unterverteiler und punktuelle Instandsetzung.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="terrace">
+                <span class="calc-choice__title">Smart Home / KNX</span>
+                <span class="calc-choice__desc">Automation, Lichtszenen und intelligente Gebäudesteuerung.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="repair">
+                <span class="calc-choice__title">Sicherheit &amp; Netzwerk</span>
+                <span class="calc-choice__desc">Video, Alarm, LAN/WLAN und Prüfarbeiten.</span>
+              </button>
+            </div>
+          </section>
+
+          <section class="calc-panel" data-step="2" hidden>
+            <h3>2) Fläche und Material</h3>
+            <div class="calc-grid">
+              <label>Fläche (m²)
+                <input type="number" name="area" min="1" max="500" value="12" required>
+              </label>
+            </div>
+            <div class="calc-card-grid calc-card-grid--3">
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="standard">
+                <span class="calc-choice__title">Basisinstallation</span>
+                <span class="calc-choice__desc">Elektroarbeiten im Bestand, ca. 95 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="premium">
+                <span class="calc-choice__title">Neuinstallation</span>
+                <span class="calc-choice__desc">Hochwertige Leitungsführung, ca. 125 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="xl">
+                <span class="calc-choice__title">Smart-Home-ready</span>
+                <span class="calc-choice__desc">Verkabelung für Automation, ca. 110 €/m²</span>
+              </button>
+            </div>
+            <p id="calcStep2Error" class="calc-error" hidden>Bitte Fläche eingeben und Material wählen.</p>
+          </section>
+
+          <section class="calc-panel" data-step="3" hidden>
+            <h3>3) Zusatzleistungen</h3>
+            <p class="calc-step-sub">Optional – nichts nötig? Einfach weiter.</p>
+            <div class="calc-card-grid calc-card-grid--3">
+              <button type="button" class="calc-choice" data-extra="debris">
+                <span class="calc-choice__title">Unterverteiler / Sicherungskasten</span>
+                <span class="calc-choice__desc">+ ca. 45 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-extra="waterproofing">
+                <span class="calc-choice__title">Prüfung &amp; Dokumentation</span>
+                <span class="calc-choice__desc">+ ca. 12 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-extra="floorHeating">
+                <span class="calc-choice__title">Netzwerk-Verkabelung</span>
+                <span class="calc-choice__desc">+ ca. 18 €/m²</span>
+              </button>
+            </div>
+          </section>
+        </form>
+
+        <section class="calc-panel" data-step="4" hidden>
+          <h3>4) Ihr Ergebnis</h3>
+          <div id="calcResult" class="calc-result" hidden>
+            <p class="calc-summary" id="calcSummaryText"></p>
+            <div class="calc-total-box">
+              <span class="calc-total-label">Geschätzter Preisrahmen:</span>
+              <p id="calcTotal" class="calc-total-price"></p>
+              <div class="calc-total-note calc-disclaimer">
+                <p>Unverbindlich · inkl. Material &amp; Arbeit · Festpreis nach Besichtigung.</p>
+                <p><strong>Wichtiger Hinweis:</strong> Richtwert nach branchenüblichen Mittelwerten. Endpreis nur nach Vor-Ort-Aufmaß möglich.</p>
+                <p>Handwerkerleistungen sind steuerlich absetzbar (§35a EStG).</p>
+              </div>
+            </div>
+
+            <div id="calcResultDetail" class="calc-result-detail">
+              <h4 class="calc-result-detail__title">Detaillierte Kostenaufschlüsselung</h4>
+              <ul id="calcBreakdown" class="calc-breakdown-list"></ul>
+              <div class="calc-actions">
+                <button type="button" id="calcPdfBtn" class="btn btn--secondary">PDF herunterladen</button>
+                <a href="#termin" class="btn btn--primary">Rückruf anfragen</a>
+              </div>
+            </div>
+
+            <div class="calc-callback calc-callback--prominent">
+              <h4 class="calc-callback__title">Rückruf mit Ihrem Preisrahmen</h4>
+              <p class="calc-callback__intro">Geben Sie Ihre Telefonnummer an – wir rufen Sie mit Ihrem Rechnerergebnis zurück, in der Regel innerhalb von 24&nbsp;Stunden.</p>
+              <form id="calcCallbackForm" class="calc-callback-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+                <input type="hidden" name="access_key" value="">
+                <input type="hidden" name="subject" id="calcCallbackSubject" value="RÜCKRUF Kostenrechner">
+                <label for="calc_callback_phone">Telefonnummer für Rückruf
+                  <input id="calc_callback_phone" name="phone" type="tel" required autocomplete="tel" placeholder="z. B. 0151 12345678">
+                </label>
+                <label class="kontakt-form__check" for="calc_callback_dsgvo">
+                  <input id="calc_callback_dsgvo" name="dsgvo_consent" type="checkbox" required>
+                  <span>Ich willige in die Verarbeitung meiner Telefonnummer zur Rückruf-Kontaktaufnahme ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
+                </label>
+                <label class="kontakt-form__honeypot" for="calc_callback_website">
+                  Website
+                  <input id="calc_callback_website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </label>
+                <button type="submit" id="calcCallbackSubmitBtn" class="btn btn--primary calc-callback__submit">Rückruf anfordern</button>
+              </form>
+              <p id="calcCallbackResult" class="calc-callback-result" aria-live="polite" hidden></p>
+              <a href="#kontakt" class="calc-callback-kontakt-link">Ausführliche Anfrage im Kontaktformular</a>
+            </div>
+            <button type="button" id="calcResetBtn" class="calc-reset" hidden>← Neu berechnen</button>
+          </div>
+        </section>
+
+        <div class="calc-nav">
+          <button type="button" id="calcBackBtn" class="btn btn--secondary">Zurück</button>
+          <button type="button" id="calcNextBtn" class="btn btn--primary">Weiter</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  WARUM WIR                     ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--alt" id="warum">
+    <div class="container">
+      <div class="warum-inner">
+        <div class="warum-img-wrap reveal">
+          <picture>
+            <img src="images/ref_3.jpg" alt="Elektroinstallation und Arbeitsumfeld von Elektro Karo in Wiesbaden" width="1200" height="900" loading="lazy" decoding="async">
+          </picture>
+        </div>
+
+        <div>
+          <header class="section-header reveal">
+            <span class="section-label" data-config="warumLabel">Warum wir</span>
+            <h2 class="section-h2">Was uns von anderen unterscheidet.</h2>
+          </header>
+
+          <ul class="warum-list" style="list-style:none">
+            <li class="warum-item reveal reveal-delay-1">
+              <div class="warum-item__icon">✓</div>
+              <div>
+                <div class="warum-item__title" data-config="warum1Titel">Meisterbetrieb mit Haltung</div>
+                <p class="warum-item__text" data-config="warum1Text">Beratung, Vorbereitung und Ausführung bleiben in fachkundiger Hand.</p>
+              </div>
+            </li>
+            <li class="warum-item reveal reveal-delay-2">
+              <div class="warum-item__icon">✓</div>
+              <div>
+                <div class="warum-item__title" data-config="warum2Titel">Regional verwurzelt</div>
+                <p class="warum-item__text" data-config="warum2Text">Bei Stromausfall oder akuten Defekten sind wir erreichbar — schnelle Hilfe, wenn es darauf ankommt.</p>
+              </div>
+            </li>
+            <li class="warum-item reveal reveal-delay-3">
+              <div class="warum-item__icon">✓</div>
+              <div>
+                <div class="warum-item__title" data-config="warum3Titel">Saubere Baustellen</div>
+                <p class="warum-item__text" data-config="warum3Text">Schutz, Ordnung und präzise Übergaben gehören zur Arbeit.</p>
+              </div>
+            </li>
+            <li class="warum-item reveal reveal-delay-4">
+              <div class="warum-item__icon">✓</div>
+              <div>
+                <div class="warum-item__title" data-config="warum4Titel">Persönliche Beratung</div>
+                <p class="warum-item__text" data-config="warum4Text">Material, Farbe und Ablauf werden vorab ruhig abgestimmt.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  FAMILIE / ÜBER UNS            ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section" id="familie">
+    <div class="container">
+      <div class="familie-inner">
+        <div class="familie-imgs reveal">
+          <a class="familie-img-link" href="team.html">
+            <div class="familie-img-main">
+              <picture>
+                <img src="images/team-bild.jpg" alt="Elektro Karo — Elektromeisterbetrieb in Wiesbaden" width="1200" height="900" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <span class="familie-img-cta">Unser Team kennenlernen →</span>
+          </a>
+        </div>
+
+        <div class="familie-text">
+          <header class="section-header reveal">
+            <span class="section-label">Über uns</span>
+            <h2 class="section-h2">Elektromeister mit Anspruch — persönlich, pünktlich, sauber.</h2>
+          </header>
+
+          <div class="familie-body reveal reveal-delay-1" id="ueberUnsBody">
+            <p>Elektro Karo ist Ihr Elektromeisterbetrieb in Wiesbaden. Seit der Gründung im November 2021 stehen wir für maßgeschneiderte Elektroinstallationen, Reparaturen und Wartungen.</p>
+            <p>Inhaber Jubran Karo hat 2020 seine Ausbildung abgeschlossen und im April 2021 den Meisterbrief erworben — aktuelles Fachwissen für moderne Elektrotechnik, Smart Home und KNX.</p>
+            <p>Mit 24-Stunden-Notdienst, DEVK-Berufshaftpflicht und Eintrag in der Handwerkskammer Wiesbaden sind wir Ihr regionaler Ansprechpartner in Wiesbaden und Umgebung.</p>
+          </div>
+
+          <div class="familie-badges reveal reveal-delay-2">
+            <span class="familie-badge" data-config="berufsbezeichnung">Elektromeister</span>
+            <span class="familie-badge">Seit 2021</span>
+            <span class="familie-badge">24h-Notdienst</span>
+            <span class="familie-badge">HK Wiesbaden</span>
+          </div>
+
+          <!-- ══════════════════════════════════════════════════════
+               Dokument-Bilder: gesteuert über CLIENT.dokBild1/2/3
+               Leerer String ("") in config.js → Bild wird ausgeblendet.
+               ══════════════════════════════════════════════════════ -->
+          <div class="familie-docs reveal reveal-delay-3" hidden>
+            <div class="familie-doc" id="dokBild1">
+              <picture>
+                <img src="images/logo-client.png" alt="Meisterbrief Malergeschäft Hans Schmitt e.K." width="720" height="1080" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="familie-doc" id="dokBild2">
+              <picture>
+                <img src="images/logo-client.png" alt="Zertifikat Malergeschäft Hans Schmitt e.K." width="469" height="700" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="familie-doc" id="dokBild3">
+              <picture>
+                <img src="images/logo-client.png" alt="Urkunde Malergeschäft Hans Schmitt e.K." width="465" height="700" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  REFERENZEN                    ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--alt" id="referenzen">
+    <div class="container">
+      <header class="section-header section-header--center reveal">
+        <span class="section-label">Unsere Projekte</span>
+        <h2 class="section-h2">Ausgewählte Referenzen.</h2>
+        <p class="section-sub">Jedes Projekt ist einmalig. Jedes verdient dieselbe Sorgfalt.</p>
+      </header>
+
+      <div class="ref-grid reveal">
+        <div class="ref-item">
+          <picture><img src="images/ref_1.jpg" alt="Elektroinstallation Referenzprojekt Wiesbaden" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Elektroinstallation</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_2.jpg" alt="Unterverteiler und Sicherungskasten" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Unterverteiler</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_3.jpg" alt="Smart-Home-Installation" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Smart Home</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_4.jpg" alt="Wallbox Installation" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Wallbox</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_5.jpg" alt="Netzwerk-Verkabelung" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Netzwerk</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_6.jpg" alt="Sicherheitstechnik" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Sicherheit</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_7.jpg" alt="Gewerbliche Elektroinstallation" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Gewerbe</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_8.jpg" alt="Elektro-Reparatur und Instandsetzung" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>Reparatur</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_9.jpg" alt="KNX Gebäudeautomation" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>KNX</span></div>
+        </div>
+        <div class="ref-item">
+          <picture><img src="images/ref_10.jpg" alt="Anlagenprüfung nach DGUV" width="350" height="350" loading="lazy" decoding="async"></picture>
+          <div class="ref-item__overlay"><span>DGUV-Prüfung</span></div>
+        </div>
+      </div>
+
+      <div class="ref-cta reveal">
+        <a href="referenzen.html" class="btn btn--secondary">Alle Projekte ansehen</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  PARTNER                       ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--partner" id="partner" hidden>
+    <div class="container">
+      <header class="section-header section-header--center reveal">
+        <span class="section-label">Netzwerk</span>
+        <h2 class="section-h2">Unsere Partner.</h2>
+        <p class="section-sub" data-config="partnerIntro">Gemeinsam mit regionalen Fachbetrieben und bewährten Systempartnern in Koblenz und der Region.</p>
+      </header>
+      <div class="partner-track-wrap reveal" id="partnerCarousel" data-partner-track></div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  BEWERTUNGEN                   ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--dark-mid" id="bewertungen">
+    <div class="container">
+      <header class="section-header section-header--center reveal">
+        <span class="section-label">Was Kunden sagen</span>
+        <h2 class="section-h2">Das sagen unsere Kunden.</h2>
+        <p class="section-sub">Echte Google-Bewertungen — Quelle: Google-Profil Elektro Karo.</p>
+      </header>
+
+      <div class="bewertungen-carousel-container reveal">
+        <button class="carousel-btn carousel-btn--prev" aria-label="Vorherige Bewertung" id="reviewsPrev">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="reviewsTrack">
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c1">A</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Andreas</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Hatte schon viele Elektriker, Herr Karo war bisher der beste. Sehr professionell, schnell und bei den getätigten Arbeiten nichts auszusetzen. Alle Wünsche wurden geplant und fachgerecht ausgeführt.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c2">K</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Klaus Schwarz</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Top Elektro Firma! Kann ich uneingeschränkt empfehlen. Hohes Fachwissen, saubere Arbeit, faire Preise.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c3">V</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Vanessa Weyer</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Sehr gute Arbeit geleistet, ging professionell und schnell. Alles sauber und fachmännisch perfekt erledigt. Eine absolute Empfehlung. Preis-Leistung absolut top.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c4">M</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Mattias Gaurie</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Sehr kompetentes Team von Elektrikern, einwandfreie Arbeiten, freundlich und gewissenhaft. Immer wieder gerne.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c5">G</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Giselle Romano</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Herr Karo und sein Team sind sehr freundlich und auch kurzfristig erreichbar. Die Arbeit wurde zügig erledigt und die Baustelle sauber hinterlassen. Top Leistung — auf jeden Fall weiterempfehlen.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+
+            <article class="bewertung-card">
+              <div class="bewertung-card__header">
+                  <div class="bewertung-card__avatar avatar--c1">Q</div>
+                <div class="bewertung-card__meta">
+                  <div class="bewertung-card__author">Qutaiba Althalabi</div>
+                  <div class="bewertung-card__stars">★★★★★</div>
+                </div>
+              </div>
+              <p class="bewertung-card__text">Vielen Dank! Sehr schnelle Reaktion und freundlich.</p>
+              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
+            </article>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn--next" aria-label="Nächste Bewertung" id="reviewsNext">
+          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+      </div>
+
+      <div class="carousel-dots" id="reviewsDots"></div>
+
+      <p class="reviews-cta-wrap reveal">
+        <a href="#"
+           data-config-href="googleBewertung"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="reviews-google-link">Google-Bewertung schreiben</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  TERMIN / RÜCKRUF              ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <!-- Variante: CLIENT.terminVariante = "rueckruf" | "calcom" | "whatsapp" | "formular" -->
+  <section class="section section--dark" id="termin">
+    <div class="container">
+      <header class="section-header section-header--center reveal">
+        <span class="section-label">Kontakt</span>
+        <h2 class="section-h2">Jetzt Kontakt aufnehmen</h2>
+        <p class="section-sub">Anrufen, WhatsApp schreiben oder Rückruf anfordern — unverbindlich und ohne Online-Kalender.</p>
+      </header>
+
+      <!-- VARIANTE: Rückruf (Standard) -->
+      <div data-termin="rueckruf" id="termin-rueckruf" class="termin-rueckruf reveal">
+        <p class="termin-rueckruf__hint">Wir melden uns zeitnah bei Ihnen — in der Regel innerhalb eines Werktags.</p>
+        <div class="termin-rueckruf__ctas">
+          <a href="tel:#" class="btn btn--primary btn--lg" data-config-href="tel">Jetzt anrufen</a>
+          <a href="#" class="btn btn--wa btn--lg" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+        <div class="termin-form-box">
+          <h3 class="termin-form-box__title">Rückruf anfordern</h3>
+          <form id="rueckrufForm" novalidate>
+            <div class="kontakt-form__grid">
+              <label for="rueckruf_name">Ihr Name
+                <input id="rueckruf_name" name="name" type="text" required autocomplete="name" placeholder="Max Mustermann">
+              </label>
+              <label for="rueckruf_phone">Telefon
+                <input id="rueckruf_phone" name="telefon" type="tel" required autocomplete="tel" placeholder="01575 / 0020222">
+              </label>
+            </div>
+            <label for="rueckruf_zeit">Wunschzeit (optional)
+              <input id="rueckruf_zeit" name="wunschzeit" type="text" placeholder="z. B. werktags vormittags">
+            </label>
+            <label for="rueckruf_nachricht">Ihr Anliegen
+              <textarea id="rueckruf_nachricht" name="nachricht" rows="3" placeholder="Kurz beschreiben, worum es geht — wir rufen Sie zurück."></textarea>
+            </label>
+            <label class="kontakt-form__check" for="rueckruf_dsgvo">
+              <input id="rueckruf_dsgvo" name="dsgvo_consent" type="checkbox" required>
+              <span>Ich willige in die Verarbeitung meiner Angaben zur Bearbeitung meiner Rückrufanfrage ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
+            </label>
+            <button type="submit" class="btn btn--primary">Rückruf anfordern</button>
+            <p id="rueckrufFormResult" class="kontakt-form__note" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- ──────────────────────────────────────────────────────
+           VARIANTE A: Cal.com (Standard)
+           Eingeblendet wenn CLIENT.terminVariante === "calcom"
+      ────────────────────────────────────────────────────── -->
+      <div data-termin="calcom" id="termin-buchung" hidden>
+        <div class="consent-gate reveal" id="termin-consent">
+          <h3 class="consent-gate__title">Online-Terminbuchung (Cal.com) nach Einwilligung</h3>
+          <p class="consent-gate__text">
+            Die Terminbuchung nutzt einen externen Dienst. Aktivierung erst nach Ihrer Einwilligung.
+            Details stehen in der <a class="inline-link" href="datenschutz.html">Datenschutzerklärung</a>.
+          </p>
+          <div>
+            <button type="button" class="btn btn--primary btn--sm" id="enableBookingConsent">Terminbereich freischalten</button>
+            <button type="button" class="btn btn--ghost btn--sm" id="withdrawBookingConsent">Einwilligung widerrufen</button>
+          </div>
+          <p class="consent-gate__status" id="bookingConsentStatus"></p>
+          <div class="booking-embed-placeholder" id="bookingEmbed" hidden>
+            <a href="#"
+               data-config-href="calcom"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn--primary">
+              Termin direkt buchen
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ──────────────────────────────────────────────────────
+           VARIANTE B: WhatsApp direkt
+           Eingeblendet wenn CLIENT.terminVariante === "whatsapp"
+      ────────────────────────────────────────────────────── -->
+      <div data-termin="whatsapp" hidden id="termin-buchung-wa">
+        <div class="termin-wa-box reveal">
+          <div class="termin-wa-box__icon" aria-hidden="true">
+            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.4054 3.4875C18.1607 1.2375 15.1714 0 11.9946 0C5.4375 0 0.101786 5.335 0.101786 11.8929C0.101786 13.9875 0.648214 16.0339 1.6875 17.8393L0 24L6.30536 22.3446C8.04107 23.2929 9.99643 23.7911 11.9893 23.7911H11.9946C18.5464 23.7911 24 18.4561 24 11.8982C24 8.72143 22.65 5.7375 20.4054 3.4875ZM11.9946 21.7875C10.2107 21.7875 8.46429 21.3107 6.93214 20.4107L6.57321 20.1964L2.84464 21.1714L3.83571 17.5286L3.60107 17.1536C2.60893 15.5625 2.08929 13.7518 2.08929 11.8929C2.08929 6.43393 6.53571 1.9875 12 1.9875C14.6464 1.9875 17.1321 3.02143 18.9857 4.88036C20.8393 6.73929 21.9161 9.225 21.9107 11.8982C21.9107 17.3625 17.4536 21.7875 11.9946 21.7875ZM17.4268 14.3839C17.1321 14.2339 15.6589 13.5107 15.3857 13.4143C15.1125 13.3125 14.9143 13.2643 14.7161 13.5643C14.5179 13.8643 13.9446 14.5339 13.7679 14.7375C13.5964 14.9357 13.4196 14.9625 13.125 14.8125C11.3786 13.9393 10.2268 13.2536 9.07018 11.2768C8.76429 10.7411 9.38036 10.7786 9.95357 9.63214C10.05 9.43393 10.0018 9.2625 9.92679 9.1125C9.85179 8.9625 9.25714 7.48929 9.01071 6.89464C8.76964 6.31607 8.525 6.39643 8.34107 6.38571C8.16964 6.375 7.97143 6.375 7.77321 6.375C7.575 6.375 7.25357 6.45 6.98036 6.74464C6.70714 7.04464 5.94643 7.75714 5.94643 9.23036C5.94643 10.7036 7.00714 12.1286 7.15179 12.3268C7.30179 12.525 9.24643 15.5304 12.2357 16.8375C14.1375 17.6679 14.8875 17.7375 15.8357 17.5982C16.4143 17.5125 17.6036 16.8911 17.85 16.2054C18.0964 15.5196 18.0964 14.9304 18.0214 14.8071C17.9518 14.6732 17.7214 14.5982 17.4268 14.3839Z" fill="white"/>
+            </svg>
+          </div>
+          <h3>Direkt per WhatsApp anfragen</h3>
+          <p>Schreiben Sie uns – schnell, unkompliziert und ohne Wartezeiten. Wir antworten in der Regel innerhalb weniger Stunden.</p>
+          <a href="#" id="terminWaBtn" class="btn btn--wa btn--lg" target="_blank" rel="noopener noreferrer" data-config-href="whatsapp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4054 3.4875C18.1607 1.2375 15.1714 0 11.9946 0C5.4375 0 0.101786 5.335 0.101786 11.8929C0.101786 13.9875 0.648214 16.0339 1.6875 17.8393L0 24L6.30536 22.3446C8.04107 23.2929 9.99643 23.7911 11.9893 23.7911H11.9946C18.5464 23.7911 24 18.4561 24 11.8982C24 8.72143 22.65 5.7375 20.4054 3.4875ZM11.9946 21.7875C10.2107 21.7875 8.46429 21.3107 6.93214 20.4107L6.57321 20.1964L2.84464 21.1714L3.83571 17.5286L3.60107 17.1536C2.60893 15.5625 2.08929 13.7518 2.08929 11.8929C2.08929 6.43393 6.53571 1.9875 12 1.9875C14.6464 1.9875 17.1321 3.02143 18.9857 4.88036C20.8393 6.73929 21.9161 9.225 21.9107 11.8982C21.9107 17.3625 17.4536 21.7875 11.9946 21.7875ZM17.4268 14.3839C17.1321 14.2339 15.6589 13.5107 15.3857 13.4143C15.1125 13.3125 14.9143 13.2643 14.7161 13.5643C14.5179 13.8643 13.9446 14.5339 13.7679 14.7375C13.5964 14.9357 13.4196 14.9625 13.125 14.8125C11.3786 13.9393 10.2268 13.2536 9.07018 11.2768C8.76429 10.7411 9.38036 10.7786 9.95357 9.63214C10.05 9.43393 10.0018 9.2625 9.92679 9.1125C9.85179 8.9625 9.25714 7.48929 9.01071 6.89464C8.76964 6.31607 8.525 6.39643 8.34107 6.38571C8.16964 6.375 7.97143 6.375 7.77321 6.375C7.575 6.375 7.25357 6.45 6.98036 6.74464C6.70714 7.04464 5.94643 7.75714 5.94643 9.23036C5.94643 10.7036 7.00714 12.1286 7.15179 12.3268C7.30179 12.525 9.24643 15.5304 12.2357 16.8375C14.1375 17.6679 14.8875 17.7375 15.8357 17.5982C16.4143 17.5125 17.6036 16.8911 17.85 16.2054C18.0964 15.5196 18.0964 14.9304 18.0214 14.8071C17.9518 14.6732 17.7214 14.5982 17.4268 14.3839Z"/></svg>
+            Auf WhatsApp schreiben
+          </a>
+        </div>
+      </div>
+
+      <!-- ──────────────────────────────────────────────────────
+           VARIANTE C: Terminanfrage-Formular (Web3Forms)
+           Eingeblendet wenn CLIENT.terminVariante === "formular"
+      ────────────────────────────────────────────────────── -->
+      <div data-termin="formular" hidden id="termin-buchung-form">
+        <div class="termin-form-box reveal">
+          <form id="terminForm" action="https://api.web3forms.com/submit" method="post" novalidate>
+            <input type="hidden" name="access_key" value="">
+            <input type="hidden" name="subject" value="Neue Terminanfrage">
+            <input type="hidden" name="from_page" value="Terminsektion">
+            <div class="kontakt-form__grid">
+              <label for="termin_name">Ihr Name
+                <input id="termin_name" name="name" type="text" required autocomplete="name" placeholder="Max Mustermann">
+              </label>
+              <label for="termin_phone">Telefon
+                <input id="termin_phone" name="telefon" type="tel" required autocomplete="tel" placeholder="0151 12345678">
+              </label>
+            </div>
+            <label for="termin_date">Wunschdatum (optional)
+              <input id="termin_date" name="wunschtermin" type="date">
+            </label>
+            <label for="termin_nachricht">Ihr Anliegen
+              <textarea id="termin_nachricht" name="nachricht" rows="3" placeholder="Kurz beschreiben, was Sie planen – wir melden uns schnellstmöglich."></textarea>
+            </label>
+            <label class="kontakt-form__honeypot" for="termin_website" aria-hidden="true">
+              Website
+              <input id="termin_website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </label>
+            <label class="kontakt-form__check" for="termin_dsgvo">
+              <input id="termin_dsgvo" name="dsgvo_consent" type="checkbox" required>
+              <span>Ich willige in die Verarbeitung meiner Angaben zur Bearbeitung meiner Terminanfrage ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
+            </label>
+            <button type="submit" id="terminFormSubmitBtn" class="btn btn--primary">Terminanfrage senden</button>
+            <p id="terminFormResult" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+
+      <p class="termin-fallback reveal">
+        Oder direkt anrufen:
+        <a href="tel:#" data-config-href="tel" data-config="telefonDisplay">01575 / 0020222</a>
+        &nbsp;·&nbsp; <span data-config="oeffZeitenKurz">Mo–Do 07:30–12:00, 12:45–16:00 · Fr 07:30–12:00, 12:45–14:45</span>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  KONTAKT                       ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--contact" id="kontakt">
+      <header class="section-header reveal">
+        <span class="section-label">Finden Sie uns</span>
+        <h2 class="section-h2">Kontakt &amp; Anfahrt.</h2>
+      </header>
+
+      <div class="kontakt-inner">
+        <div class="kontakt-info reveal">
+          <div class="kontakt-block">
+            <div class="kontakt-block__label">Adresse</div>
+            <p>
+              <span data-config="name">Elektro Karo</span><br>
+              <span data-config="strasse">Dotzheimer-Str. 160</span><br>
+              <span data-config="plz">65197</span> <span data-config="ort">Wiesbaden</span>
+            </p>
+          </div>
+
+          <div class="kontakt-block">
+            <div class="kontakt-block__label">Kontakt</div>
+            <p>
+              <a href="tel:#" data-config-href="tel" data-config="telefonDisplay">01575 / 0020222</a><br>
+              <a href="mailto:#" data-config-href="mailto" data-config="email">info@elektro-karo.de</a>
+            </p>
+            <!-- WhatsApp-Link: wird von config-apply.js ein-/ausgeblendet (CLIENT.whatsapp) -->
+            <div class="kontakt-wa-wrap" data-wa-wrap hidden>
+              <a href="#" data-config-href="whatsapp" class="kontakt-wa-link" target="_blank" rel="noopener noreferrer" hidden aria-label="WhatsApp schreiben">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.4054 3.4875C18.1607 1.2375 15.1714 0 11.9946 0C5.4375 0 0.101786 5.335 0.101786 11.8929C0.101786 13.9875 0.648214 16.0339 1.6875 17.8393L0 24L6.30536 22.3446C8.04107 23.2929 9.99643 23.7911 11.9893 23.7911H11.9946C18.5464 23.7911 24 18.4561 24 11.8982C24 8.72143 22.65 5.7375 20.4054 3.4875ZM11.9946 21.7875C10.2107 21.7875 8.46429 21.3107 6.93214 20.4107L6.57321 20.1964L2.84464 21.1714L3.83571 17.5286L3.60107 17.1536C2.60893 15.5625 2.08929 13.7518 2.08929 11.8929C2.08929 6.43393 6.53571 1.9875 12 1.9875C14.6464 1.9875 17.1321 3.02143 18.9857 4.88036C20.8393 6.73929 21.9161 9.225 21.9107 11.8982C21.9107 17.3625 17.4536 21.7875 11.9946 21.7875ZM17.4268 14.3839C17.1321 14.2339 15.6589 13.5107 15.3857 13.4143C15.1125 13.3125 14.9143 13.2643 14.7161 13.5643C14.5179 13.8643 13.9446 14.5339 13.7679 14.7375C13.5964 14.9357 13.4196 14.9625 13.125 14.8125C11.3786 13.9393 10.2268 13.2536 9.07018 11.2768C8.76429 10.7411 9.38036 10.7786 9.95357 9.63214C10.05 9.43393 10.0018 9.2625 9.92679 9.1125C9.85179 8.9625 9.25714 7.48929 9.01071 6.89464C8.76964 6.31607 8.525 6.39643 8.34107 6.38571C8.16964 6.375 7.97143 6.375 7.77321 6.375C7.575 6.375 7.25357 6.45 6.98036 6.74464C6.70714 7.04464 5.94643 7.75714 5.94643 9.23036C5.94643 10.7036 7.00714 12.1286 7.15179 12.3268C7.30179 12.525 9.24643 15.5304 12.2357 16.8375C14.1375 17.6679 14.8875 17.7375 15.8357 17.5982C16.4143 17.5125 17.6036 16.8911 17.85 16.2054C18.0964 15.5196 18.0964 14.9304 18.0214 14.8071C17.9518 14.6732 17.7214 14.5982 17.4268 14.3839Z"/></svg>
+                Auf WhatsApp schreiben
+              </a>
+            </div>
+          </div>
+
+          <div class="kontakt-block">
+            <div class="kontakt-block__label">Öffnungszeiten</div>
+            <dl class="kontakt-hours">
+              <dt>Mo – Do</dt><dd data-config="oeffMoDoBis">07:30–12:00 Uhr, 12:45–16:00 Uhr</dd>
+              <dt>Freitag</dt><dd data-config="oeffFrBis">07:30–12:00 Uhr, 12:45–14:45 Uhr</dd>
+              <dt>Sa &amp; So</dt><dd>Geschlossen</dd>
+            </dl>
+          </div>
+
+          <div class="kontakt-block">
+            <div class="kontakt-block__label">Soziale Netzwerke</div>
+            <div class="kontakt-socials" style="display: flex; gap: 1.2rem; margin-top: 0.5rem;">
+              <a href="#" data-config-href="facebook" target="_blank" rel="noopener noreferrer" class="social-link social-link--contact" aria-label="Facebook" style="color: var(--primary); transition: color var(--t-fast), transform var(--t-fast); display: inline-flex;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="#" data-config-href="instagram" target="_blank" rel="noopener noreferrer" class="social-link social-link--contact" aria-label="Instagram" style="color: var(--primary); transition: color var(--t-fast), transform var(--t-fast); display: inline-flex;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <a href="#termin" class="btn btn--primary">Rückruf anfordern</a>
+        </div>
+
+        <div class="kontakt-map reveal reveal-delay-1" id="gatedMapContainer">
+          <div class="kontakt-map__overlay" id="mapConsentOverlay">
+            <div class="kontakt-map__overlay-content">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="kontakt-map__overlay-icon"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+              <h3 class="kontakt-map__overlay-title">Interaktive Karte laden</h3>
+              <p class="kontakt-map__overlay-text">Stimmen Sie der Aktivierung von <strong>Google Maps</strong> zu, um die Anfahrtskarte und Routenplanung direkt anzuzeigen.</p>
+              <button type="button" class="btn btn--primary btn--sm" id="acceptMapBtn">Karte aktivieren</button>
+              <span class="kontakt-map__overlay-note">Mit Aktivierung willigen Sie in die Datenübertragung an Google ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
+            </div>
+          </div>
+          <div id="realMapContainer" class="kontakt-map__real" style="display: none; width: 100%; height: 100%;"></div>
+        </div>
+
+        <div class="kontakt-faq reveal reveal-delay-1" id="faq">
+          <header class="kontakt-faq__head">
+            <span class="section-label">Häufige Fragen</span>
+            <h3 class="kontakt-faq__title">Antworten auf typische Anfragen</h3>
+            <p class="kontakt-faq__sub">Kurz und sachlich — für Orientierung vor dem ersten Gespräch.</p>
+          </header>
+          <div class="faq-list" data-faq-list></div>
+        </div>
+
+        <!-- Kontaktformular: gesteuert durch CLIENT.kontaktformularAktiv -->
+        <form class="kontakt-form reveal reveal-delay-2" id="kontaktForm" action="https://api.web3forms.com/submit" method="post" novalidate>
+            <input type="hidden" name="access_key" value="">
+            <div class="kontakt-form__grid">
+              <label for="vorname">Vorname
+                <input id="vorname" name="vorname" autocomplete="given-name" required>
+              </label>
+              <label for="nachname">Nachname
+                <input id="nachname" name="nachname" autocomplete="family-name" required>
+              </label>
+            </div>
+            <div class="kontakt-form__grid">
+              <label for="telefon">Telefon
+                <input id="telefon" name="telefon" type="tel" autocomplete="tel" required>
+              </label>
+              <label for="email">E-Mail
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </label>
+            </div>
+            <!-- Optionen werden von config-apply.js aus CLIENT.kontaktAnliegen befüllt -->
+            <label for="anfrageart">Anliegen
+              <select id="anfrageart" name="anfrageart" required>
+                <option value="">Bitte auswählen</option>
+                <option value="beratung">Beratung / Angebot anfragen</option>
+                <option value="reparatur">Reparatur / Sanierung</option>
+                <option value="allgemein">Allgemeine Anfrage</option>
+              </select>
+            </label>
+            <label for="nachricht">Nachricht
+              <textarea id="nachricht" name="nachricht" placeholder="Kurz Ihr Vorhaben beschreiben"></textarea>
+            </label>
+            <label class="kontakt-form__honeypot" for="website" aria-hidden="true">
+              Website
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </label>
+            <label class="kontakt-form__check" for="dsgvo">
+              <input id="dsgvo" name="dsgvo" type="checkbox" required>
+              <span>Ich habe die <a class="inline-link" href="datenschutz.html">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu.</span>
+            </label>
+            <button type="submit" class="btn btn--primary">Anfrage senden</button>
+            <p class="kontakt-form__note" id="kontaktFormResult" aria-live="polite"></p>
+          </form>
+      </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  FOOTER                        ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__wordmark-name" data-config="name">Elektro Karo</div>
+          <div class="footer__wordmark-sub" data-config="unternehmenstyp">e.K.</div>
+          <p class="footer__brand-claim">Ihr <span data-config="handwerksbezeichnung">Elektroinstallateur</span>-Meister in <span data-config="ort">Wiesbaden</span>.</p>
+          <p class="footer__brand-member" style="margin-bottom: 1.2rem;">Mitglied: <span data-config="fachverband">Elektroinnung Wiesbaden</span></p>
+          <div class="footer__socials" style="display: flex; gap: 1rem;">
+            <a href="#" data-config-href="facebook" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook" style="color: rgba(255,255,255,0.6); transition: color var(--t-fast); display: inline-flex;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" data-config-href="instagram" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram" style="color: rgba(255,255,255,0.6); transition: color var(--t-fast); display: inline-flex;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051C.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Leistungen</div>
+          <ul class="footer__col-links">
+            <li><a href="leistungen/innenarbeiten.html">Innenarbeiten</a></li>
+            <li><a href="leistungen/fassade.html">Fassade</a></li>
+            <li><a href="leistungen/bodenbelaege.html">Bodenbeläge</a></li>
+            <li><a href="leistungen/schimmelbeseitigung.html">Schimmelbeseitigung</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Navigation</div>
+          <ul class="footer__col-links">
+            <li><a href="referenzen.html">Referenzen</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="#familie">Über uns</a></li>
+            <li><a href="#bewertungen">Bewertungen</a></li>
+            <li><a href="#termin">Rückruf anfordern</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <ul class="footer__col-links">
+            <li><span data-config="strasse">Dotzheimer-Str. 160</span>, <span data-config="plz">65197</span> <span data-config="ort">Wiesbaden</span></li>
+            <li><a href="tel:#" data-config-href="tel" data-config="telefonDisplay">0261 / 28744414</a></li>
+            <li><a href="mailto:#" data-config-href="mailto" data-config="email">info@elektro-karo.de</a></li>
+            <li style="margin-top:.5rem;color:rgba(255,255,255,.35);font-size:.7rem" data-config="oeffZeitenKurz">Mo–Do 08–17 · Fr 08–13 Uhr</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy" data-config="copyright">© 2026 Elektro Karo, Wiesbaden</span>
+        <nav class="footer__legal" aria-label="Rechtliches">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="404.html">404</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ╔════════════════════════════════╗ -->
+  <!-- ║  WHATSAPP FAB                  ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <!-- Sichtbarkeit gesteuert durch config-apply.js (CLIENT.whatsapp) -->
+  <a
+    id="waFab"
+    href="#"
+    class="wa-fab"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp: Direkt schreiben"
+    hidden>
+    <span class="wa-fab__ring" aria-hidden="true"></span>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <path d="M20.4054 3.4875C18.1607 1.2375 15.1714 0 11.9946 0C5.4375 0 0.101786 5.335 0.101786 11.8929C0.101786 13.9875 0.648214 16.0339 1.6875 17.8393L0 24L6.30536 22.3446C8.04107 23.2929 9.99643 23.7911 11.9893 23.7911H11.9946C18.5464 23.7911 24 18.4561 24 11.8982C24 8.72143 22.65 5.7375 20.4054 3.4875ZM11.9946 21.7875C10.2107 21.7875 8.46429 21.3107 6.93214 20.4107L6.57321 20.1964L2.84464 21.1714L3.83571 17.5286L3.60107 17.1536C2.60893 15.5625 2.08929 13.7518 2.08929 11.8929C2.08929 6.43393 6.53571 1.9875 12 1.9875C14.6464 1.9875 17.1321 3.02143 18.9857 4.88036C20.8393 6.73929 21.9161 9.225 21.9107 11.8982C21.9107 17.3625 17.4536 21.7875 11.9946 21.7875ZM17.4268 14.3839C17.1321 14.2339 15.6589 13.5107 15.3857 13.4143C15.1125 13.3125 14.9143 13.2643 14.7161 13.5643C14.5179 13.8643 13.9446 14.5339 13.7679 14.7375C13.5964 14.9357 13.4196 14.9625 13.125 14.8125C11.3786 13.9393 10.2268 13.2536 9.07018 11.2768C8.76429 10.7411 9.38036 10.7786 9.95357 9.63214C10.05 9.43393 10.0018 9.2625 9.92679 9.1125C9.85179 8.9625 9.25714 7.48929 9.01071 6.89464C8.76964 6.31607 8.525 6.39643 8.34107 6.38571C8.16964 6.375 7.97143 6.375 7.77321 6.375C7.575 6.375 7.25357 6.45 6.98036 6.74464C6.70714 7.04464 5.94643 7.75714 5.94643 9.23036C5.94643 10.7036 7.00714 12.1286 7.15179 12.3268C7.30179 12.525 9.24643 15.5304 12.2357 16.8375C14.1375 17.6679 14.8875 17.7375 15.8357 17.5982C16.4143 17.5125 17.6036 16.8911 17.85 16.2054C18.0964 15.5196 18.0964 14.9304 18.0214 14.8071C17.9518 14.6732 17.7214 14.5982 17.4268 14.3839Z"/>
+    </svg>
+  </a>
+
+  <div id="klaro"></div>
+
+  <div id="pdfExportHost" class="pdf-export-host" aria-hidden="true"></div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/calc.js" defer></script>
+  <script src="js/pdf.js" defer></script>
+  <script src="js/slider.js" defer></script>
+
+</body>
+</html>

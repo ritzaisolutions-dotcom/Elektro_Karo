@@ -1,0 +1,48 @@
+{
+  "provider": {
+    "name": "Elektro Karo",
+    "type": "Electrician",
+    "url": "https://elektro-karo.de",
+    "telephone": "+4915750020222",
+    "email": "info@elektro-karo.de",
+    "address": {
+      "streetAddress": "Dotzheimer-Str. 160",
+      "postalCode": "65197",
+      "addressLocality": "Wiesbaden",
+      "addressRegion": "Hessen",
+      "addressCountry": "DE"
+    }
+  },
+  "serviceArea": ["Wiesbaden", "Mainz", "Taunusstein", "Eltville", "Rüdesheim", "Bad Schwalbach"],
+  "lastUpdated": "2026-06-09",
+  "services": [
+    {
+      "id": "elektroinstallation",
+      "name": "Elektroinstallation",
+      "summary": "Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude",
+      "url": "https://elektro-karo.de/leistungen/innenarbeiten.html",
+      "keywords": ["Elektriker Wiesbaden", "Elektroinstallation", "Unterverteiler", "Reparatur"]
+    },
+    {
+      "id": "smart-home-knx",
+      "name": "Smart Home & KNX",
+      "summary": "Gebäudeautomation, Lichtszenen, KNX-Systeme",
+      "url": "https://elektro-karo.de/leistungen/fassade.html",
+      "keywords": ["Smart Home Wiesbaden", "KNX", "Gebäudeautomation"]
+    },
+    {
+      "id": "wallbox",
+      "name": "Wallbox & E-Mobilität",
+      "summary": "Ladestation, Anmeldung, Installation",
+      "url": "https://elektro-karo.de/leistungen/bodenbelaege.html",
+      "keywords": ["Wallbox Wiesbaden", "E-Auto Ladestation", "E-Mobilität"]
+    },
+    {
+      "id": "sicherheit-netzwerk",
+      "name": "Sicherheit & Netzwerk",
+      "summary": "Video, Alarm, LAN/WLAN, DGUV-Prüfung",
+      "url": "https://elektro-karo.de/leistungen/schimmelbeseitigung.html",
+      "keywords": ["Videoüberwachung", "Netzwerk", "DGUV", "Sicherheitstechnik"]
+    }
+  ]
+}

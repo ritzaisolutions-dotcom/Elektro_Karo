@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Logs (lokaler Preview-Server)
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# RAIS-interne Dokumente — nie ins Kunden-Repo pushen
+PLAN.md
+sop-webseiten-bau/
+
+# Kunden-spezifische Bilder die nicht ins Template gehören
+# (werden per Kunde neu angelegt)
+website/images/ref_*.webp
+website/images/ref_*.jpg
+website/images/team-bild.*
+website/images/meisterbrief*
+website/images/urkunde*
+website/images/logo-client.*
+website/images/favicon-client.*

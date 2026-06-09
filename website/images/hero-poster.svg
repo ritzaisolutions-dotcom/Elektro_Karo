@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Hero Platzhalter Malerbetrieb</title>
+  <desc id="desc">Dunkle, ruhige Markenflaeche mit goldenen Linien.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f0e0c"/>
+      <stop offset="0.55" stop-color="#1c1a14"/>
+      <stop offset="1" stop-color="#242018"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="74%" cy="34%" r="42%">
+      <stop offset="0" stop-color="#c9a84c" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c9a84c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <path d="M1240 0 760 1080" stroke="#c9a84c" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M1460 0 980 1080" stroke="#c9a84c" stroke-opacity=".10" stroke-width="1"/>
+  <text x="190" y="830" fill="#c9a84c" font-family="Cormorant Garamond, Georgia, serif" font-size="84" font-weight="600" letter-spacing="10">SCHMITT</text>
+  <text x="196" y="890" fill="#f5efe0" font-family="Jost, Arial, sans-serif" font-size="22" font-weight="300" letter-spacing="7">MALEREI · KOBLENZ</text>
+</svg>

@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "name": "Elektro Karo — FAQ für Answer Engines",
+  "inLanguage": "de-DE",
+  "about": {
+    "@type": "Electrician",
+    "name": "Elektro Karo",
+    "url": "https://elektro-karo.de"
+  },
+  "dateModified": "2026-06-09",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Welche Elektro-Leistungen bietet Elektro Karo in Wiesbaden an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Elektroinstallation, Reparatur und Wartung, Smart Home & KNX, Wallbox, Sicherheitstechnik, Netzwerke, SAT-Anlagen, Messungen nach DIN VDE und Anlagenprüfung nach DGUV."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bietet Elektro Karo einen Notdienst an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Elektro Karo bietet einen 24-Stunden-Notdienst. Erreichbar unter 01575 / 0020222 oder per WhatsApp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wo befindet sich Elektro Karo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dotzheimer-Str. 160, 65197 Wiesbaden, Hessen, Deutschland."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In welchem Gebiet ist Elektro Karo tätig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Primär Wiesbaden und Umgebung, u. a. Mainz, Taunusstein, Eltville, Rüdesheim, Bad Schwalbach."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Installiert Elektro Karo Wallboxen für E-Autos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — von der Planung über die Anmeldung beim Netzbetreiber bis zur fachgerechten Montage. Details: https://elektro-karo.de/leistungen/bodenbelaege.html"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bietet Elektro Karo Smart Home und KNX an?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja — Gebäudeautomation, Lichtszenen und KNX-Systeme. Details: https://elektro-karo.de/leistungen/fassade.html"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie kann ich Elektro Karo kontaktieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Telefon +4915750020222, WhatsApp https://wa.me/4915750020222, E-Mail info@elektro-karo.de, Kontaktformular oder Rückruf auf https://elektro-karo.de/#termin"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Erstellt Elektro Karo kostenlose Angebote?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Nach Ihrer Anfrage wird der Umfang geklärt und auf Wunsch ein unverbindliches Angebot erstellt — vor Ort in Wiesbaden oder telefonisch."
+      }
+    }
+  ]
+}

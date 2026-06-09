@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team | Elektro Karo — Elektromeister Wiesbaden</title>
+  <meta name="description" content="Das Team von Elektro Karo in Wiesbaden – Elektromeister Jubran Karo und eingespielte Fachkräfte für Installation, Smart Home und Sicherheitstechnik.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="images/favicon-client.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/config.js"></script>
+  <script src="js/config-apply.js"></script>
+</head>
+<body>
+  <nav class="nav nav--scrolled" id="mainNav" aria-label="Hauptnavigation">
+    <div class="nav__inner">
+      <a href="index.html#hero" class="nav__wordmark" aria-label="Elektro Karo, Startseite">
+        <img class="nav__logo" src="images/logo-client.png" alt="" width="48" height="48" decoding="async" aria-hidden="true">
+        <span class="nav__wordmark-text">
+          <span class="nav__wordmark-name" data-config="nameKurz">Karo</span>
+          <span class="nav__wordmark-sub">Elektro · Wiesbaden</span>
+        </span>
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li class="nav__item nav__item--dropdown">
+          <button type="button" class="nav__dropdown-btn" id="navLeistungenBtn" aria-expanded="false" aria-controls="navLeistungenMenu" aria-haspopup="true">Leistungen</button>
+          <ul class="nav__dropdown" id="navLeistungenMenu" role="menu" hidden>
+            <li role="none"><a role="menuitem" href="leistungen/innenarbeiten.html">Elektroinstallation</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/fassade.html">Smart Home &amp; KNX</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a></li>
+            <li role="none" class="nav__dropdown-divider"><a role="menuitem" href="index.html#leistungen">Übersicht Startseite</a></li>
+          </ul>
+        </li>
+        <li data-nav-calc><a href="index.html#kostenrechner">Kostenrechner</a></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+        <li><a href="team.html" aria-current="page">Team</a></li>
+        <li><a href="index.html#familie">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+
+      <a href="tel:#" class="btn btn--primary btn--sm nav__cta" data-config-href="tel">Anrufen</a>
+
+      <button class="nav__hamburger" id="navHamburger" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile" role="dialog" aria-label="Navigation">
+    <button class="nav__mobile-close" id="navMobileClose" aria-label="Menü schließen">✕</button>
+    <details class="nav__mobile-group">
+      <summary>Leistungen</summary>
+      <a href="leistungen/innenarbeiten.html">Elektroinstallation</a>
+      <a href="leistungen/fassade.html">Smart Home &amp; KNX</a>
+      <a href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a>
+      <a href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a>
+      <a href="index.html#leistungen">Übersicht Startseite</a>
+    </details>
+    <a href="index.html#kostenrechner" data-nav-calc>Kostenrechner</a>
+    <a href="referenzen.html">Referenzen</a>
+    <a href="team.html">Team</a>
+    <a href="index.html#familie">Über uns</a>
+    <a href="index.html#kontakt">Kontakt</a>
+    <a href="tel:#" class="btn btn--primary" style="margin-top:1rem" data-config-href="tel">Jetzt anrufen</a>
+    <span class="nav__mobile-phone">
+      <a href="tel:#" data-config-href="tel" data-config="telefonDisplay">01575 / 0020222</a>
+    </span>
+  </div>
+
+  <main class="subpage-main container">
+    <header class="subpage-hero">
+      <h1>Unser Team</h1>
+      <p>Elektromeister Jubran Karo und eingespielte Fachkräfte — von der Planung bis zur Baustelle.</p>
+    </header>
+
+    <section class="subpage-card">
+      <div class="team-hero-photo">
+        <picture>
+          <img src="images/team-bild.jpg" alt="Team und Arbeitsweise von Elektro Karo in Wiesbaden" width="1200" height="900" loading="lazy" decoding="async">
+        </picture>
+      </div>
+
+      <h2>Teammitglieder</h2>
+
+      <div class="team-roster">
+        <article class="team-member">
+          <div class="team-member__photo">
+            <div class="team-avatar avatar--pb" aria-hidden="true" data-config="team1Init">JK</div>
+          </div>
+          <h3 class="team-member__name" data-config="team1Name">Jubran Karo</h3>
+          <p class="team-role" data-config="team1Rolle">Elektromeister &amp; Inhaber</p>
+        </article>
+
+        <article class="team-member">
+          <div class="team-member__photo">
+            <div class="team-avatar avatar--jf" aria-hidden="true" data-config="team2Init">EI</div>
+          </div>
+          <h3 class="team-member__name" data-config="team2Name">Fachteam Installation</h3>
+          <p class="team-role" data-config="team2Rolle">Elektroinstallation &amp; Reparatur</p>
+        </article>
+
+        <article class="team-member">
+          <div class="team-member__photo">
+            <div class="team-avatar avatar--lp" aria-hidden="true" data-config="team3Init">SH</div>
+          </div>
+          <h3 class="team-member__name" data-config="team3Name">Fachteam Smart Home</h3>
+          <p class="team-role" data-config="team3Rolle">KNX, Netzwerk &amp; Sicherheit</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="subpage-card">
+      <a class="btn btn--primary" href="tel:#" data-config-href="tel">Anrufen</a>
+      <a class="btn btn--secondary" href="index.html#familie" style="margin-left: var(--sp-3);">Zurück zu Über uns</a>
+    </section>
+  </main>
+
+  <section class="partner-strip" id="partner" aria-labelledby="partner-strip-title">
+    <div class="container">
+      <h2 id="partner-strip-title" class="partner-strip__title">Partner &amp; Netzwerk</h2>
+      <p class="partner-strip__intro">Für umfassende Projekte arbeiten wir mit regionalen Fachbetrieben zusammen — <a href="index.html#partner">alle Partner ansehen</a></p>
+      <div data-partner-track data-partner-compact></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span class="footer__copy" data-config="copyright">© 2026 Elektro Karo, Wiesbaden</span>
+        <div class="footer__socials" style="display:flex;gap:.8rem;">
+          <a href="#" data-config-href="facebook" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">Facebook</a>
+          <a href="#" data-config-href="instagram" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">Instagram</a>
+        </div>
+        <nav class="footer__legal" aria-label="Rechtliches">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+          <a href="referenzen.html">Referenzen</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

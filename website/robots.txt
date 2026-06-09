@@ -1,0 +1,50 @@
+User-agent: *
+Allow: /
+# Controlled launch: keep non-public helper paths out of index.
+Disallow: /docs/
+Disallow: /assets/private/
+
+# ── Answer Engine Optimization (AEO) ─────────────────────────
+# Kuratierte LLM-Indexdatei (Spec: https://llmstxt.org/)
+# https://elektro-karo.de/llms.txt
+# https://elektro-karo.de/llms-full.txt
+# https://elektro-karo.de/business-profile.json
+# https://elektro-karo.de/aeo/manifest.json
+# https://elektro-karo.de/aeo/faq.json
+# https://elektro-karo.de/aeo/services.json
+
+# Explizit erlaubt für gängige AI-Crawler (strukturierte Fakten)
+User-agent: GPTBot
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /business-profile.json
+Allow: /aeo/
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://elektro-karo.de/sitemap.xml
