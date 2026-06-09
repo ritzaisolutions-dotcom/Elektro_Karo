@@ -1,5 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/leistungen/innenarbeiten.html", "destination": "/leistungen/elektroinstallation.html", "permanent": true },
+    { "source": "/leistungen/fassade.html", "destination": "/leistungen/smart-home-knx.html", "permanent": true },
+    { "source": "/leistungen/bodenbelaege.html", "destination": "/leistungen/wallbox.html", "permanent": true },
+    { "source": "/leistungen/schimmelbeseitigung.html", "destination": "/leistungen/sicherheit-netzwerk.html", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",

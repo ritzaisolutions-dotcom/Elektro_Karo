@@ -14,10 +14,10 @@ Elektro Karo (Inhaber Jubran Karo, Elektromeister, gegründet 2021) ist in der H
 
 ## Leistungen
 
-- [Elektroinstallation](https://elektro-karo.de/leistungen/innenarbeiten.html): Installation, Reparatur, Wartung, Unterverteiler — Wohn- & Geschäftsgebäude
-- [Smart Home & KNX](https://elektro-karo.de/leistungen/fassade.html): Gebäudeautomation, Lichtszenen, KNX-Systeme
-- [Wallbox & E-Mobilität](https://elektro-karo.de/leistungen/bodenbelaege.html): Ladestation, Netzbetreiber-Anmeldung, Montage
-- [Sicherheit & Netzwerk](https://elektro-karo.de/leistungen/schimmelbeseitigung.html): Video, Alarm, LAN/WLAN, DGUV-Prüfung
+- [Elektroinstallation](https://elektro-karo.de/leistungen/elektroinstallation.html): Installation, Reparatur, Wartung, Unterverteiler — Wohn- & Geschäftsgebäude
+- [Smart Home & KNX](https://elektro-karo.de/leistungen/smart-home-knx.html): Gebäudeautomation, Lichtszenen, KNX-Systeme
+- [Wallbox & E-Mobilität](https://elektro-karo.de/leistungen/wallbox.html): Ladestation, Netzbetreiber-Anmeldung, Montage
+- [Sicherheit & Netzwerk](https://elektro-karo.de/leistungen/sicherheit-netzwerk.html): Video, Alarm, LAN/WLAN, DGUV-Prüfung
 
 ## Kontakt & Anfrage
 

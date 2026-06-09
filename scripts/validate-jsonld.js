@@ -16,7 +16,7 @@ console.log('business-profile.json OK');
 extractLd(fs.readFileSync(path.join(root, 'index.html'), 'utf8'));
 console.log('index.html JSON-LD OK');
 
-['innenarbeiten', 'fassade', 'bodenbelaege', 'schimmelbeseitigung'].forEach((name) => {
+['elektroinstallation', 'smart-home-knx', 'wallbox', 'sicherheit-netzwerk'].forEach((name) => {
   extractLd(fs.readFileSync(path.join(root, 'leistungen', `${name}.html`), 'utf8'));
   console.log(`${name}.html JSON-LD OK`);
 });

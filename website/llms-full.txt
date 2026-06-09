@@ -28,7 +28,7 @@ Structured-JSON: https://elektro-karo.de/business-profile.json
 - **E-Mail:** info@elektro-karo.de
 - **WhatsApp:** https://wa.me/4915750020222
 - **Geo:** 50.0826, 8.2400
-- **Karte:** https://maps.google.com/?q=Dotzheimer-Str.+160,+65197+Wiesbaden
+- **Karte:** https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8
 
 ## Öffnungszeiten
 
@@ -44,19 +44,19 @@ Wiesbaden (Primär), Mainz, Taunusstein, Eltville, Rüdesheim am Rhein, Bad Schw
 
 ### 1. Elektroinstallation
 Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude — vom Unterverteiler bis zur Steckdose.
-URL: https://elektro-karo.de/leistungen/innenarbeiten.html
+URL: https://elektro-karo.de/leistungen/elektroinstallation.html
 
 ### 2. Smart Home & KNX
 Gebäudeautomation, Lichtszenen, intelligente Steuerung — geplant und fachgerecht installiert.
-URL: https://elektro-karo.de/leistungen/fassade.html
+URL: https://elektro-karo.de/leistungen/smart-home-knx.html
 
 ### 3. Wallbox & E-Mobilität
 Wallbox-Montage, Anmeldung beim Netzbetreiber, sichere Ladeinfrastruktur.
-URL: https://elektro-karo.de/leistungen/bodenbelaege.html
+URL: https://elektro-karo.de/leistungen/wallbox.html
 
 ### 4. Sicherheit & Netzwerk
 Videoüberwachung, Alarmtechnik, LAN/WLAN, Prüfungen nach DGUV.
-URL: https://elektro-karo.de/leistungen/schimmelbeseitigung.html
+URL: https://elektro-karo.de/leistungen/sicherheit-netzwerk.html
 
 Weitere Leistungen laut Website: Beratung, Planung, Kundendienst, Lichtberechnung, SAT-Anlage, Messung nach DIN VDE, Anlagenprüfung.
 
@@ -90,7 +90,7 @@ Ja — 24-Stunden-Notdienst unter 01575 / 0020222.
 Wiesbaden und nähere Umgebung (siehe Servicegebiet).
 
 **Installieren Sie Wallboxen?**
-Ja — Planung, Anmeldung, Montage. Seite: /leistungen/bodenbelaege.html
+Ja — Planung, Anmeldung, Montage. Seite: /leistungen/wallbox.html
 
 **Erstellen Sie kostenlose Angebote?**
 Ja — unverbindlich nach Anfrage, telefonisch oder vor Ort.
@@ -105,7 +105,7 @@ Elektro-Richtpreise ca. 95–125 €/m² je nach Umfang (Bestand vs. Neuinstalla
 ## Wichtige URLs
 
 - Home: https://elektro-karo.de/
-- Über uns: https://elektro-karo.de/#familie
+- Über uns: https://elektro-karo.de/#ueber-uns
 - Bewertungen: https://elektro-karo.de/#bewertungen
 - FAQ (Seite): https://elektro-karo.de/#faq
 - Impressum: https://elektro-karo.de/impressum.html

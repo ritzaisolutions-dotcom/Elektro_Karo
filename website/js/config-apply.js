@@ -105,10 +105,16 @@
     });
 
     // ── 6. NAV WORDMARK ────────────────────────────────────
-    set('.nav__wordmark-name',    CLIENT.nameKurz || CLIENT.name.split(' ')[0]);
-    set('.footer__wordmark-name', CLIENT.nameKurz || CLIENT.name.split(' ')[0]);
+    set('.nav__wordmark-name',    CLIENT.name || CLIENT.nameKurz);
+    set('.footer__wordmark-name', CLIENT.name || CLIENT.nameKurz);
 
     // ── 7. SOCIAL LINKS ────────────────────────────────────
+    const hasSocial = Boolean(CLIENT.facebook || CLIENT.instagram);
+    if (!hasSocial) {
+      document.querySelectorAll('[data-social-block]').forEach(el => {
+        el.hidden = true;
+      });
+    }
     if (!CLIENT.facebook) {
       document.querySelectorAll('a[data-config-href="facebook"]').forEach(el => {
         el.closest('div, li')?.style.setProperty('display', 'none');
@@ -159,7 +165,9 @@
 
     // ── 12. ÖFFNUNGSZEITEN KURZTEXT ───────────────────────
     document.querySelectorAll('[data-config="oeffZeitenKurz"]').forEach(el => {
-      if (moDoHours && frHours) {
+      if (moDoHours && frHours && moDoHours === frHours) {
+        el.textContent = `Mo–Fr ${moDoHours}`;
+      } else if (moDoHours && frHours) {
         el.textContent = `Mo–Do ${moDoHours} · Fr ${frHours}`;
       }
     });
@@ -420,11 +428,21 @@
     if (CLIENT.kostenrechnerAktiv === false) {
       const calcSection = document.getElementById('kostenrechner');
       if (calcSection) calcSection.hidden = true;
-      // Navigationseinträge ausblenden (Desktop + Mobile)
+      const angebotSection = document.getElementById('angebot');
+      if (angebotSection) angebotSection.hidden = false;
       document.querySelectorAll('[data-nav-calc]').forEach(el => {
         el.setAttribute('hidden', '');
       });
     }
+
+    // ── 24b. TEAM-ROSTER (leere Einträge ausblenden) ─────
+    document.querySelectorAll('.team-member').forEach((article, index) => {
+      const nameKey = `team${index + 1}Name`;
+      const name = CLIENT[nameKey];
+      if (!name || String(name).startsWith('[')) {
+        article.hidden = true;
+      }
+    });
 
     // ── 25. DATENSCHUTZ: terminVariante-bedingte Listeneinträge
     document.querySelectorAll('[data-datenschutz-termin]').forEach(el => {

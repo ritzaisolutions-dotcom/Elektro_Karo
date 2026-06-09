@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team | Elektro Karo — Elektromeister Wiesbaden</title>
-  <meta name="description" content="Das Team von Elektro Karo in Wiesbaden – Elektromeister Jubran Karo und eingespielte Fachkräfte für Installation, Smart Home und Sicherheitstechnik.">
+  <meta name="description" content="Elektromeister Jubran Karo — Inhaber von Elektro Karo in Wiesbaden. Persönlicher Ansprechpartner für Elektroinstallation, Smart Home und Notdienst.">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="images/favicon-client.png">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -28,17 +28,18 @@
         <li class="nav__item nav__item--dropdown">
           <button type="button" class="nav__dropdown-btn" id="navLeistungenBtn" aria-expanded="false" aria-controls="navLeistungenMenu" aria-haspopup="true">Leistungen</button>
           <ul class="nav__dropdown" id="navLeistungenMenu" role="menu" hidden>
-            <li role="none"><a role="menuitem" href="leistungen/innenarbeiten.html">Elektroinstallation</a></li>
-            <li role="none"><a role="menuitem" href="leistungen/fassade.html">Smart Home &amp; KNX</a></li>
-            <li role="none"><a role="menuitem" href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a></li>
-            <li role="none"><a role="menuitem" href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/elektroinstallation.html">Elektroinstallation</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/smart-home-knx.html">Smart Home &amp; KNX</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/wallbox.html">Wallbox &amp; E-Mobilität</a></li>
+            <li role="none"><a role="menuitem" href="leistungen/sicherheit-netzwerk.html">Sicherheit &amp; Netzwerk</a></li>
             <li role="none" class="nav__dropdown-divider"><a role="menuitem" href="index.html#leistungen">Übersicht Startseite</a></li>
           </ul>
         </li>
-        <li data-nav-calc><a href="index.html#kostenrechner">Kostenrechner</a></li>
+        <li data-nav-calc hidden><a href="index.html#angebot">Kostenrechner</a></li>
         <li><a href="referenzen.html">Referenzen</a></li>
         <li><a href="team.html" aria-current="page">Team</a></li>
-        <li><a href="index.html#familie">Über uns</a></li>
+        <li><a href="index.html#ueber-uns">Über uns</a></li>
+        <li><a href="index.html#termin">Anfragen</a></li>
         <li><a href="index.html#kontakt">Kontakt</a></li>
       </ul>
 
@@ -54,16 +55,17 @@
     <button class="nav__mobile-close" id="navMobileClose" aria-label="Menü schließen">✕</button>
     <details class="nav__mobile-group">
       <summary>Leistungen</summary>
-      <a href="leistungen/innenarbeiten.html">Elektroinstallation</a>
-      <a href="leistungen/fassade.html">Smart Home &amp; KNX</a>
-      <a href="leistungen/bodenbelaege.html">Wallbox &amp; E-Mobilität</a>
-      <a href="leistungen/schimmelbeseitigung.html">Sicherheit &amp; Netzwerk</a>
+      <a href="leistungen/elektroinstallation.html">Elektroinstallation</a>
+      <a href="leistungen/smart-home-knx.html">Smart Home &amp; KNX</a>
+      <a href="leistungen/wallbox.html">Wallbox &amp; E-Mobilität</a>
+      <a href="leistungen/sicherheit-netzwerk.html">Sicherheit &amp; Netzwerk</a>
       <a href="index.html#leistungen">Übersicht Startseite</a>
     </details>
-    <a href="index.html#kostenrechner" data-nav-calc>Kostenrechner</a>
+    <a href="index.html#angebot" data-nav-calc hidden>Kostenrechner</a>
     <a href="referenzen.html">Referenzen</a>
     <a href="team.html">Team</a>
-    <a href="index.html#familie">Über uns</a>
+    <a href="index.html#ueber-uns">Über uns</a>
+    <a href="index.html#termin">Anfragen</a>
     <a href="index.html#kontakt">Kontakt</a>
     <a href="tel:#" class="btn btn--primary" style="margin-top:1rem" data-config-href="tel">Jetzt anrufen</a>
     <span class="nav__mobile-phone">
@@ -73,8 +75,8 @@
 
   <main class="subpage-main container">
     <header class="subpage-hero">
-      <h1>Unser Team</h1>
-      <p>Elektromeister Jubran Karo und eingespielte Fachkräfte — von der Planung bis zur Baustelle.</p>
+      <h1>Jubran Karo — Elektromeister</h1>
+      <p>Inhaber von Elektro Karo in Wiesbaden — persönlich erreichbar, fachlich kompetent, mit 24h-Notdienst.</p>
     </header>
 
     <section class="subpage-card">
@@ -84,7 +86,7 @@
         </picture>
       </div>
 
-      <h2>Teammitglieder</h2>
+      <h2>Inhaber</h2>
 
       <div class="team-roster">
         <article class="team-member">
@@ -95,7 +97,7 @@
           <p class="team-role" data-config="team1Rolle">Elektromeister &amp; Inhaber</p>
         </article>
 
-        <article class="team-member">
+        <article class="team-member" hidden data-config-empty="team2Name">
           <div class="team-member__photo">
             <div class="team-avatar avatar--jf" aria-hidden="true" data-config="team2Init">EI</div>
           </div>
@@ -103,7 +105,7 @@
           <p class="team-role" data-config="team2Rolle">Elektroinstallation &amp; Reparatur</p>
         </article>
 
-        <article class="team-member">
+        <article class="team-member" hidden data-config-empty="team3Name">
           <div class="team-member__photo">
             <div class="team-avatar avatar--lp" aria-hidden="true" data-config="team3Init">SH</div>
           </div>
@@ -115,7 +117,7 @@
 
     <section class="subpage-card">
       <a class="btn btn--primary" href="tel:#" data-config-href="tel">Anrufen</a>
-      <a class="btn btn--secondary" href="index.html#familie" style="margin-left: var(--sp-3);">Zurück zu Über uns</a>
+      <a class="btn btn--secondary" href="index.html#ueber-uns" style="margin-left: var(--sp-3);">Zurück zu Über uns</a>
     </section>
   </main>
 

@@ -47,7 +47,7 @@
       "name": "Installiert Elektro Karo Wallboxen für E-Autos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja — von der Planung über die Anmeldung beim Netzbetreiber bis zur fachgerechten Montage. Details: https://elektro-karo.de/leistungen/bodenbelaege.html"
+        "text": "Ja — von der Planung über die Anmeldung beim Netzbetreiber bis zur fachgerechten Montage. Details: https://elektro-karo.de/leistungen/wallbox.html"
       }
     },
     {
@@ -55,7 +55,7 @@
       "name": "Bietet Elektro Karo Smart Home und KNX an?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja — Gebäudeautomation, Lichtszenen und KNX-Systeme. Details: https://elektro-karo.de/leistungen/fassade.html"
+        "text": "Ja — Gebäudeautomation, Lichtszenen und KNX-Systeme. Details: https://elektro-karo.de/leistungen/smart-home-knx.html"
       }
     },
     {

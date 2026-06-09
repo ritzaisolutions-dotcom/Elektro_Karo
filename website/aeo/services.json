@@ -20,28 +20,28 @@
       "id": "elektroinstallation",
       "name": "Elektroinstallation",
       "summary": "Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude",
-      "url": "https://elektro-karo.de/leistungen/innenarbeiten.html",
+      "url": "https://elektro-karo.de/leistungen/elektroinstallation.html",
       "keywords": ["Elektriker Wiesbaden", "Elektroinstallation", "Unterverteiler", "Reparatur"]
     },
     {
       "id": "smart-home-knx",
       "name": "Smart Home & KNX",
       "summary": "Gebäudeautomation, Lichtszenen, KNX-Systeme",
-      "url": "https://elektro-karo.de/leistungen/fassade.html",
+      "url": "https://elektro-karo.de/leistungen/smart-home-knx.html",
       "keywords": ["Smart Home Wiesbaden", "KNX", "Gebäudeautomation"]
     },
     {
       "id": "wallbox",
       "name": "Wallbox & E-Mobilität",
       "summary": "Ladestation, Anmeldung, Installation",
-      "url": "https://elektro-karo.de/leistungen/bodenbelaege.html",
+      "url": "https://elektro-karo.de/leistungen/wallbox.html",
       "keywords": ["Wallbox Wiesbaden", "E-Auto Ladestation", "E-Mobilität"]
     },
     {
       "id": "sicherheit-netzwerk",
       "name": "Sicherheit & Netzwerk",
       "summary": "Video, Alarm, LAN/WLAN, DGUV-Prüfung",
-      "url": "https://elektro-karo.de/leistungen/schimmelbeseitigung.html",
+      "url": "https://elektro-karo.de/leistungen/sicherheit-netzwerk.html",
       "keywords": ["Videoüberwachung", "Netzwerk", "DGUV", "Sicherheitstechnik"]
     }
   ]

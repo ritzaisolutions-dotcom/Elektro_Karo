@@ -25,7 +25,7 @@
       "latitude": 50.0826,
       "longitude": 8.2400
     },
-    "hasMap": "https://maps.google.com/?q=Dotzheimer-Str.+160,+65197+Wiesbaden",
+    "hasMap": "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
     "googlePlaceIdNote": "Google Maps search: Elektro Karo Wiesbaden"
   },
   "openingHours": {
@@ -42,25 +42,25 @@
       "id": "elektroinstallation",
       "name": "Elektroinstallation",
       "summary": "Installation, Reparatur und Wartung für Wohn- und Geschäftsgebäude",
-      "url": "https://elektro-karo.de/leistungen/innenarbeiten.html"
+      "url": "https://elektro-karo.de/leistungen/elektroinstallation.html"
     },
     {
       "id": "smart-home-knx",
       "name": "Smart Home & KNX",
       "summary": "Gebäudeautomation, Lichtszenen, KNX-Systeme",
-      "url": "https://elektro-karo.de/leistungen/fassade.html"
+      "url": "https://elektro-karo.de/leistungen/smart-home-knx.html"
     },
     {
       "id": "wallbox",
       "name": "Wallbox & E-Mobilität",
       "summary": "Ladestation, Anmeldung, Installation",
-      "url": "https://elektro-karo.de/leistungen/bodenbelaege.html"
+      "url": "https://elektro-karo.de/leistungen/wallbox.html"
     },
     {
       "id": "sicherheit-netzwerk",
       "name": "Sicherheit & Netzwerk",
       "summary": "Video, Alarm, LAN/WLAN, DGUV-Prüfung",
-      "url": "https://elektro-karo.de/leistungen/schimmelbeseitigung.html"
+      "url": "https://elektro-karo.de/leistungen/sicherheit-netzwerk.html"
     }
   ],
   "serviceArea": [

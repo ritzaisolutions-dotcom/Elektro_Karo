@@ -6,12 +6,12 @@
 const CLIENT = {
   // ── FIRMA ──────────────────────────────────────────────────
   name:                 "Elektro Karo",
-  nameKurz:             "Karo",
+  nameKurz:             "Elektro Karo",
   unternehmenstyp:      "",
   handwerksbezeichnung: "Elektroinstallateur",
   berufsbezeichnung:    "Elektromeister",
   gruendungsjahr:       "2021",
-  slogan:               "Meisterbetrieb für Elektroinstallation in Wiesbaden — zuverlässig, sauber und mit 24h-Notdienst.",
+  slogan:               "Elektromeister in Wiesbaden — Elektroinstallation, Smart Home und 24h-Notdienst.",
   heroEyebrow:          "Elektromeister · Wiesbaden",
   leistungenKurz:       "Elektroinstallation, Smart Home & KNX, Wallbox, Sicherheit & Netzwerk",
 
@@ -43,8 +43,8 @@ const CLIENT = {
 
   // ── GOOGLE ─────────────────────────────────────────────────
   googleMapsEmbedUrl:    "",
-  googleMapsLink:        "https://maps.google.com/?q=Dotzheimer-Str.+160,+65197+Wiesbaden",
-  googleBewertungsLink:  "https://www.google.com/maps/search/Elektro+Karo+Wiesbaden",
+  googleMapsLink:        "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
+  googleBewertungsLink:  "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
   googleBewertungAnzahl: "18 Bewertungen",
   googleBewertungNote:   "Ausgezeichnet",
 
@@ -97,14 +97,14 @@ const CLIENT = {
   team1Name:  "Jubran Karo",
   team1Rolle: "Elektromeister & Inhaber",
   team1Init:  "JK",
-  team2Name:  "Fachteam Installation",
-  team2Rolle: "Elektroinstallation & Reparatur",
-  team2Init:  "EI",
-  team3Name:  "Fachteam Smart Home",
-  team3Rolle: "KNX, Netzwerk & Sicherheit",
-  team3Init:  "SH",
+  team2Name:  "",
+  team2Rolle: "",
+  team2Init:  "",
+  team3Name:  "",
+  team3Rolle: "",
+  team3Init:  "",
 
-  kostenrechnerAktiv: true,
+  kostenrechnerAktiv: false,
 
   // ── KOSTENRECHNER PREISE (€/m² Richtwerte) ─────────────────
   preise: {
@@ -133,7 +133,7 @@ const CLIENT = {
     { id: "floorHeating",  label: "Netzwerk-Verkabelung", desc: "+ ca. 18 €/m²" }
   ],
 
-  kontaktformularAktiv: true,
+  kontaktformularAktiv: false,
 
   kontaktAnliegen: [
     { value: "beratung",    label: "Beratung / Angebot anfragen"  },
