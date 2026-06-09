@@ -51,7 +51,8 @@
 
 ## Git / Deploy
 
-- Remote zeigt noch auf `malermeister_schmitt` — neues Repo anlegen und Remote wechseln vor Kunden-Push.
+- **Remote:** https://github.com/ritzaisolutions-dotcom/Elektro_Karo.git (`main`, frischer Initial-Commit ohne Schmitt-Historie)
+- **Vercel:** Repo verknüpfen oder bestehendes Projekt auf neues Remote umstellen (`outputDirectory: website`)
 
 ## Answer Engine Optimization (AEO)
 
