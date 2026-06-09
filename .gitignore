@@ -1,8 +1,9 @@
 node_modules/
 .vercel/
-.env
-.firecrawl/
 *.log
 images/current/
 .DS_Store
 Thumbs.db
+.env
+.env.*
+.firecrawl/
