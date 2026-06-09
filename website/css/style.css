@@ -619,10 +619,18 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   bottom: calc(var(--sp-8) + 2.75rem);
   transform: translateX(-50%);
   width: min(100% - var(--sp-6), 52rem);
+  max-width: calc(100% - var(--sp-6));
   margin: 0;
+  padding-inline: var(--sp-3);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35em;
+  text-wrap: balance;
   font-size: var(--fs-xs);
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(245, 239, 224, 0.55);
   animation: fadeUp 0.6s var(--ease) 0.45s both;
@@ -1974,23 +1982,43 @@ a.leistung-card {
 }
 
 .google-reviews-summary {
+  display: block;
   background: #fff;
+  border: 1px solid transparent;
   border-radius: var(--r-lg);
-  padding: var(--sp-5) var(--sp-6);
+  padding: var(--sp-3) var(--sp-4);
   text-align: center;
-  max-width: 420px;
+  max-width: 280px;
   margin: 0 auto var(--sp-5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--t-base) var(--ease), box-shadow var(--t-base) var(--ease), border-color var(--t-fast);
+}
+
+.google-reviews-summary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  border-color: var(--accent);
+}
+
+.google-reviews-summary__cta {
+  display: block;
+  margin-top: var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent, #f5a623);
 }
 
 .google-reviews-summary__label {
   font-family: var(--ff-head);
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #1a1a1a;
-  margin: 0 0 var(--sp-2);
+  margin: 0 0 var(--sp-1);
 }
 
 .google-reviews-summary__stars {
@@ -2001,9 +2029,9 @@ a.leistung-card {
 }
 
 .google-reviews-summary__count {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   color: #5f6368;
-  margin: 0 0 var(--sp-3);
+  margin: 0 0 var(--sp-2);
 }
 
 .google-reviews-summary__brand-text {
@@ -2083,10 +2111,14 @@ a.leistung-card {
 }
 
 .bewertung-card--google .bewertung-card__more {
-  color: #5f6368;
+  color: #1a73e8;
   font-style: normal;
   text-transform: none;
   letter-spacing: 0;
+}
+
+.bewertung-card--google .bewertung-card__more:hover {
+  color: #174ea6;
 }
 
 .avatar--c1 { background: linear-gradient(135deg, #4285F4, #1a73e8); }
@@ -2564,10 +2596,10 @@ a.leistung-card {
   text-align: center;
   margin-top: var(--sp-6);
   font-size: var(--fs-sm);
-  color: rgba(255,255,255,0.5);
+  color: rgba(245, 239, 224, 0.75);
 }
 .termin-fallback a {
-  color: #fff;
+  color: var(--accent);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -3157,11 +3189,34 @@ a.leistung-card {
   margin-bottom: var(--sp-6);
 }
 
-.termin-rueckruf__hint {
-  text-align: center;
-  font-size: var(--fs-sm);
-  color: rgba(245, 239, 224, 0.65);
-  margin-bottom: var(--sp-5);
+#bewertungen .section-sub {
+  color: rgba(245, 239, 224, 0.9);
+  max-width: 42rem;
+}
+
+#bewertungen .google-reviews-attribution {
+  color: rgba(245, 239, 224, 0.75);
+}
+
+#bewertungen .google-reviews-attribution a {
+  color: var(--accent);
+}
+
+#bewertungen .carousel-dot {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+#termin .section-sub {
+  color: rgba(245, 239, 224, 0.9);
+  max-width: 42rem;
+}
+
+#termin .termin-form-box .kontakt-form__check {
+  color: rgba(245, 239, 224, 0.85);
+}
+
+#termin .termin-form-box .kontakt-form__check a {
+  color: var(--accent);
 }
 
 .team-grid {
@@ -3444,9 +3499,6 @@ a.leistung-card {
     bottom: calc(var(--sp-7) + 2.5rem);
   }
   .hero__credentials-sep { display: none; }
-  .hero__credentials span:not(.hero__credentials-sep) {
-    display: block;
-  }
 }
 
 /* Issue 18: Scroll indicator — unnecessary on mobile */

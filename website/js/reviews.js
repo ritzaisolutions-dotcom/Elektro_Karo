@@ -73,7 +73,7 @@
           el.textContent = CLIENT.googleBewertungAnzahl;
         });
         document.querySelectorAll('[data-config="bewertungenAnzahl"]').forEach((el) => {
-          el.textContent = `${n} Google-Bewertungen`;
+          el.textContent = n === 1 ? '1 Bewertung' : `${n} Bewertungen`;
         });
       }
       if (data.ratingLabel) {

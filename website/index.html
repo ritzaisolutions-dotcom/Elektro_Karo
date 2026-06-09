@@ -180,14 +180,24 @@
       font-family: var(--ff-head);
       font-size: var(--fs-xl);
       font-weight: 600;
-      color: var(--primary);
+      color: var(--accent);
       margin: 0 0 var(--sp-4);
       text-align: center;
     }
     .termin-form-box label { color: var(--text); }
     .termin-form-box input,
     .termin-form-box textarea,
-    .termin-form-box select { color: var(--text); background: var(--bg); }
+    .termin-form-box select {
+      color: var(--text);
+      background: var(--primary-light);
+      border: 1px solid rgba(245, 166, 35, 0.25);
+    }
+    .termin-form-box input:focus,
+    .termin-form-box textarea:focus,
+    .termin-form-box select:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
     #terminFormResult { margin-top: .75rem; font-size: var(--fs-sm); font-weight: 600; }
 
     /* ── WhatsApp Button (universell) ────────────────────── */
@@ -525,7 +535,7 @@
             </a>
           </div>
 
-          <p class="hero__notdienst">24h-Notdienst · <a href="tel:#" data-config-href="tel" class="inline-link"><span data-config="telefonDisplay">01575 / 0020222</span></a></p>
+          <p class="hero__notdienst">24h-Notdienst verfügbar</p>
         </div>
 
         <p class="hero__credentials">
@@ -535,7 +545,7 @@
           <span class="hero__credentials-sep" aria-hidden="true">·</span>
           <span>Seit 2021</span>
           <span class="hero__credentials-sep" aria-hidden="true">·</span>
-          <a href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" class="inline-link">18 Google-Bewertungen</a>
+          <a href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" class="inline-link" data-config="bewertungenAnzahl">18 Bewertungen</a>
         </p>
 
         <a href="#leistungen" class="scroll-indicator" id="scrollIndicator" aria-label="Weiter zu den Leistungen">
@@ -794,11 +804,11 @@
       <header class="section-header section-header--center reveal">
         <span class="section-label">Was Kunden sagen</span>
         <h2 class="section-h2">Das sagen unsere Kunden.</h2>
-        <p class="section-sub">Echte Google-Bewertungen — aktualisiert über Google Places API.</p>
+        <p class="section-sub">Echte Kundenstimmen von Google — regelmäßig aktualisiert.</p>
       </header>
 
       <div class="google-reviews-widget reveal" id="googleReviewsWidget" aria-live="polite">
-        <div class="google-reviews-summary" id="reviewsSummary" hidden>
+        <a class="google-reviews-summary" id="reviewsSummary" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" hidden aria-label="Google-Bewertung schreiben">
           <p class="google-reviews-summary__label" id="reviewsSummaryLabel">Ausgezeichnet</p>
           <div class="google-reviews-summary__stars" id="reviewsSummaryStars" aria-hidden="true">★★★★★</div>
           <p class="google-reviews-summary__count" id="reviewsSummaryCount">Basierend auf 18 Bewertungen</p>
@@ -807,7 +817,8 @@
               <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
             </span>
           </p>
-        </div>
+          <span class="google-reviews-summary__cta">Bewertung auf Google schreiben →</span>
+        </a>
 
         <p class="google-reviews-loading" id="reviewsLoading">Bewertungen werden geladen…</p>
 
@@ -828,13 +839,6 @@
         <div class="carousel-dots" id="reviewsDots"></div>
       </div>
 
-      <p class="reviews-cta-wrap reveal">
-        <a href="#"
-           data-config-href="googleBewertung"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="reviews-google-link">Google-Bewertung schreiben</a>
-      </p>
       <p class="google-reviews-attribution reveal">
         Bewertungen bereitgestellt von <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>.
         Daten werden serverseitig über die Google Places API geladen und zwischengespeichert.
@@ -1055,14 +1059,13 @@
       <header class="section-header section-header--center reveal">
         <span class="section-label">Kontakt</span>
         <h2 class="section-h2">Jetzt Kontakt aufnehmen</h2>
-        <p class="section-sub">Anrufen, WhatsApp schreiben oder Rückruf anfordern — unverbindlich und ohne Online-Kalender.</p>
+        <p class="section-sub">Anrufen, WhatsApp schreiben oder Rückruf anfordern — unverbindlich. Wir melden uns in der Regel innerhalb eines Werktags.</p>
       </header>
 
       <!-- VARIANTE: Rückruf (Standard) -->
       <div data-termin="rueckruf" id="termin-rueckruf" class="termin-rueckruf reveal">
-        <p class="termin-rueckruf__hint">Wir melden uns zeitnah bei Ihnen — in der Regel innerhalb eines Werktags.</p>
         <div class="termin-rueckruf__ctas">
-          <a href="tel:#" class="btn btn--primary btn--lg" data-config-href="tel">Jetzt anrufen</a>
+          <a href="tel:#" class="btn btn--primary btn--lg" data-config-href="tel"><span>Jetzt anrufen: </span><span data-config="telefonDisplay">01575 / 0020222</span></a>
           <a href="#" class="btn btn--wa btn--lg" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
         <div class="termin-form-box">
@@ -1073,7 +1076,7 @@
                 <input id="rueckruf_name" name="name" type="text" required autocomplete="name" placeholder="Max Mustermann">
               </label>
               <label for="rueckruf_phone">Telefon
-                <input id="rueckruf_phone" name="telefon" type="tel" required autocomplete="tel" placeholder="01575 / 0020222">
+                <input id="rueckruf_phone" name="telefon" type="tel" required autocomplete="tel" placeholder="z. B. 0170 1234567">
               </label>
             </div>
             <label for="rueckruf_zeit">Wunschzeit (optional)
@@ -1179,9 +1182,7 @@
       </div>
 
       <p class="termin-fallback reveal">
-        Oder direkt anrufen:
-        <a href="tel:#" data-config-href="tel" data-config="telefonDisplay">01575 / 0020222</a>
-        &nbsp;·&nbsp; <span data-config="oeffZeitenKurz">Mo–Fr 08:00–16:00 Uhr</span>
+        <span data-config="oeffZeitenKurz">Mo–Fr 08:00–16:00 Uhr</span>
       </p>
     </div>
   </section>

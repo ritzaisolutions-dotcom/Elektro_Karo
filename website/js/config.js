@@ -171,7 +171,7 @@ const CLIENT = {
 
   jahreErfahrung:    "Seit 2021",
   teamGroesse:       "Meisterbetrieb",
-  bewertungenAnzahl: "18 Google-Bewertungen",
+  bewertungenAnzahl: "18 Bewertungen",
 
   partnerIntro: "",
   partnerBgColor: "var(--secondary-dark, #122640)",
