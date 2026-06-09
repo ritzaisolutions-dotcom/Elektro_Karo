@@ -371,11 +371,17 @@
     }
 
     // ── 20. ÜBER-UNS TEXT ────────────────────────────────
+    const escapeHtml = (str) => String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+
     const ueberUnsBody = document.getElementById('ueberUnsBody');
     if (ueberUnsBody && Array.isArray(CLIENT.ueberUns) && CLIENT.ueberUns.length) {
       const paras = CLIENT.ueberUns.filter(p => p && !p.startsWith('['));
       if (paras.length > 0) {
-        ueberUnsBody.innerHTML = paras.map(p => `<p>${p}</p>`).join('\n');
+        ueberUnsBody.innerHTML = paras.map(p => `<p>${escapeHtml(p)}</p>`).join('\n');
       }
     }
 
@@ -425,13 +431,19 @@
     }
 
     // ── 24. KOSTENRECHNER AKTIV ──────────────────────────
+    const calcSection = document.getElementById('kostenrechner');
+    const angebotSection = document.getElementById('angebot');
     if (CLIENT.kostenrechnerAktiv === false) {
-      const calcSection = document.getElementById('kostenrechner');
       if (calcSection) calcSection.hidden = true;
-      const angebotSection = document.getElementById('angebot');
       if (angebotSection) angebotSection.hidden = false;
       document.querySelectorAll('[data-nav-calc]').forEach(el => {
         el.setAttribute('hidden', '');
+      });
+    } else {
+      if (calcSection) calcSection.hidden = false;
+      if (angebotSection) angebotSection.hidden = true;
+      document.querySelectorAll('[data-nav-calc]').forEach(el => {
+        el.removeAttribute('hidden');
       });
     }
 
@@ -482,17 +494,16 @@
 
     // ── 27. PARTNER-KARUSSELL ─────────────────────────────
     const renderPartners = () => {
-      if (!Array.isArray(CLIENT.partner) || !CLIENT.partner.length) return;
+      const partnerSection = document.getElementById('partner');
+      if (!Array.isArray(CLIENT.partner) || !CLIENT.partner.length) {
+        if (partnerSection) partnerSection.hidden = true;
+        return;
+      }
+      if (partnerSection) partnerSection.hidden = false;
 
       const scriptEl = document.querySelector('script[src*="config-apply"]');
       const scriptSrc = scriptEl?.getAttribute('src') || '';
       const imgPrefix = scriptSrc.includes('/leistungen/') ? '../images/' : 'images/';
-
-      const escapeHtml = (str) => String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
 
       const buildCard = (partner) => {
         const name = partner.name || '';

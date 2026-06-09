@@ -3,5 +3,11 @@
   "buildCommand": "",
   "installCommand": "",
   "outputDirectory": "website",
-  "framework": null
+  "framework": null,
+  "crons": [
+    {
+      "path": "/api/reviews",
+      "schedule": "0 6 * * *"
+    }
+  ]
 }

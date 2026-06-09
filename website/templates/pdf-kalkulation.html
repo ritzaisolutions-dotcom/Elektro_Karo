@@ -1,28 +1,38 @@
-﻿<!--
+<!--
   PDF-Kalkulation — HTML-Template (Fragment)
   Wird von js/pdf.js per fetch geladen, Platzhalter {{KEY}} werden ersetzt.
   Platzhalter-Liste siehe js/pdf.js → PDF_TEMPLATE_KEYS
 -->
 <article class="pdf-doc" lang="de">
+
+  <!-- ── HEADER STRIP ─────────────────────────────────────── -->
   <header class="pdf-doc__header">
-    <div class="pdf-doc__brand">
-      <img class="pdf-doc__logo {{LOGO_HIDDEN_CLASS}}" src="{{LOGO_SRC}}" alt="{{CLIENT_NAME}}" width="200" height="42">
-      <div class="pdf-doc__company">
-        <p class="pdf-doc__company-name">{{CLIENT_NAME}}</p>
-        <p class="pdf-doc__company-meta">{{HANDWERKSBEZEICHNUNG}} · {{ORT}}</p>
+    <div class="pdf-doc__header-inner">
+      <div class="pdf-doc__brand">
+        <img class="pdf-doc__logo {{LOGO_HIDDEN_CLASS}}" src="{{LOGO_SRC}}" alt="{{CLIENT_NAME}}" width="180" height="38">
+        <div class="pdf-doc__company">
+          <p class="pdf-doc__company-name">{{CLIENT_NAME}}</p>
+          <p class="pdf-doc__company-meta">{{HANDWERKSBEZEICHNUNG}} · {{ORT}}</p>
+        </div>
+      </div>
+      <div class="pdf-doc__header-right">
+        <span class="pdf-doc__doc-badge">Kostenschätzung</span>
+        <p class="pdf-doc__date">{{DATUM}}</p>
       </div>
     </div>
-    <div class="pdf-doc__meta">
-      <p class="pdf-doc__doc-type">Kostenschätzung</p>
-      <p class="pdf-doc__date">{{DATUM}}</p>
-    </div>
+    <div class="pdf-doc__header-accent"></div>
   </header>
 
+  <!-- ── TITLE BLOCK ──────────────────────────────────────── -->
   <div class="pdf-doc__title-block">
-    <h1 class="pdf-doc__title">Ihre unverbindliche Kostenschätzung</h1>
+    <div class="pdf-doc__title-row">
+      <h1 class="pdf-doc__title">Ihre unverbindliche Kostenschätzung</h1>
+      <span class="pdf-doc__title-deco">&#9889;</span>
+    </div>
     <p class="pdf-doc__summary">{{SUMMARY}}</p>
   </div>
 
+  <!-- ── PROJECT DETAILS GRID ─────────────────────────────── -->
   <div class="pdf-doc__details">
     <div class="pdf-doc__detail">
       <span class="pdf-doc__detail-label">Projektart</span>
@@ -42,7 +52,12 @@
     </div>
   </div>
 
-  <h2 class="pdf-doc__section-title">Kostenaufschlüsselung</h2>
+  <!-- ── COST BREAKDOWN TABLE ──────────────────────────────── -->
+  <h2 class="pdf-doc__section-title">
+    <span class="pdf-doc__section-title__line"></span>
+    Kostenaufschlüsselung
+    <span class="pdf-doc__section-title__line"></span>
+  </h2>
   <div class="pdf-doc__table-wrap">
     <table class="pdf-doc__table">
       <thead>
@@ -57,29 +72,47 @@
     </table>
   </div>
 
+  <!-- ── TOTAL BOX ─────────────────────────────────────────── -->
   <div class="pdf-doc__total-box">
-    <p class="pdf-doc__total-label">Geschätzter Preisrahmen</p>
-    <p class="pdf-doc__total-range">{{TOTAL_RANGE}}</p>
-    <p class="pdf-doc__total-avg">Mittelwert ca. {{TOTAL_AVG}}</p>
+    <div class="pdf-doc__total-left">
+      <p class="pdf-doc__total-label">Geschätzter Preisrahmen</p>
+      <p class="pdf-doc__total-range">{{TOTAL_RANGE}}</p>
+      <p class="pdf-doc__total-avg">Mittelwert ca. {{TOTAL_AVG}}</p>
+    </div>
+    <div class="pdf-doc__total-badge">
+      <span>&#9889;</span>
+      <span class="pdf-doc__total-badge-text">Unverbindlich</span>
+    </div>
   </div>
 
+  <!-- ── DISCLAIMER ────────────────────────────────────────── -->
   <aside class="pdf-doc__disclaimer">
-    <p class="pdf-doc__disclaimer-title">Wichtiger Hinweis</p>
-    <p>Diese Kostenschätzung ist <strong>unverbindlich</strong> und basiert auf groben Richtwerten für Elektroarbeiten (inkl. Material &amp; Arbeit).</p>
-    <p>Der endgültige Festpreis ist erst nach Vor-Ort-Aufmaß, Untergrundprüfung und finaler Materialwahl möglich.</p>
+    <p class="pdf-doc__disclaimer-title">&#9432; Wichtiger Hinweis</p>
+    <p>Diese Kostenschätzung ist <strong>unverbindlich</strong> und basiert auf Richtwerten für Elektroarbeiten (inkl. Material &amp; Arbeit).</p>
+    <p>Der endgültige Festpreis ist erst nach Vor-Ort-Aufmaß und finaler Materialwahl möglich.</p>
     <p>Handwerkerleistungen sind steuerlich absetzbar (§&nbsp;35a EStG).</p>
   </aside>
 
+  <!-- ── FOOTER STRIP ──────────────────────────────────────── -->
   <footer class="pdf-doc__footer">
-    <div>
-      <strong>Kontakt</strong>
-      <p>{{TELEFON}}<br>{{EMAIL}}</p>
-    </div>
-    <div>
-      <strong>Anschrift</strong>
-      <p>{{ADRESSE}}</p>
+    <div class="pdf-doc__footer-inner">
+      <div class="pdf-doc__footer-col">
+        <span class="pdf-doc__footer-label">Telefon</span>
+        <span class="pdf-doc__footer-value">{{TELEFON}}</span>
+      </div>
+      <div class="pdf-doc__footer-col">
+        <span class="pdf-doc__footer-label">E-Mail</span>
+        <span class="pdf-doc__footer-value">{{EMAIL}}</span>
+      </div>
+      <div class="pdf-doc__footer-col">
+        <span class="pdf-doc__footer-label">Anschrift</span>
+        <span class="pdf-doc__footer-value">{{ADRESSE}}</span>
+      </div>
+      <div class="pdf-doc__footer-col pdf-doc__footer-col--right">
+        <span class="pdf-doc__footer-domain">{{DOMAIN}}</span>
+        <span class="pdf-doc__footer-validity">Gültig 30 Tage</span>
+      </div>
     </div>
   </footer>
 
-  <p class="pdf-doc__validity">Gültigkeit dieser Schätzung: 30 Tage · {{DOMAIN}}</p>
 </article>

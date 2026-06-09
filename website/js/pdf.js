@@ -83,7 +83,7 @@
 
   const buildPdfHtml = async (calc) => {
     const template = await loadTemplate();
-    const logoSrc = new URL('images/logo-client.png', window.location.href).href;
+    const logoSrc = new URL('images/logo-removebg.png', window.location.href).href;
     const logoOk = await preloadLogo(logoSrc);
 
     const clientName = cfg('name', 'Handwerker');

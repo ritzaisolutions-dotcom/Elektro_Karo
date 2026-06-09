@@ -349,11 +349,16 @@
         if (manager) {
           manager.updateConsent('googleMaps', true);
           manager.saveAndApplyConsents();
+          return;
         }
-      } else {
-        mapConsentOverlay.style.display = 'none';
-        realMapContainer.style.display = 'block';
-        mountMapIframe();
+      }
+      if (window.klaro && typeof window.klaro.show === 'function') {
+        window.klaro.show();
+        return;
+      }
+      const mapNote = mapConsentOverlay?.querySelector('.kontakt-map__overlay-note');
+      if (mapNote) {
+        mapNote.textContent = 'Cookie-Einstellungen werden geladen. Bitte laden Sie die Seite neu oder öffnen Sie die Datenschutzeinstellungen.';
       }
     });
   }
@@ -633,25 +638,28 @@
     });
   }
 
-  /* === REVIEWS CAROUSEL === */
-  const reviewsTrack = document.getElementById('reviewsTrack');
-  const reviewsPrev = document.getElementById('reviewsPrev');
-  const reviewsNext = document.getElementById('reviewsNext');
-  const reviewsDotsContainer = document.getElementById('reviewsDots');
-  
-  if (reviewsTrack && reviewsPrev && reviewsNext && reviewsDotsContainer) {
-    const cards = Array.from(reviewsTrack.querySelectorAll('.bewertung-card'));
+  /* === REVIEWS CAROUSEL (init after reviews.js renders cards) === */
+  let reviewsCarouselResizeBound = false;
+
+  window.initReviewsCarousel = () => {
+    const reviewsTrack = document.getElementById('reviewsTrack');
+    const reviewsPrev = document.getElementById('reviewsPrev');
+    const reviewsNext = document.getElementById('reviewsNext');
+    const reviewsDotsContainer = document.getElementById('reviewsDots');
+    if (!reviewsTrack || !reviewsPrev || !reviewsNext || !reviewsDotsContainer) return;
+
+    const cards = () => Array.from(reviewsTrack.querySelectorAll('.bewertung-card'));
     let currentIndex = 0;
     let autoplayInterval;
-    
+
     const getVisibleCount = () => {
       if (window.innerWidth >= 1024) return 3;
       if (window.innerWidth >= 768) return 2;
       return 1;
     };
-    
-    const getMaxIndex = () => Math.max(0, cards.length - getVisibleCount());
-    
+
+    const getMaxIndex = () => Math.max(0, cards().length - getVisibleCount());
+
     const createDots = () => {
       reviewsDotsContainer.innerHTML = '';
       const dotsCount = getMaxIndex() + 1;
@@ -667,109 +675,98 @@
         reviewsDotsContainer.appendChild(dot);
       }
     };
-    
+
     const updateCarousel = () => {
       currentIndex = Math.min(currentIndex, getMaxIndex());
-      const card = cards[0];
+      const card = cards()[0];
       if (!card) return;
-      
+
       const cardStyle = window.getComputedStyle(card);
       const cardWidth = card.getBoundingClientRect().width;
       const marginRight = parseFloat(cardStyle.marginRight) || 0;
       const stepWidth = cardWidth + marginRight;
-      
+
       reviewsTrack.style.transform = `translateX(${-currentIndex * stepWidth}px)`;
-      
+
       const dots = Array.from(reviewsDotsContainer.querySelectorAll('.carousel-dot'));
       dots.forEach((dot, idx) => {
         dot.classList.toggle('carousel-dot--active', idx === currentIndex);
       });
     };
-    
+
     const slideNext = () => {
       const maxIdx = getMaxIndex();
-      if (currentIndex >= maxIdx) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
+      currentIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
       updateCarousel();
     };
-    
+
     const slidePrev = () => {
       const maxIdx = getMaxIndex();
-      if (currentIndex <= 0) {
-        currentIndex = maxIdx;
-      } else {
-        currentIndex--;
-      }
+      currentIndex = currentIndex <= 0 ? maxIdx : currentIndex - 1;
       updateCarousel();
     };
-    
-    reviewsNext.addEventListener('click', () => {
-      slideNext();
-      resetAutoplay();
-    });
-    
-    reviewsPrev.addEventListener('click', () => {
-      slidePrev();
-      resetAutoplay();
-    });
-    
-    let startX = 0;
-    let isSwiping = false;
-    
-    reviewsTrack.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isSwiping = true;
-    }, { passive: true });
-    
-    reviewsTrack.addEventListener('touchmove', (e) => {
-      if (!isSwiping) return;
-      const diffX = startX - e.touches[0].clientX;
-      if (Math.abs(diffX) > 50) {
-        if (diffX > 0) {
-          slideNext();
-        } else {
-          slidePrev();
-        }
-        isSwiping = false;
-        resetAutoplay();
-      }
-    }, { passive: true });
-    
-    reviewsTrack.addEventListener('touchend', () => {
-      isSwiping = false;
-    });
-    
+
     const startAutoplay = () => {
+      clearInterval(autoplayInterval);
+      if (cards().length <= getVisibleCount()) return;
       autoplayInterval = setInterval(slideNext, 6000);
     };
-    
+
     const resetAutoplay = () => {
       clearInterval(autoplayInterval);
       startAutoplay();
     };
-    
-    const carouselContainer = document.querySelector('.bewertungen-carousel-container');
-    if (carouselContainer) {
-      carouselContainer.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-      carouselContainer.addEventListener('mouseleave', startAutoplay);
+
+    if (reviewsTrack.dataset.carouselInit !== '1') {
+      reviewsNext.onclick = () => { slideNext(); resetAutoplay(); };
+      reviewsPrev.onclick = () => { slidePrev(); resetAutoplay(); };
+
+      let startX = 0;
+      let isSwiping = false;
+
+      reviewsTrack.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+      }, { passive: true });
+
+      reviewsTrack.addEventListener('touchmove', (e) => {
+        if (!isSwiping) return;
+        const diffX = startX - e.touches[0].clientX;
+        if (Math.abs(diffX) > 50) {
+          if (diffX > 0) slideNext();
+          else slidePrev();
+          isSwiping = false;
+          resetAutoplay();
+        }
+      }, { passive: true });
+
+      reviewsTrack.addEventListener('touchend', () => { isSwiping = false; });
+
+      const carouselContainer = document.getElementById('reviewsCarouselWrap');
+      if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+        carouselContainer.addEventListener('mouseleave', startAutoplay);
+      }
+
+      if (!reviewsCarouselResizeBound) {
+        reviewsCarouselResizeBound = true;
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            if (typeof window.initReviewsCarousel === 'function') window.initReviewsCarousel();
+          }, 150);
+        });
+      }
+
+      reviewsTrack.dataset.carouselInit = '1';
     }
-    
+
+    currentIndex = 0;
     createDots();
     updateCarousel();
     startAutoplay();
-    
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(() => {
-        createDots();
-        updateCarousel();
-      }, 150);
-    });
-  }
+  };
 
   const loadKlaro = () => {
     if (!document.getElementById('klaro') || document.querySelector('script[data-klaro-loader]')) return;

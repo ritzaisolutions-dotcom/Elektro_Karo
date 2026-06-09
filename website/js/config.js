@@ -1,7 +1,7 @@
 // ============================================================
 //  HANDWERKER TEMPLATE — Elektro Karo
 //  Alle kundespezifischen Werte hier eintragen.
-//  Bilder: logo-client.png, favicon-client.png, hero-video.mp4, ref_*.jpg
+//  Bilder: logo-removebg.png, favicon-client.png, hero-video.mp4, ref_*.jpg
 // ============================================================
 const CLIENT = {
   // ── FIRMA ──────────────────────────────────────────────────
@@ -39,11 +39,12 @@ const CLIENT = {
   terminVariante: "rueckruf",
 
   // ── FORMULARE ──────────────────────────────────────────────
-  formularModus: "web3forms",
+  formularModus: "mailto",
 
   // ── GOOGLE ─────────────────────────────────────────────────
   googleMapsEmbedUrl:    "",
   googleMapsLink:        "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
+  googlePlaceId:         "",
   googleBewertungsLink:  "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
   googleBewertungAnzahl: "18 Bewertungen",
   googleBewertungNote:   "Ausgezeichnet",
@@ -104,7 +105,7 @@ const CLIENT = {
   team3Rolle: "",
   team3Init:  "",
 
-  kostenrechnerAktiv: false,
+  kostenrechnerAktiv: true,
 
   // ── KOSTENRECHNER PREISE (€/m² Richtwerte) ─────────────────
   preise: {

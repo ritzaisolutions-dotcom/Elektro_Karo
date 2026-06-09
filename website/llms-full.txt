@@ -72,11 +72,11 @@ Weitere Leistungen laut Website: Beratung, Planung, Kundendienst, Lichtberechnun
 
 1. **Telefon:** tel:+4915750020222 — schnellster Weg, inkl. Notdienst
 2. **WhatsApp:** https://wa.me/4915750020222
-3. **Rückruf-Formular:** https://elektro-karo.de/#termin (Web3Forms → E-Mail an Inhaber)
-4. **Kontaktformular:** https://elektro-karo.de/#kontakt
-5. **Kostenrechner-Rückruf:** https://elektro-karo.de/#kostenrechner (unverbindlicher Elektro-Richtpreis)
+3. **Rückruf-Formular:** https://elektro-karo.de/#termin (öffnet lokales E-Mail-Programm per mailto)
+4. **Angebot anfragen:** https://elektro-karo.de/#angebot (Telefon, WhatsApp, Rückruf)
+5. **Kontakt & Anfahrt:** https://elektro-karo.de/#kontakt (Adresse, Karte — Kontaktformular derzeit deaktiviert)
 
-Kein Online-Terminkalender (kein Cal.com). Keine erfundenen Preise — verbindliches Angebot nach Besichtigung.
+Kein Online-Terminkalender (kein Cal.com). Kostenrechner derzeit deaktiviert. Verbindliches Angebot nach Besichtigung.
 
 ## FAQ
 
@@ -96,15 +96,13 @@ Ja — Planung, Anmeldung, Montage. Seite: /leistungen/wallbox.html
 Ja — unverbindlich nach Anfrage, telefonisch oder vor Ort.
 
 **Wie läuft eine Anfrage ab?**
-Telefon, WhatsApp, Kontaktformular oder Rückruf-Anfrage → Klärung Umfang → optional Angebot.
-
-## Kostenrechner (Richtwerte, unverbindlich)
-
-Elektro-Richtpreise ca. 95–125 €/m² je nach Umfang (Bestand vs. Neuinstallation vs. Smart-Home-ready). Zusatzleistungen: Unterverteiler, Prüfung, Netzwerk. Details auf https://elektro-karo.de/#kostenrechner
+Telefon, WhatsApp oder Rückruf-Anfrage → Klärung Umfang → unverbindliches Angebot auf Wunsch.
 
 ## Wichtige URLs
 
 - Home: https://elektro-karo.de/
+- Angebot: https://elektro-karo.de/#angebot
+- Rückruf: https://elektro-karo.de/#termin
 - Über uns: https://elektro-karo.de/#ueber-uns
 - Bewertungen: https://elektro-karo.de/#bewertungen
 - FAQ (Seite): https://elektro-karo.de/#faq

@@ -85,7 +85,8 @@
     "telephoneUri": "tel:+4915750020222",
     "emailUri": "mailto:info@elektro-karo.de",
     "whatsappUri": "https://wa.me/4915750020222",
-    "contactForm": "https://elektro-karo.de/#kontakt"
+    "contactForm": "https://elektro-karo.de/#termin",
+    "angebotCta": "https://elektro-karo.de/#angebot"
   },
   "seoKeywords": [
     "Elektriker Wiesbaden",
@@ -97,9 +98,10 @@
   ],
   "demoNotes": {
     "isDemoSite": true,
-    "reviewsSource": "https://elektro-karo.de/",
-    "noInventedRatings": false,
-    "reviewsNote": "Google reviews sourced from public website content"
+    "reviewsSource": "https://elektro-karo.de/api/reviews",
+    "reviewsFallback": "https://elektro-karo.de/data/google-reviews.json",
+    "noInventedRatings": true,
+    "reviewsNote": "Up to 5 reviews via Google Places API (New), sorted newest-first server-side; total count from userRatingCount"
   },
   "aeo": {
     "lastUpdated": "2026-06-09",

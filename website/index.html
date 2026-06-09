@@ -38,7 +38,8 @@
   <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/pdf-kalkulation.css">
+  <link rel="stylesheet" href="css/pdf-kalkulation.css" id="pdfCalcCss" media="none" onload="if(typeof CLIENT!=='undefined'&&CLIENT.kostenrechnerAktiv!==false)this.media='all'">
+  <script>if(typeof CLIENT!=='undefined'&&CLIENT.kostenrechnerAktiv!==false){var _p=document.getElementById('pdfCalcCss');if(_p)_p.media='all';}</script>
 
   <!-- ═══════════════════════════════════════════════════════
        Template-Erweiterungen: WhatsApp FAB, Termin-Varianten
@@ -96,17 +97,43 @@
       width: 100%;
       justify-content: center;
     }
+    .hero__notdienst .inline-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .hero__notdienst .inline-link:hover {
+      color: var(--accent-hover, #ffc04d);
+      text-decoration: underline;
+    }
     .hero__notdienst {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       margin-top: var(--sp-3);
-      padding: .35rem .85rem;
-      border-radius: var(--r-md);
-      background: rgba(245, 166, 35, .15);
-      border: 1px solid rgba(245, 166, 35, .45);
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      background: rgba(245, 166, 35, .12);
+      border: 1px solid rgba(245, 166, 35, .4);
       color: #ffc04d;
-      font-size: var(--fs-sm);
+      font-size: var(--fs-xs);
       font-weight: 600;
-      letter-spacing: .02em;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .hero__notdienst::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f5a623;
+      box-shadow: 0 0 6px #f5a623;
+      animation: pulse-dot 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
     }
     .termin-rueckruf__ctas {
       display: flex;
@@ -399,7 +426,7 @@
   <nav class="nav" id="mainNav" aria-label="Hauptnavigation">
     <div class="nav__inner">
       <a href="#hero" class="nav__wordmark" aria-label="Elektro Karo, Startseite">
-        <img class="nav__logo" src="images/logo-client.png" alt="" width="48" height="48" decoding="async" fetchpriority="high" aria-hidden="true">
+        <img class="nav__logo" src="images/logo-removebg.png" alt="" width="48" height="48" decoding="async" fetchpriority="high" aria-hidden="true">
         <span class="nav__wordmark-text">
           <span class="nav__wordmark-name" data-config="nameKurz">Karo</span>
           <span class="nav__wordmark-sub">Elektro · Wiesbaden</span>
@@ -481,7 +508,7 @@
       <div class="hero__content">
         <div class="hero__center">
           <div class="hero__brand" aria-hidden="true">
-            <img class="hero__logo" src="images/logo-client.png" alt="" width="160" height="160" decoding="async">
+            <img class="hero__logo" src="images/logo-removebg.png" alt="" width="160" height="160" decoding="async">
           </div>
 
           <p class="hero__eyebrow" data-config="heroEyebrow">Elektromeister · Wiesbaden</p>
@@ -498,7 +525,7 @@
             </a>
           </div>
 
-          <p class="hero__notdienst">24h-Notdienst · <span data-config="telefonDisplay">01575 / 0020222</span></p>
+          <p class="hero__notdienst">24h-Notdienst · <a href="tel:#" data-config-href="tel" class="inline-link"><span data-config="telefonDisplay">01575 / 0020222</span></a></p>
         </div>
 
         <p class="hero__credentials">
@@ -574,7 +601,191 @@
 
 
   <!-- ╔════════════════════════════════╗ -->
-  
+  <!-- ║  KOSTENRECHNER                 ║ -->
+  <!-- ╚════════════════════════════════╝ -->
+  <section class="section section--calc-premium" id="kostenrechner">
+    <div class="container">
+      <header class="section-header section-header--center reveal">
+        <span class="section-label">Kostenrechner</span>
+        <h2 class="section-h2">Ihr Preisrahmen in 3&nbsp;Minuten.</h2>
+        <p class="section-sub">Unverbindlich und kostenlos. Den verbindlichen Festpreis erhalten Sie nach Besichtigung vor Ort.</p>
+      </header>
+
+      <div class="calc-wizard reveal reveal-delay-1" id="calcWizard">
+
+        <div class="calc-steps" aria-label="Fortschritt" aria-hidden="true">
+          <span class="calc-step-dot calc-step-dot--active" data-step-label="Projektart"></span>
+          <span class="calc-step-dot" data-step-label="Fläche"></span>
+          <span class="calc-step-dot" data-step-label="Extras"></span>
+          <span class="calc-step-dot" data-step-label="Ergebnis"></span>
+        </div>
+
+        <form id="calcForm" class="calc-form" novalidate>
+
+          <!-- ── STEP 1: Projektart ── -->
+          <section class="calc-panel" data-step="1">
+            <h3 class="calc-panel__title">Was planen Sie?</h3>
+            <div class="calc-card-grid">
+              <button type="button" class="calc-choice" data-field="projectType" data-value="bath">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </span>
+                <span class="calc-choice__title" data-config="leistung1Titel">Elektroinstallation</span>
+                <span class="calc-choice__desc">Neu- und Bestandsinstallation in Wohn- und Geschäftsräumen.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="floor">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </span>
+                <span class="calc-choice__title">Renovierung &amp; Reparatur</span>
+                <span class="calc-choice__desc">Leitungen, Unterverteiler und punktuelle Instandsetzung.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="terrace">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </span>
+                <span class="calc-choice__title">Smart Home / KNX</span>
+                <span class="calc-choice__desc">Automation, Lichtszenen und intelligente Gebäudesteuerung.</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="projectType" data-value="repair">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <span class="calc-choice__title">Sicherheit &amp; Netzwerk</span>
+                <span class="calc-choice__desc">Video, Alarm, LAN/WLAN und Prüfarbeiten.</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ── STEP 2: Fläche + Material ── -->
+          <section class="calc-panel" data-step="2" hidden>
+            <h3 class="calc-panel__title">Fläche und Ausführung</h3>
+            <div class="calc-area-row">
+              <label class="calc-area-label" for="calcAreaInput">
+                <span class="calc-area-label__text">Fläche des Projekts</span>
+                <div class="calc-area-field">
+                  <input id="calcAreaInput" type="number" name="area" min="1" max="500" value="12" required autocomplete="off">
+                  <span class="calc-area-field__unit">m²</span>
+                </div>
+              </label>
+            </div>
+            <div class="calc-card-grid calc-card-grid--3">
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="standard">
+                <span class="calc-choice__title">Basisinstallation</span>
+                <span class="calc-choice__desc">Elektroarbeiten im Bestand, ca. 95 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="premium">
+                <span class="calc-choice__title">Neuinstallation</span>
+                <span class="calc-choice__desc">Hochwertige Leitungsführung, ca. 125 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-field="materialClass" data-value="xl">
+                <span class="calc-choice__title">Smart-Home-ready</span>
+                <span class="calc-choice__desc">Verkabelung für Automation, ca. 110 €/m²</span>
+              </button>
+            </div>
+            <p id="calcStep2Error" class="calc-error" hidden>Bitte Fläche eingeben und Material wählen.</p>
+          </section>
+
+          <!-- ── STEP 3: Zusatzleistungen ── -->
+          <section class="calc-panel" data-step="3" hidden>
+            <h3 class="calc-panel__title">Zusatzleistungen</h3>
+            <p class="calc-step-sub">Optional — nichts ausgewählt? Einfach weiterklicken.</p>
+            <div class="calc-card-grid calc-card-grid--3">
+              <button type="button" class="calc-choice" data-extra="debris">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                </span>
+                <span class="calc-choice__title">Unterverteiler / Sicherungskasten</span>
+                <span class="calc-choice__desc">+ ca. 45 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-extra="waterproofing">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </span>
+                <span class="calc-choice__title">Prüfung &amp; Dokumentation</span>
+                <span class="calc-choice__desc">+ ca. 12 €/m²</span>
+              </button>
+              <button type="button" class="calc-choice" data-extra="floorHeating">
+                <span class="calc-choice__icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+                </span>
+                <span class="calc-choice__title">Netzwerk-Verkabelung</span>
+                <span class="calc-choice__desc">+ ca. 18 €/m²</span>
+              </button>
+            </div>
+          </section>
+
+        </form>
+
+        <!-- ── STEP 4: Ergebnis (außerhalb des <form>) ── -->
+        <section class="calc-panel" data-step="4" hidden>
+          <div id="calcResult" hidden>
+            <div class="calc-total-box">
+              <span class="calc-total-label">Ihr geschätzter Preisrahmen</span>
+              <p id="calcTotal" class="calc-total-price"></p>
+              <p class="calc-summary" id="calcSummaryText"></p>
+              <div class="calc-disclaimer">
+                <p>Unverbindlich · inkl. Material &amp; Arbeit · Festpreis nach Besichtigung.</p>
+                <p><strong>Hinweis:</strong> Richtwert nach branchenüblichen Mittelwerten. Endpreis nur nach Vor-Ort-Aufmaß möglich. Handwerkerleistungen sind steuerlich absetzbar (§&nbsp;35a EStG).</p>
+              </div>
+            </div>
+
+            <div id="calcResultDetail" class="calc-result-detail">
+              <h4 class="calc-result-detail__title">Kostenaufschlüsselung</h4>
+              <ul id="calcBreakdown" class="calc-breakdown-list"></ul>
+              <div class="calc-actions">
+                <button type="button" id="calcPdfBtn" class="btn btn--secondary">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                  PDF herunterladen
+                </button>
+                <a href="#termin" class="btn btn--primary">Rückruf anfragen</a>
+              </div>
+            </div>
+
+            <div class="calc-callback calc-callback--prominent">
+              <h4 class="calc-callback__title">Jetzt Rückruf anfordern</h4>
+              <p class="calc-callback__intro">Geben Sie Ihre Nummer an — wir rufen mit Ihrem Ergebnis zurück und klären alles Weitere persönlich, in der Regel innerhalb von 24&nbsp;Stunden.</p>
+              <form id="calcCallbackForm" class="calc-callback-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+                <input type="hidden" name="access_key" value="">
+                <input type="hidden" name="subject" id="calcCallbackSubject" value="RÜCKRUF Kostenrechner">
+                <div class="calc-phone-row">
+                  <label class="calc-phone-label" for="calc_callback_phone">
+                    <span class="calc-phone-label__text">Telefonnummer für Rückruf</span>
+                    <input id="calc_callback_phone" name="phone" type="tel" required autocomplete="tel" placeholder="z. B. 01575 / 0020222">
+                  </label>
+                  <button type="submit" id="calcCallbackSubmitBtn" class="btn btn--primary btn--lg calc-callback__submit">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 14.1 19.79 19.79 0 0 1 1.12 5.43 2 2 0 0 1 3.1 3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91A16 16 0 0 0 14 15.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Rückruf anfordern
+                  </button>
+                </div>
+                <label class="kontakt-form__check" for="calc_callback_dsgvo">
+                  <input id="calc_callback_dsgvo" name="dsgvo_consent" type="checkbox" required>
+                  <span>Ich willige in die Verarbeitung meiner Telefonnummer zur Rückruf-Kontaktaufnahme ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
+                </label>
+                <label class="kontakt-form__honeypot" for="calc_callback_website">
+                  Website
+                  <input id="calc_callback_website" name="website" type="text" tabindex="-1" autocomplete="off">
+                </label>
+              </form>
+              <p id="calcCallbackResult" class="calc-callback-result" aria-live="polite" hidden></p>
+              <a href="#kontakt" class="calc-callback-kontakt-link">Ausführliche Anfrage im Kontaktformular</a>
+            </div>
+            <button type="button" id="calcResetBtn" class="calc-reset" hidden>← Neu berechnen</button>
+          </div>
+        </section>
+
+        <div class="calc-nav">
+          <button type="button" id="calcBackBtn" class="btn btn--ghost" hidden>← Zurück</button>
+          <button type="button" id="calcNextBtn" class="btn btn--primary">Weiter →</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ╔════════════════════════════════╗ -->
+
 
   <!-- ║  BEWERTUNGEN                   ║ -->
   <!-- ╚════════════════════════════════╝ -->
@@ -583,96 +794,39 @@
       <header class="section-header section-header--center reveal">
         <span class="section-label">Was Kunden sagen</span>
         <h2 class="section-h2">Das sagen unsere Kunden.</h2>
-        <p class="section-sub">Echte Google-Bewertungen — Quelle: Google-Profil Elektro Karo.</p>
+        <p class="section-sub">Echte Google-Bewertungen — aktualisiert über Google Places API.</p>
       </header>
 
-      <div class="bewertungen-carousel-container reveal">
-        <button class="carousel-btn carousel-btn--prev" aria-label="Vorherige Bewertung" id="reviewsPrev">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        </button>
-
-        <div class="carousel-track-container">
-          <div class="carousel-track" id="reviewsTrack">
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c1">A</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Andreas</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Hatte schon viele Elektriker, Herr Karo war bisher der beste. Sehr professionell, schnell und bei den getätigten Arbeiten nichts auszusetzen. Alle Wünsche wurden geplant und fachgerecht ausgeführt.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c2">K</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Klaus Schwarz</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Top Elektro Firma! Kann ich uneingeschränkt empfehlen. Hohes Fachwissen, saubere Arbeit, faire Preise.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c3">V</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Vanessa Weyer</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Sehr gute Arbeit geleistet, ging professionell und schnell. Alles sauber und fachmännisch perfekt erledigt. Eine absolute Empfehlung. Preis-Leistung absolut top.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c4">M</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Mattias Gaurie</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Sehr kompetentes Team von Elektrikern, einwandfreie Arbeiten, freundlich und gewissenhaft. Immer wieder gerne.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c5">G</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Giselle Romano</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Herr Karo und sein Team sind sehr freundlich und auch kurzfristig erreichbar. Die Arbeit wurde zügig erledigt und die Baustelle sauber hinterlassen. Top Leistung — auf jeden Fall weiterempfehlen.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-
-            <article class="bewertung-card">
-              <div class="bewertung-card__header">
-                  <div class="bewertung-card__avatar avatar--c1">Q</div>
-                <div class="bewertung-card__meta">
-                  <div class="bewertung-card__author">Qutaiba Althalabi</div>
-                  <div class="bewertung-card__stars">★★★★★</div>
-                </div>
-              </div>
-              <p class="bewertung-card__text">Vielen Dank! Sehr schnelle Reaktion und freundlich.</p>
-              <a class="bewertung-card__more" href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer">Vollständige Bewertung auf Google</a>
-            </article>
-          </div>
+      <div class="google-reviews-widget reveal" id="googleReviewsWidget" aria-live="polite">
+        <div class="google-reviews-summary" id="reviewsSummary" hidden>
+          <p class="google-reviews-summary__label" id="reviewsSummaryLabel">Ausgezeichnet</p>
+          <div class="google-reviews-summary__stars" id="reviewsSummaryStars" aria-hidden="true">★★★★★</div>
+          <p class="google-reviews-summary__count" id="reviewsSummaryCount">Basierend auf 18 Bewertungen</p>
+          <p class="google-reviews-summary__brand" aria-label="Google">
+            <span class="google-reviews-summary__brand-text" aria-hidden="true">
+              <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+            </span>
+          </p>
         </div>
 
-        <button class="carousel-btn carousel-btn--next" aria-label="Nächste Bewertung" id="reviewsNext">
-          <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-        </button>
-      </div>
+        <p class="google-reviews-loading" id="reviewsLoading">Bewertungen werden geladen…</p>
 
-      <div class="carousel-dots" id="reviewsDots"></div>
+        <div class="bewertungen-carousel-container" id="reviewsCarouselWrap" hidden>
+          <button class="carousel-btn carousel-btn--prev" aria-label="Vorherige Bewertung" id="reviewsPrev">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="reviewsTrack" data-reviews-track></div>
+          </div>
+
+          <button class="carousel-btn carousel-btn--next" aria-label="Nächste Bewertung" id="reviewsNext">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="reviewsDots"></div>
+      </div>
 
       <p class="reviews-cta-wrap reveal">
         <a href="#"
@@ -680,6 +834,10 @@
            target="_blank"
            rel="noopener noreferrer"
            class="reviews-google-link">Google-Bewertung schreiben</a>
+      </p>
+      <p class="google-reviews-attribution reveal">
+        Bewertungen bereitgestellt von <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google</a>.
+        Daten werden serverseitig über die Google Places API geladen und zwischengespeichert.
       </p>
     </div>
   </section>
@@ -730,17 +888,17 @@
           <div class="familie-docs reveal reveal-delay-3" hidden>
             <div class="familie-doc" id="dokBild1">
               <picture>
-                <img src="images/logo-client.png" alt="Meisterbrief Malergeschäft Hans Schmitt e.K." width="720" height="1080" loading="lazy" decoding="async">
+                <img src="images/logo-removebg.png" alt="Meisterbrief Elektro Karo" width="720" height="1080" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="familie-doc" id="dokBild2">
               <picture>
-                <img src="images/logo-client.png" alt="Zertifikat Malergeschäft Hans Schmitt e.K." width="469" height="700" loading="lazy" decoding="async">
+                <img src="images/logo-removebg.png" alt="Zertifikat Elektro Karo" width="469" height="700" loading="lazy" decoding="async">
               </picture>
             </div>
             <div class="familie-doc" id="dokBild3">
               <picture>
-                <img src="images/logo-client.png" alt="Urkunde Malergeschäft Hans Schmitt e.K." width="465" height="700" loading="lazy" decoding="async">
+                <img src="images/logo-removebg.png" alt="Urkunde Elektro Karo" width="465" height="700" loading="lazy" decoding="async">
               </picture>
             </div>
           </div>
@@ -823,7 +981,7 @@
       <header class="section-header section-header--center reveal">
         <span class="section-label">Netzwerk</span>
         <h2 class="section-h2">Unsere Partner.</h2>
-        <p class="section-sub" data-config="partnerIntro">Gemeinsam mit regionalen Fachbetrieben und bewährten Systempartnern in Koblenz und der Region.</p>
+        <p class="section-sub" data-config="partnerIntro">Gemeinsam mit regionalen Fachbetrieben und bewährten Systempartnern in Wiesbaden und der Region.</p>
       </header>
       <div class="partner-track-wrap reveal" id="partnerCarousel" data-partner-track></div>
     </div>
@@ -1162,7 +1320,7 @@
 
   <!-- ║  ANGEBOT CTA                  ║ -->
   <!-- ╚════════════════════════════════╝ -->
-  <section class="section section--alt" id="angebot" hidden>
+  <section class="section section--alt" id="angebot">
     <div class="container">
       <header class="section-header section-header--center reveal">
         <span class="section-label">Angebot</span>
@@ -1182,148 +1340,6 @@
 
 
 
-  <!-- ║  KOSTENRECHNER                 ║ -->
-  <!-- ╚════════════════════════════════╝ -->
-  <!-- Sichtbarkeit gesteuert durch CLIENT.kostenrechnerAktiv in config.js -->
-  <section class="section section--alt" id="kostenrechner">
-    <div class="container">
-      <header class="section-header reveal section-header--center">
-        <span class="section-label">Kostenrechner</span>
-        <h2 class="section-h2">Ihr Preisrahmen in 4 interaktiven Schritten.</h2>
-        <p class="section-sub">In 4 Schritten zum Elektro-Richtpreis – unverbindlich und kostenlos. Der verbindliche Preis folgt nach Besichtigung.</p>
-      </header>
-
-      <div class="calc-wizard reveal reveal-delay-1" id="calcWizard">
-        <div class="calc-steps" aria-hidden="true">
-          <span class="calc-step-dot calc-step-dot--active"></span>
-          <span class="calc-step-dot"></span>
-          <span class="calc-step-dot"></span>
-          <span class="calc-step-dot"></span>
-        </div>
-
-        <form id="calcForm" class="calc-form" novalidate>
-          <section class="calc-panel" data-step="1">
-            <h3>1) Projektart wählen</h3>
-            <div class="calc-card-grid">
-              <button type="button" class="calc-choice" data-field="projectType" data-value="bath">
-                <span class="calc-choice__title">Elektroinstallation</span>
-                <span class="calc-choice__desc">Neu- und Bestandsinstallation in Wohn- und Geschäftsräumen.</span>
-              </button>
-              <button type="button" class="calc-choice" data-field="projectType" data-value="floor">
-                <span class="calc-choice__title">Renovierung &amp; Reparatur</span>
-                <span class="calc-choice__desc">Leitungen, Unterverteiler und punktuelle Instandsetzung.</span>
-              </button>
-              <button type="button" class="calc-choice" data-field="projectType" data-value="terrace">
-                <span class="calc-choice__title">Smart Home / KNX</span>
-                <span class="calc-choice__desc">Automation, Lichtszenen und intelligente Gebäudesteuerung.</span>
-              </button>
-              <button type="button" class="calc-choice" data-field="projectType" data-value="repair">
-                <span class="calc-choice__title">Sicherheit &amp; Netzwerk</span>
-                <span class="calc-choice__desc">Video, Alarm, LAN/WLAN und Prüfarbeiten.</span>
-              </button>
-            </div>
-          </section>
-
-          <section class="calc-panel" data-step="2" hidden>
-            <h3>2) Fläche und Material</h3>
-            <div class="calc-grid">
-              <label>Fläche (m²)
-                <input type="number" name="area" min="1" max="500" value="12" required>
-              </label>
-            </div>
-            <div class="calc-card-grid calc-card-grid--3">
-              <button type="button" class="calc-choice" data-field="materialClass" data-value="standard">
-                <span class="calc-choice__title">Basisinstallation</span>
-                <span class="calc-choice__desc">Elektroarbeiten im Bestand, ca. 95 €/m²</span>
-              </button>
-              <button type="button" class="calc-choice" data-field="materialClass" data-value="premium">
-                <span class="calc-choice__title">Neuinstallation</span>
-                <span class="calc-choice__desc">Hochwertige Leitungsführung, ca. 125 €/m²</span>
-              </button>
-              <button type="button" class="calc-choice" data-field="materialClass" data-value="xl">
-                <span class="calc-choice__title">Smart-Home-ready</span>
-                <span class="calc-choice__desc">Verkabelung für Automation, ca. 110 €/m²</span>
-              </button>
-            </div>
-            <p id="calcStep2Error" class="calc-error" hidden>Bitte Fläche eingeben und Material wählen.</p>
-          </section>
-
-          <section class="calc-panel" data-step="3" hidden>
-            <h3>3) Zusatzleistungen</h3>
-            <p class="calc-step-sub">Optional – nichts nötig? Einfach weiter.</p>
-            <div class="calc-card-grid calc-card-grid--3">
-              <button type="button" class="calc-choice" data-extra="debris">
-                <span class="calc-choice__title">Unterverteiler / Sicherungskasten</span>
-                <span class="calc-choice__desc">+ ca. 45 €/m²</span>
-              </button>
-              <button type="button" class="calc-choice" data-extra="waterproofing">
-                <span class="calc-choice__title">Prüfung &amp; Dokumentation</span>
-                <span class="calc-choice__desc">+ ca. 12 €/m²</span>
-              </button>
-              <button type="button" class="calc-choice" data-extra="floorHeating">
-                <span class="calc-choice__title">Netzwerk-Verkabelung</span>
-                <span class="calc-choice__desc">+ ca. 18 €/m²</span>
-              </button>
-            </div>
-          </section>
-        </form>
-
-        <section class="calc-panel" data-step="4" hidden>
-          <h3>4) Ihr Ergebnis</h3>
-          <div id="calcResult" class="calc-result" hidden>
-            <p class="calc-summary" id="calcSummaryText"></p>
-            <div class="calc-total-box">
-              <span class="calc-total-label">Geschätzter Preisrahmen:</span>
-              <p id="calcTotal" class="calc-total-price"></p>
-              <div class="calc-total-note calc-disclaimer">
-                <p>Unverbindlich · inkl. Material &amp; Arbeit · Festpreis nach Besichtigung.</p>
-                <p><strong>Wichtiger Hinweis:</strong> Richtwert nach branchenüblichen Mittelwerten. Endpreis nur nach Vor-Ort-Aufmaß möglich.</p>
-                <p>Handwerkerleistungen sind steuerlich absetzbar (§35a EStG).</p>
-              </div>
-            </div>
-
-            <div id="calcResultDetail" class="calc-result-detail">
-              <h4 class="calc-result-detail__title">Detaillierte Kostenaufschlüsselung</h4>
-              <ul id="calcBreakdown" class="calc-breakdown-list"></ul>
-              <div class="calc-actions">
-                <button type="button" id="calcPdfBtn" class="btn btn--secondary">PDF herunterladen</button>
-                <a href="#termin" class="btn btn--primary">Rückruf anfragen</a>
-              </div>
-            </div>
-
-            <div class="calc-callback calc-callback--prominent">
-              <h4 class="calc-callback__title">Rückruf mit Ihrem Preisrahmen</h4>
-              <p class="calc-callback__intro">Geben Sie Ihre Telefonnummer an – wir rufen Sie mit Ihrem Rechnerergebnis zurück, in der Regel innerhalb von 24&nbsp;Stunden.</p>
-              <form id="calcCallbackForm" class="calc-callback-form" action="https://api.web3forms.com/submit" method="post" novalidate>
-                <input type="hidden" name="access_key" value="">
-                <input type="hidden" name="subject" id="calcCallbackSubject" value="RÜCKRUF Kostenrechner">
-                <label for="calc_callback_phone">Telefonnummer für Rückruf
-                  <input id="calc_callback_phone" name="phone" type="tel" required autocomplete="tel" placeholder="z. B. 0151 12345678">
-                </label>
-                <label class="kontakt-form__check" for="calc_callback_dsgvo">
-                  <input id="calc_callback_dsgvo" name="dsgvo_consent" type="checkbox" required>
-                  <span>Ich willige in die Verarbeitung meiner Telefonnummer zur Rückruf-Kontaktaufnahme ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
-                </label>
-                <label class="kontakt-form__honeypot" for="calc_callback_website">
-                  Website
-                  <input id="calc_callback_website" name="website" type="text" tabindex="-1" autocomplete="off">
-                </label>
-                <button type="submit" id="calcCallbackSubmitBtn" class="btn btn--primary calc-callback__submit">Rückruf anfordern</button>
-              </form>
-              <p id="calcCallbackResult" class="calc-callback-result" aria-live="polite" hidden></p>
-              <a href="#kontakt" class="calc-callback-kontakt-link">Ausführliche Anfrage im Kontaktformular</a>
-            </div>
-            <button type="button" id="calcResetBtn" class="calc-reset" hidden>← Neu berechnen</button>
-          </div>
-        </section>
-
-        <div class="calc-nav">
-          <button type="button" id="calcBackBtn" class="btn btn--secondary">Zurück</button>
-          <button type="button" id="calcNextBtn" class="btn btn--primary">Weiter</button>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ╔════════════════════════════════╗ -->
@@ -1418,9 +1434,17 @@
   <div id="pdfExportHost" class="pdf-export-host" aria-hidden="true"></div>
 
   <script src="js/main.js" defer></script>
-  <script src="js/calc.js" defer></script>
-  <script src="js/pdf.js" defer></script>
-  <script src="js/slider.js" defer></script>
+  <script src="js/reviews.js" defer></script>
+  <script>
+    if (typeof CLIENT !== 'undefined' && CLIENT.kostenrechnerAktiv !== false) {
+      ['js/calc.js', 'js/pdf.js'].forEach((src) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.body.appendChild(script);
+      });
+    }
+  </script>
 
 </body>
 </html>

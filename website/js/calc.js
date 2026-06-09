@@ -13,20 +13,20 @@
     projects: (_C.calcProjekte && _C.calcProjekte.length)
       ? _C.calcProjekte
       : [
-          { id: 'bath',    label: 'Innenarbeiten', multi: 1.0 },
-          { id: 'floor',   label: 'Bodenbeläge', multi: 0.9 },
-          { id: 'terrace', label: 'Fassade', multi: 1.3 },
-          { id: 'repair',  label: 'Schimmel & Sanierung', multi: 1.15 }
+          { id: 'bath',    label: 'Elektroinstallation', multi: 1.0 },
+          { id: 'floor',   label: 'Renovierung & Reparatur', multi: 0.85 },
+          { id: 'terrace', label: 'Smart Home / KNX', multi: 1.35 },
+          { id: 'repair',  label: 'Sicherheit & Netzwerk', multi: 1.15 }
         ],
     materials: [
-      { id: 'standard', label: (_C.calcMaterialien?.[0]?.label || 'Standardanstrich'),  pricePerM2: _PREISE.standard  || 18 },
-      { id: 'premium',  label: (_C.calcMaterialien?.[1]?.label || 'Premiumgestaltung'), pricePerM2: _PREISE.premium   || 28 },
-      { id: 'xl',       label: (_C.calcMaterialien?.[2]?.label || 'Tapezieren'),         pricePerM2: _PREISE.xl        || 22 }
+      { id: 'standard', label: (_C.calcMaterialien?.[0]?.label || 'Basisinstallation'),  pricePerM2: _PREISE.standard  || 95 },
+      { id: 'premium',  label: (_C.calcMaterialien?.[1]?.label || 'Neuinstallation'), pricePerM2: _PREISE.premium   || 125 },
+      { id: 'xl',       label: (_C.calcMaterialien?.[2]?.label || 'Smart-Home-ready'), pricePerM2: _PREISE.xl        || 110 }
     ],
     extras: [
-      { id: 'debris',        label: (_C.calcExtras?.[0]?.label || 'Alte Tapete entfernen'), pricePerM2: _PREISE.altbelagEntfernen || 8 },
-      { id: 'waterproofing', label: (_C.calcExtras?.[1]?.label || 'Grundierung & Spachtelung'), pricePerM2: _PREISE.abdichtung || 15 },
-      { id: 'floorHeating',  label: (_C.calcExtras?.[2]?.label || 'Deckenarbeiten'), pricePerM2: _PREISE.fussbodenheizung || 12 }
+      { id: 'debris',        label: (_C.calcExtras?.[0]?.label || 'Unterverteiler / Sicherungskasten'), pricePerM2: _PREISE.altbelagEntfernen || 45 },
+      { id: 'waterproofing', label: (_C.calcExtras?.[1]?.label || 'Prüfung & Dokumentation'), pricePerM2: _PREISE.abdichtung || 12 },
+      { id: 'floorHeating',  label: (_C.calcExtras?.[2]?.label || 'Netzwerk-Verkabelung'), pricePerM2: _PREISE.fussbodenheizung || 18 }
     ],
     range: { minFactor: 0.93, maxFactor: 1.12, roundTo: 10 }
   };
@@ -59,8 +59,14 @@
   const findProject = (id) => CONFIG.projects.find((p) => p.id === id) || CONFIG.projects[0];
   const findMaterial = (id) => CONFIG.materials.find((m) => m.id === id) || CONFIG.materials[0];
 
+  const escapeHtml = (str) => String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
   const createLine = (label, amount) =>
-    `<li><span class="calc-breakdown-label">${label}</span><span class="calc-breakdown-price">${euro(amount)}</span></li>`;
+    `<li><span class="calc-breakdown-label">${escapeHtml(label)}</span><span class="calc-breakdown-price">${euro(amount)}</span></li>`;
 
   const calculate = (data) => {
     const area = Number(data.area || 0);

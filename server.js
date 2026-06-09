@@ -146,6 +146,20 @@ const server = http.createServer(async (req, res) => {
     return handleContact(req, res);
   }
 
+  if (req.method === 'GET' && requestUrl.pathname === '/api/reviews') {
+    const reviewsPath = path.join(WEBSITE_DIR, 'data', 'google-reviews.json');
+    try {
+      const raw = await fsp.readFile(reviewsPath, 'utf8');
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'public, max-age=300'
+      });
+      return res.end(raw);
+    } catch {
+      return sendJson(res, 503, { error: 'Fallback reviews JSON fehlt. npm run sync-reviews' });
+    }
+  }
+
   if (req.method === 'GET' || req.method === 'HEAD') {
     let pathname = requestUrl.pathname;
     try {

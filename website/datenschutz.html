@@ -16,7 +16,7 @@
   <nav class="nav nav--scrolled" id="mainNav" aria-label="Hauptnavigation">
     <div class="nav__inner">
       <a href="index.html#hero" class="nav__wordmark" aria-label="Elektro Karo, Startseite">
-        <img class="nav__logo" src="images/logo-client.png" alt="" width="48" height="48" decoding="async" aria-hidden="true">
+        <img class="nav__logo" src="images/logo-removebg.png" alt="" width="48" height="48" decoding="async" aria-hidden="true">
         <span class="nav__wordmark-text">
           <span class="nav__wordmark-name" data-config="nameKurz">Karo</span>
           <span class="nav__wordmark-sub">Elektro · Wiesbaden</span>
@@ -34,7 +34,7 @@
             <li role="none" class="nav__dropdown-divider"><a role="menuitem" href="index.html#leistungen">Übersicht Startseite</a></li>
           </ul>
         </li>
-        <li data-nav-calc hidden><a href="index.html#angebot">Kostenrechner</a></li>
+        <li data-nav-calc hidden><a href="index.html#kostenrechner">Kostenrechner</a></li>
         <li><a href="referenzen.html">Referenzen</a></li>
         <li><a href="team.html">Team</a></li>
         <li><a href="index.html#termin">Anfragen</a></li>
@@ -59,7 +59,7 @@
       <a href="leistungen/sicherheit-netzwerk.html">Sicherheit &amp; Netzwerk</a>
       <a href="index.html#leistungen">Übersicht Startseite</a>
     </details>
-    <a href="index.html#angebot" data-nav-calc hidden>Kostenrechner</a>
+    <a href="index.html#kostenrechner" data-nav-calc hidden>Kostenrechner</a>
     <a href="referenzen.html">Referenzen</a>
     <a href="team.html">Team</a>
     <a href="index.html#termin">Anfragen</a>
@@ -97,8 +97,8 @@
       <p>Die nachfolgenden Verarbeitungen basieren auf dem technisch nachvollziehbaren Ist-Stand des Projekts:</p>
       <ul class="subpage-list">
         <li>Technisch notwendige Speicherung von Einwilligungen im Browser (Klaro, localStorage).</li>
-        <li>Kontaktanfragen über Web3Forms mit clientseitiger Validierung, Honeypot-Feld und zweckgebundener Übermittlung.</li>
-        <li>Kostenrechner-Rückruf: Telefonnummer und Kalkulationsdaten werden nur zur Bearbeitung der Rückruf-Anfrage per Web3Forms übermittelt (keine dauerhafte Speicherung auf dieser Website).</li>
+        <li>Das Kontaktformular auf der Startseite ist derzeit deaktiviert. Anfragen erfolgen per Telefon, WhatsApp, E-Mail oder Rückruf-Formular.</li>
+        <li>Sofern ein Web3Forms-Zugangsschlüssel konfiguriert ist, können Formularanfragen über <strong>Web3Forms</strong> übermittelt werden (clientseitige Validierung, Honeypot-Feld). <strong>Aktuell:</strong> Formulare nutzen <code>mailto</code> (lokales E-Mail-Programm) — siehe Rückruf-Formular.</li>
 
         <li data-datenschutz-termin="calcom">
           Optionale Online-Terminbuchung über den externen Dienst <strong>Cal.com</strong> – nur nach aktiver Einwilligung im Consent-Banner.
@@ -114,6 +114,7 @@
         </li>
 
         <li>Einbindung von Kartenmaterial (<strong>Google Maps</strong>) als externe Ressource – nur nach aktiver Einwilligung.</li>
+        <li>Anzeige von <strong>Google-Bewertungen</strong> auf der Startseite: Texte und Metadaten werden serverseitig über die Google Places API abgerufen, zwischengespeichert und als JSON ausgeliefert. Dabei werden keine personenbezogenen Daten der Website-Besucher an Google übermittelt. Profilbilder von Rezensenten können von Google-Servern geladen werden.</li>
       </ul>
     </section>
 
@@ -122,14 +123,15 @@
       <ul class="subpage-list">
         <li>Art. 6 Abs. 1 lit. f DSGVO für technisch notwendige Bereitstellung der Website und Consent-Speicherung (berechtigtes Interesse).</li>
         <li>Art. 6 Abs. 1 lit. a DSGVO für einwilligungsbasierte Dienste (je nach aktivierter Variante: Cal.com Terminbuchungs-Embed, WhatsApp-Link oder Google Maps).</li>
-        <li>Art. 6 Abs. 1 lit. b DSGVO für vorvertragliche Kommunikation bei Kontaktanfragen, Kostenrechner-Rückrufen und Terminanfragen.</li>
+        <li>Art. 6 Abs. 1 lit. b DSGVO für vorvertragliche Kommunikation bei Rückrufanfragen und direktem Kontakt (Telefon, E-Mail, WhatsApp).</li>
       </ul>
     </section>
 
     <section class="subpage-card">
       <h2>Empfänger und Drittlandbezug</h2>
       <ul class="subpage-list">
-        <li>Kontaktanfragen und Rückruf-Anfragen werden an <strong>Web3Forms</strong> als technischen Dienstleister übermittelt.</li>
+        <li>Rückrufanfragen über das Formular werden über Ihr lokales E-Mail-Programm (<code>mailto</code>) an unsere E-Mail-Adresse übermittelt und in unserem Postfach verarbeitet.</li>
+        <li>Bei konfiguriertem Web3Forms-Zugang können Formularanfragen alternativ an <strong>Web3Forms</strong> übermittelt werden (derzeit nicht aktiv).</li>
 
         <li data-datenschutz-termin="calcom">
           Bei aktivierter Terminbuchung wird eine Verbindung zu <strong>Cal.com</strong> hergestellt. Dabei können personenbezogene Daten (u. a. IP-Adresse, Termindetails) an Cal.com übermittelt werden.
@@ -154,8 +156,8 @@
       <ul class="subpage-list">
         <li>Consent-Daten: bis zum Widerruf bzw. Löschen des Browser-Speichers.</li>
         <li>Kontaktanfragen und Terminanfragen: nur so lange, wie sie zur Bearbeitung der Anfrage und gesetzlicher Nachweispflichten erforderlich sind.</li>
-        <li>Kostenrechner-Berechnungen basieren auf clientseitig gepflegten Vorgaben – es findet keine serverseitige Speicherung der Eingaben statt.</li>
-        <li>Kontaktdaten bei Web3Forms: Speicherdauer gemäß den Anbieterangaben und eigenen Löschfristen (vgl. <a class="inline-link" href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">web3forms.com/privacy</a>).</li>
+        <li>Der Kostenrechner ist derzeit deaktiviert. Bei Aktivierung: Berechnungen erfolgen clientseitig ohne serverseitige Speicherung der Eingaben.</li>
+        <li>Bei Nutzung von Web3Forms: Speicherdauer gemäß Anbieterangaben (vgl. <a class="inline-link" href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">web3forms.com/privacy</a>).</li>
       </ul>
     </section>
 

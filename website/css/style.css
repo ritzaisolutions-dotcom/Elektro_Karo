@@ -612,6 +612,7 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   gap: 10px;
 }
 
+
 .hero__credentials {
   position: absolute;
   left: 50%;
@@ -746,6 +747,249 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .calc-step-dot--active {
   width: 28px;
   background: var(--accent);
+}
+
+/* ── Premium calculator section ─────────────────────────── */
+.section--calc-premium {
+  background: linear-gradient(180deg, var(--primary-mid, #122640) 0%, var(--primary-dark) 100%);
+  position: relative;
+}
+
+/* Step indicator with numbered circles and connecting line */
+.calc-steps {
+  position: relative;
+  align-items: center;
+  padding: var(--sp-2) 0 var(--sp-4);
+}
+
+.calc-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 80px);
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+  margin-top: -8px;
+}
+
+.calc-step-dot {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-dark);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.calc-step-dot::before {
+  content: attr(data-step-label);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  text-transform: uppercase;
+}
+
+.calc-step-dot::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.25s;
+}
+
+.calc-step-dot--active {
+  width: 32px;
+  height: 32px;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.calc-step-dot--active::after {
+  background: var(--primary-dark);
+}
+
+.calc-step-dot--active::before {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.calc-step-dot--done {
+  border-color: var(--accent);
+  background: rgba(245,166,35,0.12);
+}
+
+.calc-step-dot--done::after {
+  width: 10px;
+  height: 7px;
+  border-radius: 0;
+  border-left: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  background: transparent;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+/* Panel title */
+.calc-panel__title {
+  font-family: var(--ff-head);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--sp-4);
+  margin-top: 0;
+}
+
+/* Icon inside choice cards */
+.calc-choice__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  background: rgba(245, 166, 35, 0.08);
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.calc-choice:hover .calc-choice__icon,
+.calc-choice.is-selected .calc-choice__icon {
+  background: rgba(245, 166, 35, 0.18);
+  color: var(--accent-hover, #ffc04d);
+}
+
+/* Area / m² input row */
+.calc-area-row {
+  margin-bottom: var(--sp-4);
+}
+
+.calc-area-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.calc-area-label__text {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.calc-area-field {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 200px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--primary-dark);
+  transition: border-color 0.2s;
+}
+
+.calc-area-field:focus-within {
+  border-color: var(--accent);
+}
+
+.calc-area-field input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: .6rem .8rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  outline: none;
+  width: 0;
+  min-width: 0;
+}
+
+.calc-area-field__unit {
+  padding: .6rem .9rem .6rem .4rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Phone callback row */
+.calc-phone-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-3);
+  align-items: end;
+}
+
+.calc-phone-label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.calc-phone-label__text {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.calc-phone-label input[type="tel"] {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--primary-dark);
+  color: var(--primary);
+  padding: .65rem .9rem;
+  font-size: var(--fs-base);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.calc-phone-label input[type="tel"]:focus {
+  border-color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .calc-phone-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Step indicator mobile */
+@media (max-width: 480px) {
+  .calc-steps::before {
+    display: none;
+  }
+  .calc-step-dot::before {
+    display: none;
+  }
+  .calc-step-dot {
+    width: 24px;
+    height: 24px;
+  }
+  .calc-step-dot--active {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .calc-panel h3 {
@@ -1574,14 +1818,20 @@ a.leistung-card {
 .ref-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
   gap: var(--sp-3);
+}
+
+/* Feature tile: first item spans 2 cols × 2 rows */
+.ref-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .ref-item {
   position: relative;
   border-radius: var(--r-md);
   overflow: hidden;
-  aspect-ratio: 1/1;
   cursor: pointer;
 }
 .ref-item picture {
@@ -1613,24 +1863,30 @@ a.leistung-card {
 .ref-item__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15,14,12,0);
+  background: linear-gradient(to top, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.18) 45%, transparent 100%);
   transition: background var(--t-base);
   display: flex;
   align-items: flex-end;
   padding: var(--sp-3);
 }
 .ref-item__overlay span {
+  font-family: var(--ff-body);
   font-size: var(--fs-xs);
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--t-base), transform var(--t-base);
+  color: var(--accent, #f5a623);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 1;
+  transform: translateY(0);
+  transition: color var(--t-base);
+  background: rgba(10,22,40,0.55);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(245,166,35,0.35);
 }
 .ref-item:hover img { filter: saturate(1); transform: scale(1.04); }
-.ref-item:hover .ref-item__overlay { background: rgba(15,14,12,0.58); }
-.ref-item:hover .ref-item__overlay span { opacity: 1; transform: translateY(0); }
+.ref-item:hover .ref-item__overlay { background: linear-gradient(to top, rgba(10,22,40,0.88) 0%, rgba(10,22,40,0.28) 55%, transparent 100%); }
+.ref-item:hover .ref-item__overlay span { color: var(--accent-hover, #ffc04d); border-color: rgba(255,192,77,0.6); }
 
 .referenzen-filter {
   display: flex;
@@ -1693,15 +1949,165 @@ a.leistung-card {
 .ref-cta { text-align: center; margin-top: var(--sp-6); }
 
 @media (max-width: 900px) {
-  .ref-grid { grid-template-columns: repeat(3, 1fr); }
+  .ref-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+  }
 }
 @media (max-width: 640px) {
-  .ref-grid { grid-template-columns: repeat(2, 1fr); }
+  .ref-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 160px;
+  }
+  .ref-item:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
 }
 
 /* ============================================================
-   BEWERTUNGEN
+   BEWERTUNGEN — Google Reviews Widget
    ============================================================ */
+.google-reviews-widget {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.google-reviews-summary {
+  background: #fff;
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-6);
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto var(--sp-5);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+.google-reviews-summary__label {
+  font-family: var(--ff-head);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  margin: 0 0 var(--sp-2);
+}
+
+.google-reviews-summary__stars {
+  color: #f4b400;
+  font-size: 1.35rem;
+  letter-spacing: 4px;
+  margin-bottom: var(--sp-2);
+}
+
+.google-reviews-summary__count {
+  font-size: var(--fs-sm);
+  color: #5f6368;
+  margin: 0 0 var(--sp-3);
+}
+
+.google-reviews-summary__brand-text {
+  font-family: 'Product Sans', var(--ff-body), Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+.google-reviews-summary__brand-text .g-blue { color: #4285F4; }
+.google-reviews-summary__brand-text .g-red { color: #EA4335; }
+.google-reviews-summary__brand-text .g-yellow { color: #FBBC05; }
+.google-reviews-summary__brand-text .g-green { color: #34A853; }
+
+.google-reviews-loading {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: var(--fs-sm);
+  margin: var(--sp-4) 0;
+}
+
+.google-reviews-loading--error {
+  color: #ffb4a2;
+}
+
+.google-reviews-attribution {
+  text-align: center;
+  font-size: var(--fs-xs);
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: var(--sp-2);
+}
+
+.google-reviews-attribution a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+}
+
+.bewertung-card--google {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e8eaed;
+  color: #202124;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
+}
+
+.bewertung-card--google:hover {
+  box-shadow: 0 4px 16px rgba(32, 33, 36, 0.16);
+}
+
+.bewertung-card__google {
+  position: absolute;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  opacity: 0.85;
+}
+
+.bewertung-card__avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.bewertung-card__date {
+  font-size: var(--fs-xs);
+  color: #5f6368;
+  margin: 0;
+}
+
+.bewertung-card--google .bewertung-card__author {
+  color: #202124;
+}
+
+.bewertung-card--google .bewertung-card__text {
+  color: #3c4043;
+  font-style: normal;
+}
+
+.bewertung-card--google .bewertung-card__more {
+  color: #5f6368;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.avatar--c1 { background: linear-gradient(135deg, #4285F4, #1a73e8); }
+.avatar--c2 { background: linear-gradient(135deg, #34A853, #0d652d); }
+.avatar--c3 { background: linear-gradient(135deg, #FBBC05, #f29900); }
+.avatar--c4 { background: linear-gradient(135deg, #EA4335, #c5221f); }
+.avatar--c5 { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+
+@media (min-width: 768px) {
+  #reviewsTrack .bewertung-card {
+    width: calc((100% - var(--sp-4)) / 2);
+    margin-right: var(--sp-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  #reviewsTrack .bewertung-card {
+    width: calc((100% - (2 * var(--sp-4))) / 3);
+  }
+}
+
 .bewertungen-carousel-container {
   position: relative;
   max-width: 1100px;

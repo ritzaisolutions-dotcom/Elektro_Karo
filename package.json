@@ -6,6 +6,9 @@
   "scripts": {
     "preview": "node server.js",
     "start": "node server.js",
-    "smoke": "node scripts/smoke-test.js"
+    "smoke": "node scripts/smoke-test.js",
+    "sync-reviews": "node scripts/sync-google-reviews.js",
+    "resolve-place-id": "node scripts/resolve-place-id.js",
+    "verify-reviews": "node scripts/verify-reviews.js"
   }
 }

@@ -1,0 +1,55 @@
+{
+  "fetchedAt": "2026-06-09T12:00:00.000Z",
+  "placeName": "Elektro Karo",
+  "rating": 5,
+  "userRatingCount": 18,
+  "ratingLabel": "Ausgezeichnet",
+  "googleMapsUri": "https://maps.app.goo.gl/j8BBCAbZBu7ZSVyQ8",
+  "reviews": [
+    {
+      "author": "Qutaiba Althalabi",
+      "photoUri": "",
+      "authorUri": "",
+      "rating": 5,
+      "text": "Vielen Dank! Sehr schnelle Reaktion und freundlich.",
+      "publishTime": "2025-11-01T10:00:00.000Z",
+      "relativeTime": "vor 7 Monaten"
+    },
+    {
+      "author": "Giselle Romano",
+      "photoUri": "",
+      "authorUri": "",
+      "rating": 5,
+      "text": "Herr Karo und sein Team sind sehr freundlich und auch kurzfristig erreichbar. Die Arbeit wurde zügig erledigt und die Baustelle sauber hinterlassen. Top Leistung — auf jeden Fall weiterempfehlen.",
+      "publishTime": "2024-06-15T10:00:00.000Z",
+      "relativeTime": "vor 1 Jahr"
+    },
+    {
+      "author": "Mattias Gaurie",
+      "photoUri": "",
+      "authorUri": "",
+      "rating": 5,
+      "text": "Sehr kompetentes Team von Elektrikern, einwandfreie Arbeiten, freundlich und gewissenhaft. Immer wieder gerne.",
+      "publishTime": "2023-09-01T10:00:00.000Z",
+      "relativeTime": "vor 2 Jahren"
+    },
+    {
+      "author": "Vanessa Weyer",
+      "photoUri": "",
+      "authorUri": "",
+      "rating": 5,
+      "text": "Sehr gute Arbeit geleistet, ging professionell und schnell. Alles sauber und fachmännisch perfekt erledigt. Eine absolute Empfehlung. Preis-Leistung absolut top.",
+      "publishTime": "2023-06-01T10:00:00.000Z",
+      "relativeTime": "vor 3 Jahren"
+    },
+    {
+      "author": "Klaus Schwarz",
+      "photoUri": "",
+      "authorUri": "",
+      "rating": 5,
+      "text": "Top Elektro Firma! Kann ich uneingeschränkt empfehlen. Hohes Fachwissen, saubere Arbeit, faire Preise.",
+      "publishTime": "2023-03-01T10:00:00.000Z",
+      "relativeTime": "vor 3 Jahren"
+    }
+  ]
+}

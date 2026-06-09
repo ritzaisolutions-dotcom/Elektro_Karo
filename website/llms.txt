@@ -6,7 +6,7 @@ Elektro Karo (Inhaber Jubran Karo, Elektromeister, gegründet 2021) ist in der H
 
 ## Kernseiten
 
-- [Startseite](https://elektro-karo.de/): Hero, Leistungen, Über uns, Referenzen, Google-Bewertungen, Kostenrechner, Kontakt
+- [Startseite](https://elektro-karo.de/): Hero, Leistungen, Über uns, Referenzen, Google-Bewertungen, Angebot-CTA, Kontakt
 - [business-profile.json](https://elektro-karo.de/business-profile.json): Strukturierte Firmendaten (NAP, Öffnungszeiten, Leistungen, URLs)
 - [llms-full.txt](https://elektro-karo.de/llms-full.txt): Ausführlicher LLM-Kontext mit FAQ und Kontaktwegen
 - [FAQ (JSON)](https://elektro-karo.de/aeo/faq.json): Häufige Fragen für Answer Engines
@@ -21,7 +21,8 @@ Elektro Karo (Inhaber Jubran Karo, Elektromeister, gegründet 2021) ist in der H
 
 ## Kontakt & Anfrage
 
-- [Kontakt & Anfahrt](https://elektro-karo.de/#kontakt): Adresse Dotzheimer-Str. 160, 65197 Wiesbaden, Karte, Formular
+- [Angebot anfragen](https://elektro-karo.de/#angebot): Telefon, WhatsApp, Rückruf
+- [Kontakt & Anfahrt](https://elektro-karo.de/#kontakt): Adresse Dotzheimer-Str. 160, 65197 Wiesbaden, Karte (Formular deaktiviert)
 - [Rückruf / Telefon / WhatsApp](https://elektro-karo.de/#termin): Direktkontakt ohne Online-Kalender
 - Telefon: tel:+4915750020222 (24h-Notdienst)
 - WhatsApp: https://wa.me/4915750020222
