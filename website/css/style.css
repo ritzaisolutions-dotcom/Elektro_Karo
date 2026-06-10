@@ -614,14 +614,15 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 
 .hero__credentials {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-self: center;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   gap: 0.35em;
   text-align: center;
   text-wrap: balance;
@@ -629,13 +630,23 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245, 239, 224, 0.75);
+  color: #ffffff;
   animation: fadeUp 0.6s var(--ease) 0.45s both;
+}
+
+.hero__credentials .inline-link {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.hero__credentials .inline-link:hover {
+  color: var(--accent-hover, #ffc04d);
 }
 
 .hero__credentials-sep {
   margin: 0 0.35em;
-  color: rgba(201, 168, 76, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .scroll-indicator {
@@ -2067,14 +2078,14 @@ a.leistung-card {
 
 .bewertung-card--google {
   position: relative;
-  background: #fff;
-  border: 1px solid #e8eaed;
-  color: #202124;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
+  background: var(--primary-light);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  color: #f5efe0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .bewertung-card--google:hover {
-  box-shadow: 0 4px 16px rgba(32, 33, 36, 0.16);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.32);
 }
 
 .bewertung-card__google {
@@ -2098,24 +2109,28 @@ a.leistung-card {
   margin: 0;
 }
 
+.bewertung-card--google .bewertung-card__date {
+  color: rgba(255, 255, 255, 0.65);
+}
+
 .bewertung-card--google .bewertung-card__author {
-  color: #202124;
+  color: #ffffff;
 }
 
 .bewertung-card--google .bewertung-card__text {
-  color: #3c4043;
+  color: rgba(255, 255, 255, 0.92);
   font-style: normal;
 }
 
 .bewertung-card--google .bewertung-card__more {
-  color: #1a73e8;
+  color: var(--accent);
   font-style: normal;
   text-transform: none;
   letter-spacing: 0;
 }
 
 .bewertung-card--google .bewertung-card__more:hover {
-  color: #174ea6;
+  color: var(--accent-hover);
 }
 
 .avatar--c1 { background: linear-gradient(135deg, #4285F4, #1a73e8); }
@@ -2250,6 +2265,34 @@ a.leistung-card {
 .bewertung-card__more:hover {
   color: rgba(255, 255, 255, 0.75);
   opacity: 1;
+}
+
+/* Bewertungen: Google-Karten — weiße Schrift, hoher Kontrast (nach Basis-Regeln) */
+#bewertungen .bewertung-card.bewertung-card--google {
+  background: var(--primary-light);
+  border-color: rgba(245, 166, 35, 0.22);
+  color: #f5efe0;
+}
+
+#bewertungen .bewertung-card.bewertung-card--google .bewertung-card__author {
+  color: #ffffff;
+}
+
+#bewertungen .bewertung-card.bewertung-card--google .bewertung-card__date {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#bewertungen .bewertung-card.bewertung-card--google .bewertung-card__text {
+  color: rgba(255, 255, 255, 0.92);
+  font-style: normal;
+}
+
+#bewertungen .bewertung-card.bewertung-card--google .bewertung-card__more {
+  color: var(--accent);
+}
+
+#bewertungen .bewertung-card.bewertung-card--google .bewertung-card__more:hover {
+  color: var(--accent-hover);
 }
 
 /* ============================================================
