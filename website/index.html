@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="css/animations.css"></noscript>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260610">
   <link rel="stylesheet" href="css/pdf-kalkulation.css" id="pdfCalcCss" media="none" onload="if(typeof CLIENT!=='undefined'&&CLIENT.kostenrechnerAktiv!==false)this.media='all'">
   <script>if(typeof CLIENT!=='undefined'&&CLIENT.kostenrechnerAktiv!==false){var _p=document.getElementById('pdfCalcCss');if(_p)_p.media='all';}</script>
 
@@ -255,6 +255,32 @@
       margin-top: var(--sp-4);
     }
     .angebot-cta__actions .btn { min-width: 200px; justify-content: center; }
+
+    /* Hero-Credentials: zentriert, weiße Schrift (nach style.css + .inline-link) */
+    .hero .hero__center .hero__credentials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      align-self: center;
+      width: 100%;
+      max-width: 40rem;
+      margin: var(--sp-2) auto 0;
+      padding: 0;
+      text-align: center;
+      color: #ffffff;
+    }
+    .hero .hero__center .hero__credentials .inline-link {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .hero .hero__center .hero__credentials .inline-link:hover {
+      color: var(--accent-hover, #ffc04d);
+    }
+    .hero .hero__center .hero__credentials-sep {
+      color: rgba(255, 255, 255, 0.45);
+    }
   </style>
 
   <script src="js/config.js"></script>
