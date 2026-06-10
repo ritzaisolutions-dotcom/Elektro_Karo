@@ -167,37 +167,6 @@
     }
     .termin-wa-box p { color: rgba(255,255,255,.65); margin-bottom: var(--sp-4); font-size: var(--fs-base); }
 
-    /* ── Termin-Variante: Formular ───────────────────────── */
-    .termin-form-box {
-      max-width: 640px;
-      margin: 2.5rem auto 0;
-      background: var(--bg);
-      border-radius: var(--r-lg);
-      padding: var(--sp-5) var(--sp-5) var(--sp-6);
-      box-shadow: var(--s-lg);
-    }
-    .termin-form-box__title {
-      font-family: var(--ff-head);
-      font-size: var(--fs-xl);
-      font-weight: 600;
-      color: var(--accent);
-      margin: 0 0 var(--sp-4);
-      text-align: center;
-    }
-    .termin-form-box label { color: var(--text); }
-    .termin-form-box input,
-    .termin-form-box textarea,
-    .termin-form-box select {
-      color: var(--text);
-      background: var(--primary-light);
-      border: 1px solid rgba(245, 166, 35, 0.25);
-    }
-    .termin-form-box input:focus,
-    .termin-form-box textarea:focus,
-    .termin-form-box select:focus {
-      border-color: var(--accent);
-      outline: none;
-    }
     #terminFormResult { margin-top: .75rem; font-size: var(--fs-sm); font-weight: 600; }
 
     /* ── WhatsApp Button (universell) ────────────────────── */
@@ -536,17 +505,17 @@
           </div>
 
           <p class="hero__notdienst">24h-Notdienst verfügbar</p>
-        </div>
 
-        <p class="hero__credentials">
-          <span>Elektromeister</span>
-          <span class="hero__credentials-sep" aria-hidden="true">·</span>
-          <span data-config="ort">Wiesbaden</span>
-          <span class="hero__credentials-sep" aria-hidden="true">·</span>
-          <span>Seit 2021</span>
-          <span class="hero__credentials-sep" aria-hidden="true">·</span>
-          <a href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" class="inline-link" data-config="bewertungenAnzahl">18 Bewertungen</a>
-        </p>
+          <p class="hero__credentials">
+            <span>Elektromeister</span>
+            <span class="hero__credentials-sep" aria-hidden="true">·</span>
+            <span data-config="ort">Wiesbaden</span>
+            <span class="hero__credentials-sep" aria-hidden="true">·</span>
+            <span>Seit 2021</span>
+            <span class="hero__credentials-sep" aria-hidden="true">·</span>
+            <a href="#" data-config-href="googleBewertung" target="_blank" rel="noopener noreferrer" class="inline-link" data-config="bewertungenAnzahl">18 Bewertungen</a>
+          </p>
+        </div>
 
         <a href="#leistungen" class="scroll-indicator" id="scrollIndicator" aria-label="Weiter zu den Leistungen">
           <span>Mehr erfahren</span>
@@ -1068,9 +1037,9 @@
           <a href="tel:#" class="btn btn--primary btn--lg" data-config-href="tel"><span>Jetzt anrufen: </span><span data-config="telefonDisplay">01575 / 0020222</span></a>
           <a href="#" class="btn btn--wa btn--lg" data-config-href="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
-        <div class="termin-form-box">
+        <div class="termin-form-box termin-form-box--premium">
           <h3 class="termin-form-box__title">Rückruf anfordern</h3>
-          <form id="rueckrufForm" novalidate>
+          <form id="rueckrufForm" class="termin-form" novalidate>
             <div class="kontakt-form__grid">
               <label for="rueckruf_name">Ihr Name
                 <input id="rueckruf_name" name="name" type="text" required autocomplete="name" placeholder="Max Mustermann">
@@ -1083,13 +1052,13 @@
               <input id="rueckruf_zeit" name="wunschzeit" type="text" placeholder="z. B. werktags vormittags">
             </label>
             <label for="rueckruf_nachricht">Ihr Anliegen
-              <textarea id="rueckruf_nachricht" name="nachricht" rows="3" placeholder="Kurz beschreiben, worum es geht — wir rufen Sie zurück."></textarea>
+              <textarea id="rueckruf_nachricht" name="nachricht" rows="4" placeholder="Kurz beschreiben, worum es geht — wir rufen Sie zurück."></textarea>
             </label>
             <label class="kontakt-form__check" for="rueckruf_dsgvo">
               <input id="rueckruf_dsgvo" name="dsgvo_consent" type="checkbox" required>
               <span>Ich willige in die Verarbeitung meiner Angaben zur Bearbeitung meiner Rückrufanfrage ein (gemäß <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a>).</span>
             </label>
-            <button type="submit" class="btn btn--primary">Rückruf anfordern</button>
+            <button type="submit" class="btn btn--primary btn--lg termin-form__submit">Rückruf anfordern</button>
             <p id="rueckrufFormResult" class="kontakt-form__note" aria-live="polite"></p>
           </form>
         </div>

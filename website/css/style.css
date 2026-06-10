@@ -614,25 +614,22 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 
 .hero__credentials {
-  position: absolute;
-  left: 50%;
-  bottom: calc(var(--sp-8) + 2.75rem);
-  transform: translateX(-50%);
-  width: min(100% - var(--sp-6), 52rem);
-  max-width: calc(100% - var(--sp-6));
+  width: 100%;
+  max-width: 100%;
   margin: 0;
-  padding-inline: var(--sp-3);
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.35em;
+  text-align: center;
   text-wrap: balance;
   font-size: var(--fs-xs);
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(245, 239, 224, 0.55);
+  color: rgba(245, 239, 224, 0.75);
   animation: fadeUp 0.6s var(--ease) 0.45s both;
 }
 
@@ -3177,8 +3174,103 @@ a.leistung-card {
 }
 
 .termin-rueckruf {
-  max-width: 36rem;
+  max-width: 52rem;
   margin: 0 auto;
+}
+
+.termin-form-box {
+  max-width: 100%;
+  margin: var(--sp-6) auto 0;
+  background: var(--bg);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5) var(--sp-5) var(--sp-6);
+  box-shadow: var(--s-lg);
+}
+
+.termin-form-box--premium {
+  padding: var(--sp-6);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.28);
+}
+
+.termin-form-box__title {
+  font-family: var(--ff-head);
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0 0 var(--sp-5);
+  text-align: center;
+}
+
+.termin-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.termin-form-box label,
+.termin-form label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 224, 0.85);
+}
+
+.termin-form-box input,
+.termin-form-box textarea,
+.termin-form-box select,
+.termin-form input,
+.termin-form textarea,
+.termin-form select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: var(--fs-base);
+  font-family: inherit;
+  color: var(--text);
+  background: var(--primary-light);
+  border: 1px solid rgba(245, 166, 35, 0.25);
+  border-radius: var(--r-md);
+  text-transform: none;
+  letter-spacing: normal;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.termin-form-box textarea,
+.termin-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.termin-form-box input:focus,
+.termin-form-box textarea:focus,
+.termin-form-box select:focus,
+.termin-form input:focus,
+.termin-form textarea:focus,
+.termin-form select:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+}
+
+.termin-form__submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--sp-2);
+}
+
+.termin-form-box .kontakt-form__grid {
+  gap: var(--sp-4);
+}
+
+@media (min-width: 768px) {
+  .termin-form-box .kontakt-form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .termin-rueckruf__ctas {
@@ -3213,6 +3305,10 @@ a.leistung-card {
 
 #termin .termin-form-box .kontakt-form__check {
   color: rgba(245, 239, 224, 0.85);
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
 }
 
 #termin .termin-form-box .kontakt-form__check a {
@@ -3494,9 +3590,8 @@ a.leistung-card {
   }
   .hero__credentials {
     font-size: 0.65rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     line-height: 1.5;
-    bottom: calc(var(--sp-7) + 2.5rem);
   }
   .hero__credentials-sep { display: none; }
 }

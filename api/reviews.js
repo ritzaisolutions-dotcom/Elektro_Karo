@@ -1,6 +1,6 @@
 const { fetchPlaceReviews } = require('../lib/places-reviews');
 
-const CACHE_CONTROL = 'public, s-maxage=86400, stale-while-revalidate=604800';
+const CACHE_CONTROL = 'public, s-maxage=43200, stale-while-revalidate=86400';
 
 function isCronAuthorized(req) {
   const secret = process.env.CRON_SECRET;

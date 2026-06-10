@@ -21,6 +21,8 @@ async function main() {
     kostenrechnerHidden: kostenrechnerActive ? !/id="kostenrechner"[^>]*hidden/.test(html) : /id="kostenrechner"[^>]*hidden/.test(html),
     partnerHidden: /id="partner"[^>]*hidden/.test(html),
     heroTelCta: html.includes('hero__cta-phone') && html.includes('data-config-href="tel"'),
+    heroCredentialsInCenter: /class="hero__center"[\s\S]*class="hero__credentials"/.test(html),
+    terminFormPremium: html.includes('termin-form-box--premium') && html.includes('termin-form__submit'),
     reviewsSummaryCta: html.includes('class="google-reviews-summary"') && html.includes('data-config-href="googleBewertung"'),
     noStaticCalc: !html.includes('<script src="js/calc.js"'),
     noSlider: !html.includes('slider.js'),
